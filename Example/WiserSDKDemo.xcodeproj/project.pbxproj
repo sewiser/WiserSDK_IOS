@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		250B7054329EA87C3F8BBC68 /* libPods-WiserSDKDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28E351876F0AD4CEBBF26C90 /* libPods-WiserSDKDemo.a */; };
+		D554219E23BB2D3300E58652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D554219D23BB2D3300E58652 /* AppDelegate.m */; };
+		D55421A123BB2D3300E58652 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D55421A023BB2D3300E58652 /* SceneDelegate.m */; };
+		D55421A423BB2D3300E58652 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55421A323BB2D3300E58652 /* ViewController.m */; };
+		D55421A723BB2D3300E58652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55421A523BB2D3300E58652 /* Main.storyboard */; };
+		D55421A923BB2D3500E58652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D55421A823BB2D3500E58652 /* Assets.xcassets */; };
+		D55421AC23BB2D3500E58652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55421AA23BB2D3500E58652 /* LaunchScreen.storyboard */; };
+		D55421AF23BB2D3500E58652 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D55421AE23BB2D3500E58652 /* main.m */; };
+		D55421B923BB2D3600E58652 /* WiserSDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D55421B823BB2D3600E58652 /* WiserSDKDemoTests.m */; };
+		D55421C423BB2D3600E58652 /* WiserSDKDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D55421C323BB2D3600E58652 /* WiserSDKDemoUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D55421B523BB2D3600E58652 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D554219123BB2D3300E58652 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D554219823BB2D3300E58652;
+			remoteInfo = WiserSDKDemo;
+		};
+		D55421C023BB2D3600E58652 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D554219123BB2D3300E58652 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D554219823BB2D3300E58652;
+			remoteInfo = WiserSDKDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A42F3F61D68C0035FF8F1E8 /* Pods-WiserSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiserSDKDemo.release.xcconfig"; path = "Target Support Files/Pods-WiserSDKDemo/Pods-WiserSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
+		28E351876F0AD4CEBBF26C90 /* libPods-WiserSDKDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WiserSDKDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4813F28368AA9EC52525C9C3 /* Pods-WiserSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiserSDKDemo.debug.xcconfig"; path = "Target Support Files/Pods-WiserSDKDemo/Pods-WiserSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		D554219923BB2D3300E58652 /* WiserSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiserSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D554219C23BB2D3300E58652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D554219D23BB2D3300E58652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D554219F23BB2D3300E58652 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		D55421A023BB2D3300E58652 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		D55421A223BB2D3300E58652 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D55421A323BB2D3300E58652 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D55421A623BB2D3300E58652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D55421A823BB2D3500E58652 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D55421AB23BB2D3500E58652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D55421AD23BB2D3500E58652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D55421AE23BB2D3500E58652 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D55421B423BB2D3600E58652 /* WiserSDKDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiserSDKDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D55421B823BB2D3600E58652 /* WiserSDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WiserSDKDemoTests.m; sourceTree = "<group>"; };
+		D55421BA23BB2D3600E58652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D55421BF23BB2D3600E58652 /* WiserSDKDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiserSDKDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D55421C323BB2D3600E58652 /* WiserSDKDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WiserSDKDemoUITests.m; sourceTree = "<group>"; };
+		D55421C523BB2D3600E58652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D554219623BB2D3300E58652 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				250B7054329EA87C3F8BBC68 /* libPods-WiserSDKDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D55421B123BB2D3600E58652 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D55421BC23BB2D3600E58652 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0DE9F69A33B336C9B978196C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28E351876F0AD4CEBBF26C90 /* libPods-WiserSDKDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D554219023BB2D3300E58652 = {
+			isa = PBXGroup;
+			children = (
+				D554219B23BB2D3300E58652 /* WiserSDKDemo */,
+				D55421B723BB2D3600E58652 /* WiserSDKDemoTests */,
+				D55421C223BB2D3600E58652 /* WiserSDKDemoUITests */,
+				D554219A23BB2D3300E58652 /* Products */,
+				FF1E9E72C09F2620E3A1E1CE /* Pods */,
+				0DE9F69A33B336C9B978196C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D554219A23BB2D3300E58652 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D554219923BB2D3300E58652 /* WiserSDKDemo.app */,
+				D55421B423BB2D3600E58652 /* WiserSDKDemoTests.xctest */,
+				D55421BF23BB2D3600E58652 /* WiserSDKDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D554219B23BB2D3300E58652 /* WiserSDKDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D554219C23BB2D3300E58652 /* AppDelegate.h */,
+				D554219D23BB2D3300E58652 /* AppDelegate.m */,
+				D554219F23BB2D3300E58652 /* SceneDelegate.h */,
+				D55421A023BB2D3300E58652 /* SceneDelegate.m */,
+				D55421A223BB2D3300E58652 /* ViewController.h */,
+				D55421A323BB2D3300E58652 /* ViewController.m */,
+				D55421A523BB2D3300E58652 /* Main.storyboard */,
+				D55421A823BB2D3500E58652 /* Assets.xcassets */,
+				D55421AA23BB2D3500E58652 /* LaunchScreen.storyboard */,
+				D55421AD23BB2D3500E58652 /* Info.plist */,
+				D55421AE23BB2D3500E58652 /* main.m */,
+			);
+			path = WiserSDKDemo;
+			sourceTree = "<group>";
+		};
+		D55421B723BB2D3600E58652 /* WiserSDKDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				D55421B823BB2D3600E58652 /* WiserSDKDemoTests.m */,
+				D55421BA23BB2D3600E58652 /* Info.plist */,
+			);
+			path = WiserSDKDemoTests;
+			sourceTree = "<group>";
+		};
+		D55421C223BB2D3600E58652 /* WiserSDKDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D55421C323BB2D3600E58652 /* WiserSDKDemoUITests.m */,
+				D55421C523BB2D3600E58652 /* Info.plist */,
+			);
+			path = WiserSDKDemoUITests;
+			sourceTree = "<group>";
+		};
+		FF1E9E72C09F2620E3A1E1CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4813F28368AA9EC52525C9C3 /* Pods-WiserSDKDemo.debug.xcconfig */,
+				0A42F3F61D68C0035FF8F1E8 /* Pods-WiserSDKDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D554219823BB2D3300E58652 /* WiserSDKDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D55421C823BB2D3600E58652 /* Build configuration list for PBXNativeTarget "WiserSDKDemo" */;
+			buildPhases = (
+				22AB24C2B7CE14BB178FED44 /* [CP] Check Pods Manifest.lock */,
+				D554219523BB2D3300E58652 /* Sources */,
+				D554219623BB2D3300E58652 /* Frameworks */,
+				D554219723BB2D3300E58652 /* Resources */,
+				B5505E9245464650C10BC6BA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WiserSDKDemo;
+			productName = WiserSDKDemo;
+			productReference = D554219923BB2D3300E58652 /* WiserSDKDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D55421B323BB2D3600E58652 /* WiserSDKDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D55421CB23BB2D3600E58652 /* Build configuration list for PBXNativeTarget "WiserSDKDemoTests" */;
+			buildPhases = (
+				D55421B023BB2D3600E58652 /* Sources */,
+				D55421B123BB2D3600E58652 /* Frameworks */,
+				D55421B223BB2D3600E58652 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D55421B623BB2D3600E58652 /* PBXTargetDependency */,
+			);
+			name = WiserSDKDemoTests;
+			productName = WiserSDKDemoTests;
+			productReference = D55421B423BB2D3600E58652 /* WiserSDKDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D55421BE23BB2D3600E58652 /* WiserSDKDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D55421CE23BB2D3600E58652 /* Build configuration list for PBXNativeTarget "WiserSDKDemoUITests" */;
+			buildPhases = (
+				D55421BB23BB2D3600E58652 /* Sources */,
+				D55421BC23BB2D3600E58652 /* Frameworks */,
+				D55421BD23BB2D3600E58652 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D55421C123BB2D3600E58652 /* PBXTargetDependency */,
+			);
+			name = WiserSDKDemoUITests;
+			productName = WiserSDKDemoUITests;
+			productReference = D55421BF23BB2D3600E58652 /* WiserSDKDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D554219123BB2D3300E58652 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = wiser;
+				TargetAttributes = {
+					D554219823BB2D3300E58652 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					D55421B323BB2D3600E58652 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = D554219823BB2D3300E58652;
+					};
+					D55421BE23BB2D3600E58652 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = D554219823BB2D3300E58652;
+					};
+				};
+			};
+			buildConfigurationList = D554219423BB2D3300E58652 /* Build configuration list for PBXProject "WiserSDKDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D554219023BB2D3300E58652;
+			productRefGroup = D554219A23BB2D3300E58652 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D554219823BB2D3300E58652 /* WiserSDKDemo */,
+				D55421B323BB2D3600E58652 /* WiserSDKDemoTests */,
+				D55421BE23BB2D3600E58652 /* WiserSDKDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D554219723BB2D3300E58652 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D55421AC23BB2D3500E58652 /* LaunchScreen.storyboard in Resources */,
+				D55421A923BB2D3500E58652 /* Assets.xcassets in Resources */,
+				D55421A723BB2D3300E58652 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D55421B223BB2D3600E58652 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D55421BD23BB2D3600E58652 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22AB24C2B7CE14BB178FED44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WiserSDKDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5505E9245464650C10BC6BA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WiserSDKDemo/Pods-WiserSDKDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WiserSDKDemo/Pods-WiserSDKDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WiserSDKDemo/Pods-WiserSDKDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D554219523BB2D3300E58652 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D55421A423BB2D3300E58652 /* ViewController.m in Sources */,
+				D554219E23BB2D3300E58652 /* AppDelegate.m in Sources */,
+				D55421AF23BB2D3500E58652 /* main.m in Sources */,
+				D55421A123BB2D3300E58652 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D55421B023BB2D3600E58652 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D55421B923BB2D3600E58652 /* WiserSDKDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D55421BB23BB2D3600E58652 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D55421C423BB2D3600E58652 /* WiserSDKDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D55421B623BB2D3600E58652 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D554219823BB2D3300E58652 /* WiserSDKDemo */;
+			targetProxy = D55421B523BB2D3600E58652 /* PBXContainerItemProxy */;
+		};
+		D55421C123BB2D3600E58652 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D554219823BB2D3300E58652 /* WiserSDKDemo */;
+			targetProxy = D55421C023BB2D3600E58652 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D55421A523BB2D3300E58652 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D55421A623BB2D3300E58652 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D55421AA23BB2D3500E58652 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D55421AB23BB2D3500E58652 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D55421C623BB2D3600E58652 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D55421C723BB2D3600E58652 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D55421C923BB2D3600E58652 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4813F28368AA9EC52525C9C3 /* Pods-WiserSDKDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WiserSDKDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiser.WiserSDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D55421CA23BB2D3600E58652 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A42F3F61D68C0035FF8F1E8 /* Pods-WiserSDKDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WiserSDKDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiser.WiserSDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D55421CC23BB2D3600E58652 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WiserSDKDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiser.WiserSDKDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WiserSDKDemo.app/WiserSDKDemo";
+			};
+			name = Debug;
+		};
+		D55421CD23BB2D3600E58652 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WiserSDKDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiser.WiserSDKDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WiserSDKDemo.app/WiserSDKDemo";
+			};
+			name = Release;
+		};
+		D55421CF23BB2D3600E58652 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WiserSDKDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiser.WiserSDKDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WiserSDKDemo;
+			};
+			name = Debug;
+		};
+		D55421D023BB2D3600E58652 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WiserSDKDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiser.WiserSDKDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WiserSDKDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D554219423BB2D3300E58652 /* Build configuration list for PBXProject "WiserSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D55421C623BB2D3600E58652 /* Debug */,
+				D55421C723BB2D3600E58652 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D55421C823BB2D3600E58652 /* Build configuration list for PBXNativeTarget "WiserSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D55421C923BB2D3600E58652 /* Debug */,
+				D55421CA23BB2D3600E58652 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D55421CB23BB2D3600E58652 /* Build configuration list for PBXNativeTarget "WiserSDKDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D55421CC23BB2D3600E58652 /* Debug */,
+				D55421CD23BB2D3600E58652 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D55421CE23BB2D3600E58652 /* Build configuration list for PBXNativeTarget "WiserSDKDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D55421CF23BB2D3600E58652 /* Debug */,
+				D55421D023BB2D3600E58652 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D554219123BB2D3300E58652 /* Project object */;
+}

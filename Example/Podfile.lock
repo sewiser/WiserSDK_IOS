@@ -1,0 +1,74 @@
+PODS:
+  - CocoaAsyncSocket (7.6.3)
+  - MQTTClient (0.15.2):
+    - MQTTClient/Core (= 0.15.2)
+  - MQTTClient/Core (0.15.2):
+    - MQTTClient/Manager
+    - MQTTClient/Min
+  - MQTTClient/Manager (0.15.2):
+    - MQTTClient/Min
+  - MQTTClient/Min (0.15.2)
+  - Reachability (3.2)
+  - WiserSmartActivatorKit (3.14.0):
+    - Reachability
+    - WiserSmartDeviceKit
+  - WiserSmartBaseKit (3.14.0):
+    - WiserSmartUtil
+    - YYModel
+  - WiserSmartDeviceKit (3.14.0):
+    - WiserSmartBaseKit
+    - WiserSmartMQTTChannelKit
+    - WiserSmartSocketChannelKit
+  - WiserSmartMQTTChannelKit (3.14.0):
+    - MQTTClient (= 0.15.2)
+    - WiserSmartBaseKit
+  - WiserSmartSocketChannelKit (3.14.0):
+    - CocoaAsyncSocket
+    - WiserSmartBaseKit
+  - WiserSmartUtil (3.14.0)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - WiserSmartActivatorKit (from `../`)
+  - WiserSmartBaseKit (from `../`)
+  - WiserSmartDeviceKit (from `../`)
+  - WiserSmartMQTTChannelKit (from `../`)
+  - WiserSmartSocketChannelKit (from `../`)
+  - WiserSmartUtil (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - CocoaAsyncSocket
+    - MQTTClient
+    - Reachability
+    - YYModel
+
+EXTERNAL SOURCES:
+  WiserSmartActivatorKit:
+    :path: "../"
+  WiserSmartBaseKit:
+    :path: "../"
+  WiserSmartDeviceKit:
+    :path: "../"
+  WiserSmartMQTTChannelKit:
+    :path: "../"
+  WiserSmartSocketChannelKit:
+    :path: "../"
+  WiserSmartUtil:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
+  MQTTClient: 902c7bcac1501595f3d0b15178c7205b40331fb0
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  WiserSmartActivatorKit: b147e38aed3d6756a899757e3118cc4a6fd58ba1
+  WiserSmartBaseKit: c8d1c1fecdd144d4dc53e8390af2599bc4423db7
+  WiserSmartDeviceKit: f2989d5471f2b92493af87f5463c70204cfe733e
+  WiserSmartMQTTChannelKit: dea4f3fbfc318807d7ea2530e36682b52581fade
+  WiserSmartSocketChannelKit: 610ecd14c4702f5cf6d1f9de812610f1a2a452d5
+  WiserSmartUtil: 6e4bb9f7e9f219060b9433c74e893906cfa602e2
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: 90608a919dda85f8c9d2172acfdefeaefbc70588
+
+COCOAPODS: 1.8.4

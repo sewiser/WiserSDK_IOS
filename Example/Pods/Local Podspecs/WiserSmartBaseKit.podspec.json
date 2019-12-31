@@ -1,0 +1,41 @@
+{
+  "name": "WiserSmartBaseKit",
+  "version": "3.14.0",
+  "summary": "A short description of WiserSmartBaseKit.",
+  "homepage": "https://github.com/sewiser/WiserSDK_IOS",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": {
+    "wiser": "wiser@wiser.com"
+  },
+  "source": {
+    "git": "https://github.com/sewiser/WiserSDK_IOS.git",
+    "tag": "3.14.0"
+  },
+  "static_framework": true,
+  "platforms": {
+    "ios": "8.0",
+    "watchos": "2.0"
+  },
+  "ios": {
+    "vendored_frameworks": "ios/WiserSmartBaseKit.framework",
+    "resources": "ios/WiserSmartBaseKit.framework/Versions/A/Resources/*"
+  },
+  "watchos": {
+    "vendored_frameworks": "watchos/WiserSmartBaseKit.framework",
+    "resources": "watchos/WiserSmartBaseKit.framework/Versions/A/Resources/*"
+  },
+  "libraries": [
+    "c++",
+    "z"
+  ],
+  "dependencies": {
+    "WiserSmartUtil": [
+
+    ],
+    "YYModel": [
+
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "WiserSmartSocketChannelKit",
+  "version": "3.14.0",
+  "summary": "A short description of WiserSmartSocketChannelKit.",
+  "homepage": "https://github.com/sewiser/WiserSDK_IOS",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": {
+    "wiser": "wiser@wiser.com"
+  },
+  "source": {
+    "git": "https://github.com/sewiser/WiserSDK_IOS.git",
+    "tag": "3.14.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "static_framework": true,
+  "vendored_frameworks": "ios/WiserSmartSocketChannelKit.framework",
+  "dependencies": {
+    "WiserSmartBaseKit": [
+
+    ],
+    "CocoaAsyncSocket": [
+
+    ]
+  }
+}

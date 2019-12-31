@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-WiserSDKDemo/Pods-WiserSDKDemo-resources.sh
+${PODS_ROOT}/../../ios/WiserSmartBaseKit.framework/Versions/A/Resources/WiserSmartUtil.bundle
+${PODS_ROOT}/../../ios/WiserSmartUtil.framework/Versions/A/Resources/WiserSmartUtil.bundle
