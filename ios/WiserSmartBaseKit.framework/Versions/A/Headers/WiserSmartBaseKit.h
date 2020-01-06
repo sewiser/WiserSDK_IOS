@@ -8,8 +8,8 @@
 #ifndef WiserSmartBaseKit_h
 #define WiserSmartBaseKit_h
 
-#define TUYA_HOMEKIT_SDK
-#define TUYA_SDK_VERSION @"3.14.1"
+#define WISER_HOMEKIT_SDK
+#define WISER_SDK_VERSION @"3.14.1"
 
 #import <WiserSmartUtil/WiserSmartUtil.h>
 

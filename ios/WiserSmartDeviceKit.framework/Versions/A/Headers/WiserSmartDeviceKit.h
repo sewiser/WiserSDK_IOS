@@ -11,12 +11,12 @@
 /**
  *  当前客户端支持的最高的外网通信协议
  */
-#define TUYA_CURRENT_GW_PROTOCOL_VERSION 2.2
+#define WISER_CURRENT_GW_PROTOCOL_VERSION 2.2
 
 /**
  *  当前客户端支持的最高的局域网通信协议
  */
-#define TUYA_CURRENT_LAN_PROTOCOL_VERSION 3.3
+#define WISER_CURRENT_LAN_PROTOCOL_VERSION 3.3
 
 #import <WiserSmartBaseKit/WiserSmartBaseKit.h>
 
