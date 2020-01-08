@@ -27,7 +27,6 @@
     // Override point for customization after application launch.
     
     [[WiserSmartSDK sharedInstance] startWithAppKey:APP_KEY secretKey:APP_SECRET];
-    [[WiserSmartSDK sharedInstance] setDebugMode:YES];
     [[WiserSmartUser sharedInstance] loginByEmail:@"86" email:@"YOUR_EMAIL" password:@"YOUR_PASSWORD" success:^{
         NSLog(@"log success");
         [self loadHome];
