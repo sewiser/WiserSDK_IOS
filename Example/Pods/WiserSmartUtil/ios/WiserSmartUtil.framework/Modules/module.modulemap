@@ -1,0 +1,6 @@
+framework module WiserSmartUtil {
+  umbrella header "WiserSmartUtil.h"
+
+  export *
+  module * { export * }
+}
