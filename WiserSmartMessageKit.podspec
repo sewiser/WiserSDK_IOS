@@ -1,12 +1,11 @@
 Pod::Spec.new do |s|
   s.name = "WiserSmartMessageKit"
-  s.version = "3.12.2"
+  s.version = "3.14.3"
   s.summary = "A short description of #{s.name}."
   s.homepage = "https://github.com/sewiser/WiserSDK_IOS"
    s.license = {"type"=>"MIT"}
    s.authors = {"wiser"=>"wiser@wiser.com"}
-  s.source = { :http => "https://airtake-public-data.oss-cn-hangzhou.aliyuncs.com/smart/app/package/sdk/ios/#{s.name}-#{s.version}.zip", :type => "zip" }
-
+   s.source = { :git => "https://github.com/sewiser/WiserSDK_IOS.git", :tag => s.version.to_s }
   s.static_framework          = true
 
   s.ios.deployment_target = '8.0'
