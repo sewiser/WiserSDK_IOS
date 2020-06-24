@@ -1,0 +1,6 @@
+framework module WiserSmartMessageKit {
+  umbrella header "WiserSmartMessageKit.h"
+
+  export *
+  module * { export * }
+}
