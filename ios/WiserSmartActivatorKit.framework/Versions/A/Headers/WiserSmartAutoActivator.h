@@ -76,6 +76,32 @@ NS_ASSUME_NONNULL_BEGIN
                         failure:(WSFailureError)failure;
 
 /**
+ *  To obtain token (valid for 10 minutes)
+ *  获取配网Token（有效期10分钟）
+ *
+ *  @param success Success block
+ *  @param failure Failure block
+ */
+- (void)getTokenSuccess:(WSSuccessString)success
+                failure:(WSFailureError)failure;
+
+/**
+ * start discover device
+ * 开始发现设备
+ *
+ * @param devIds  Device Id list
+ * @param token   Config Token
+ * @param timeout Timeout, default 100 seconds
+ * @param success Success block
+ * @param failure Failure block
+ */
+- (void)startDiscoverWithDevIds:(NSArray<NSString *> *)devIds
+                          token:(NSString *)token
+                        timeout:(NSTimeInterval)timeout
+                        success:(WSSuccessHandler)success
+                        failure:(WSFailureError)failure;
+
+/**
  * start discover gateway route
  * 开始发现网关路由器
  *

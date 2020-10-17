@@ -9,10 +9,10 @@
 
 @interface NSNumber (WSSDKRandom)
 
-+ (NSInteger)tysdk_randomIntBetweenMin:(NSInteger)minValue andMax:(NSInteger)maxValue;
++ (NSInteger)wssdk_randomIntBetweenMin:(NSInteger)minValue andMax:(NSInteger)maxValue;
 
-+ (float)tysdk_randomFloat;
++ (float)wssdk_randomFloat;
 
-+ (float)tysdk_randomFloatBetweenMin:(float)minValue andMax:(float)maxValue;
++ (float)wssdk_randomFloatBetweenMin:(float)minValue andMax:(float)maxValue;
 
 @end

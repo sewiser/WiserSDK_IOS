@@ -1,6 +1,0 @@
-framework module WiserSmartFeedbackKit {
-  umbrella header "WiserSmartFeedbackKit.h"
-
-  export *
-  module * { export * }
-}

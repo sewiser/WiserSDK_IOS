@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define WSErrorDomain @"com.wiser.www"
+#define WSErrorDomain @"com.tuya.www"
 
 /**
  *
@@ -81,12 +81,15 @@ typedef enum {
     //zigbee 群组子设备不能为空
     WISER_GROUP_DEVICE_LIST_NOT_EMPTY,
     
+    //局域网离线
+    WISER_SOCKET_TCP_DISCONNECT,
+    
 } WSSDKErrorCode;
 
 @interface NSError (WSSDKDomain)
 
-+ (instancetype)tysdk_errorWithErrorCode:(WSSDKErrorCode)errorCode errorMsg:(NSString *)errorMsg;
++ (instancetype)wssdk_errorWithErrorCode:(WSSDKErrorCode)errorCode errorMsg:(NSString *)errorMsg;
 
-+ (NSError *)tysdk_errorWithCodeString:(NSString *)codeString errorMsg:(NSString *)errorMsg;
++ (NSError *)wssdk_errorWithCodeString:(NSString *)codeString errorMsg:(NSString *)errorMsg;
 
 @end

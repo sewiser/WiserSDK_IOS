@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 
 #define WSSDKLocalizedString(key, comment) \
-    [NSBundle tysdk_localizedStringForKey:(key) value:@"" table:nil]
+    [NSBundle wssdk_localizedStringForKey:(key) value:@"" table:nil]
 
 @interface NSBundle (WSSDKLanguage)
 
-+ (NSBundle *)tysdk_bundle;
++ (NSBundle *)wssdk_bundle;
 
-+ (NSString *)tysdk_getAppleLanguages;
++ (NSString *)wssdk_getAppleLanguages;
 
-+ (NSString *)tysdk_localizedStringForKey:(NSString *)key value:(NSString *)value table:(NSString *)tableName;
++ (NSString *)wssdk_localizedStringForKey:(NSString *)key value:(NSString *)value table:(NSString *)tableName;
 
 @end

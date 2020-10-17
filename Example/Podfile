@@ -9,6 +9,7 @@ target 'WiserSDKDemo' do
   pod 'WiserSmartSocketChannelKit', :path => '../'
   pod 'WiserSmartActivatorKit', :path => '../'
   pod 'WiserSmartDeviceKit', :path => '../'
+  pod 'WiserSmartDeviceCoreKit', :path => '../'
 
 #pod 'WiserSmartBaseKit', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.14.2'
 #pod 'WiserSmartUtil', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.14.2'
@@ -18,3 +19,4 @@ target 'WiserSDKDemo' do
 #pod 'WiserSmartDeviceKit', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.14.2'
 
 end
+

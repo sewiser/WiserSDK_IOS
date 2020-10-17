@@ -12,30 +12,20 @@
 #import "WiserSmartReceiveMemberDetailModel.h"
 #import "WiserSmartReceivedShareUserModel.h"
 #import "WiserSmartShareDeviceModel.h"
+#import "WiserSmartDeviceShareModel.h"
 
 
 ///  Sharing device related functions (based on device dimension sharing)
 ///  共享设备相关功能 （基于家庭的设备维度的共享）
 @interface WiserSmartHomeDeviceShare : NSObject
 
-/**
- Add Shares
- 添加共享
- 
- @param homeId      homeId
- @param countryCode countryCode
- @param userAccount userAccount
- @param devIds      devId list
- @param success     Success block
- @param failure     Failure block
- */
-- (void)addShareWithHomeId:(long long)homeId
-               countryCode:(NSString *)countryCode
-               userAccount:(NSString *)userAccount
-                    devIds:(NSArray <NSString *> *)devIds
-                   success:(void(^)(WiserSmartShareMemberModel *model))success
-                   failure:(WSFailureError)failure;
-
+/// 设备添加共享 Device Add Sharing
+/// @param requestModel 添加共享设备模型 request model
+/// @param success 成功回调 success
+/// @param failure 失败回调 failure
+- (void)addDeviceShareWithRequestModel:(WiserSmartDeviceShareRequestModel *)requestModel
+                               success:(void(^)(WiserSmartShareMemberModel *model))success
+                               failure:(WSFailureError)failure;
 
 /**
  Add Shares (new, not overwriting old Shares)
@@ -158,25 +148,7 @@
                                          failure:(WSFailureError)failure;
 
 
-#pragma mark - 单设备共享操作
-
-/**
- Device Add Sharing
- 单设备添加共享
- 
- @param homeId      homeId
- @param countryCode countryCode
- @param userAccount userAccount
- @param devId       devId
- @param success     Success block
- @param failure     Failure block
- */
-- (void)addDeviceShareWithHomeId:(long long)homeId
-                     countryCode:(NSString *)countryCode
-                     userAccount:(NSString *)userAccount
-                           devId:(NSString *)devId
-                         success:(void(^)(WiserSmartShareMemberModel *model))success
-                         failure:(WSFailureError)failure;
+#pragma mark - 
 
 
 /**

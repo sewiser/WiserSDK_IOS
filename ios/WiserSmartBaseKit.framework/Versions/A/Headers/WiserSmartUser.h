@@ -29,7 +29,8 @@ typedef NS_ENUM(NSInteger, WSRegType) {
     WSRegFacebookType,      // Register from Facebook
     WSRegTwitterType,       // Register from Twitter
     WSRegWechatType,        // Register from Wechat
-    WSRegAppleIdType        // Register from Apple
+    WSRegAppleIdType,        // Register from Apple
+    WSRegGoogleType,        //Register from google
 };
 
 /// User-related functions.
@@ -96,6 +97,18 @@ typedef NS_ENUM(NSInteger, WSRegType) {
 /// 是否开启SSL
 @property (nonatomic, assign, readonly) BOOL useSSL;
 
+/// quic host
+/// quic 域名
+@property (nonatomic, strong, readonly) NSString *quicHost;
+
+/// quic port
+/// quic 端口号
+@property (nonatomic, assign, readonly) NSInteger quicPort;
+
+/// QUIC
+/// 是否开启QUIC
+@property (nonatomic, assign, readonly) BOOL useQUIC;
+
 /// Temperature unit. 1 for `°C`, 2 for `°F`.
 /// 温度单位。1：`°C`， 2：`°F`。
 @property (nonatomic, assign) NSInteger tempUnit;
@@ -109,6 +122,14 @@ typedef NS_ENUM(NSInteger, WSRegType) {
 @property (nonatomic, strong, readonly) NSString *snsNickname;
 
 @property (nonatomic, strong, readonly) NSString *ecode;
+
+/// User type
+/// 用户类型
+@property (nonatomic, assign, readonly) NSInteger userType;
+
+/// Extra parameters
+/// 额外参数
+@property (nonatomic, strong, readonly) NSDictionary *extras;
 
 
 #pragma mark - Mobile phone verification code login
@@ -130,20 +151,23 @@ typedef NS_ENUM(NSInteger, WSRegType) {
                failure:(nullable WSFailureError)failure;
 
 /**
- *  Mobile phone verification code login and register.
- *  手机验证码登录和注册
+ *  Modile phone verification code login.
+ *  手机验证码登录
  *
+ *  @param mobile      Mobile phone number
  *  @param countryCode Country code
- *  @param phoneNumber Mobile phone number
  *  @param code        Verification code
  *  @param success     Success block
  *  @param failure     Failure block
  */
-- (void)login:(NSString *)countryCode
-  phoneNumber:(NSString *)phoneNumber
-         code:(NSString *)code
-      success:(nullable WSSuccessHandler)success
-      failure:(nullable WSFailureError)failure;
+- (void)loginWithMobile:(NSString *)mobile
+            countryCode:(NSString *)countryCode
+                   code:(NSString *)code
+                success:(WSSuccessHandler)success
+                failure:(WSFailureError)failure;
+
+
+#pragma mark - Mobile phone binding
 
 /**
  *  Send verification code. Used for mobile phone bind, mobile phone change.
@@ -229,23 +253,7 @@ typedef NS_ENUM(NSInteger, WSRegType) {
                      success:(nullable WSSuccessHandler)success
                      failure:(nullable WSFailureError)failure;
 
-#pragma mark - Email login 1.0
-
-/**
- *  Email register 1.0.
- *  邮箱注册  1.0
- *
- *  @param countryCode Country code
- *  @param email       Email
- *  @param password    Password
- *  @param success     Success block
- *  @param failure     Failure block
- */
-- (void)registerByEmail:(NSString *)countryCode
-                  email:(NSString *)email
-               password:(NSString *)password
-                success:(nullable WSSuccessHandler)success
-                failure:(nullable WSFailureError)failure;
+#pragma mark - Email login
 
 /**
  *  Email login.
@@ -344,17 +352,108 @@ typedef NS_ENUM(NSInteger, WSRegType) {
  */
 - (void)loginWithEmail:(NSString *)email countryCode:(NSString *)countryCode code:(NSString *)code success:(WSSuccessHandler)success failure:(WSFailureError)failure;
 
+#pragma mark - uid login
+
 /**
- *  Modile phone verification code login.
- *  手机验证码登录
+ *  uid login/register. The account will be registered at first login.
+ *  uid 登录注册接口（如果没有注册就注册，如果注册就登录）
  *
- *  @param mobile      Mobile phone number
- *  @param countryCode Country code
- *  @param code        Verification code
- *  @param success     Success block
- *  @param failure     Failure block
+ *  @param countryCode  Country code
+ *  @param uid          User ID
+ *  @param password     Password
+ *  @param createHome   Create default home
+ *  @param success      Success block
+ *  @param failure      Failure block
  */
-- (void)loginWithMobile:(NSString *)mobile countryCode:(NSString *)countryCode code:(NSString *)code success:(WSSuccessHandler)success failure:(WSFailureError)failure;
+- (void)loginOrRegisterWithCountryCode:(NSString *)countryCode
+                                   uid:(NSString *)uid
+                              password:(NSString *)password
+                            createHome:(BOOL)createHome
+                               success:(nullable WSSuccessID)success
+                               failure:(nullable WSFailureError)failure;
+
+#pragma mark - Social login
+
+/**
+ *  QQ login.
+ *  QQ登录
+ *
+ *  @param countryCode Country code
+ *  @param userId userId from QQ authorization login
+ *  @param accessToken accessToken from QQ authorization login
+ *  @param success Success block
+ *  @param failure Failure block
+ */
+- (void)loginByQQ:(NSString *)countryCode
+           userId:(NSString *)userId
+      accessToken:(NSString *)accessToken
+          success:(nullable WSSuccessHandler)success
+          failure:(nullable WSFailureError)failure;
+
+/**
+ *  Wechat login.
+ *  微信登录
+ *
+ *  @param countryCode Country code
+ *  @param code code from Wechat authorization login
+ *  @param success Success block
+ *  @param failure Failure block
+ */
+- (void)loginByWechat:(NSString *)countryCode
+                 code:(NSString *)code
+              success:(nullable WSSuccessHandler)success
+              failure:(nullable WSFailureError)failure;
+
+
+/**
+ *  Facebook Login.
+ *  Facebook登录
+ *
+ *  @param countryCode Country code
+ *  @param token token from Facebook authorization login
+ *  @param success Success block
+ *  @param failure Failure block
+ */
+- (void)loginByFacebook:(NSString *)countryCode
+                  token:(NSString *)token
+                success:(nullable WSSuccessHandler)success
+                failure:(nullable WSFailureError)failure;
+
+
+
+/**
+ *  Twitter login.
+ *  Twitter登录
+ *
+ *  @param countryCode Country code
+ *  @param key key from Twitter authorization login
+ *  @param secret secret from Twitter authorization login
+ *  @param success Success block
+ *  @param failure Failure block
+ */
+- (void)loginByTwitter:(NSString *)countryCode
+                   key:(NSString *)key
+                secret:(NSString *)secret
+               success:(nullable WSSuccessHandler)success
+               failure:(nullable WSFailureError)failure;
+
+
+/**
+*  third login.
+*
+*  @param type login type(ap for "login with apple")
+*  @param countryCode countryCode
+*  @param accessToken token from third authorization login
+*  @param extraInfo extra params
+*  @param success Success block
+*  @param failure Failure block
+*/
+- (void)loginByAuth2WithType:(NSString *)type
+                 countryCode:(NSString *)countryCode
+                 accessToken:(NSString *)accessToken
+                   extraInfo:(NSDictionary *)extraInfo
+                     success:(nullable WSSuccessHandler)success
+                     failure:(nullable WSFailureError)failure;
 
 #pragma mark -
 

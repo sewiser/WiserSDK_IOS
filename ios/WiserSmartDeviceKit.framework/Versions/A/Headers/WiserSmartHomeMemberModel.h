@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WiserSmartDeviceModelUtils.h"
+#import "WiserSmartHomeModelUtils.h"
 
 @interface WiserSmartHomeMemberModel : NSObject
 
@@ -19,9 +19,6 @@
 
 // name of members
 @property (nonatomic, strong) NSString *name;
-
-// admin or not
-@property (nonatomic, assign) BOOL isAdmin __deprecated_msg("The property will be deprecated and remove in a future version，Please use role");
 
 // role
 @property (nonatomic, assign) WSHomeRoleType role;
@@ -40,5 +37,9 @@
 
 // state of deal
 @property (nonatomic, assign) WSHomeStatus dealStatus;
+
+#pragma mark - deprecated
+// admin or not
+@property (nonatomic, assign) BOOL isAdmin __deprecated_msg("The property will be deprecated and remove in a future version，Please use role");
 
 @end

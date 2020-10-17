@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 void WSSDKLog(NSInteger level, NSString *module, const char *file, const char *function, NSUInteger line, NSString *format, ...);
 
+#undef WSLog
+#undef WSSDKLogDebug
+#undef WSSDKLogInfo
+#undef WSSDKLogWarn
+#undef WSSDKLogError
+
 #define WSLog(...) \
     WSSDKLog(1, @"WiserSmartHomeKit", __FILE__, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 #define WSSDKLogDebug(...) \

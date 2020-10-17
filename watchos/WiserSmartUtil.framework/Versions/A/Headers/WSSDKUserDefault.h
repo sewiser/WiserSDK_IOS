@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WSSDKUserDefault : NSObject
 
-+ (void)tysdk_setUserDefault:(id)object forKey:(NSString *)aKey;
-+ (id)tysdk_getUserDefault:(NSString *)aKey;
-+ (void)tysdk_removeUserDefault:(NSString *)aKey;
++ (void)wssdk_setUserDefault:(id)object forKey:(NSString *)aKey;
++ (id)wssdk_getUserDefault:(NSString *)aKey;
++ (void)wssdk_removeUserDefault:(NSString *)aKey;
 
 @end
 

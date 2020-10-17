@@ -9,14 +9,14 @@
 
 @interface NSString (WSSDKURL)
 
-- (NSString *)tysdk_urlEncodeString;
+- (NSString *)wssdk_urlEncodeString;
 
-- (NSString *)tysdk_urlDecodeString;
+- (NSString *)wssdk_urlDecodeString;
 
 @end
 
 @interface NSURL (WSSDKQuery)
 
-- (NSDictionary *)tysdk_queryDict;
+- (NSDictionary *)wssdk_queryDict;
 
 @end

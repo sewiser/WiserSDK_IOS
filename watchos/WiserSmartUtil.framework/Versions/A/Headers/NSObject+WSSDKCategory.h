@@ -10,20 +10,20 @@
 
 @interface NSObject (WSSDKCategory)
 
-- (NSInteger)tysdk_toInt;
+- (NSInteger)wssdk_toInt;
 
-- (NSUInteger)tysdk_toUInt;
+- (NSUInteger)wssdk_toUInt;
 
-- (NSString *)tysdk_toString;
+- (NSString *)wssdk_toString;
 
-- (float)tysdk_toFloat;
+- (float)wssdk_toFloat;
 
-- (double)tysdk_toDouble;
+- (double)wssdk_toDouble;
 
-- (BOOL)tysdk_toBool;
+- (BOOL)wssdk_toBool;
 
-+ (BOOL)tysdk_swizzleInstanceMethod:(SEL)originalSel with:(SEL)newSel;
++ (BOOL)wssdk_swizzleInstanceMethod:(SEL)originalSel with:(SEL)newSel;
 
-+ (BOOL)tysdk_swizzleClassMethod:(SEL)originalSel with:(SEL)newSel;
++ (BOOL)wssdk_swizzleClassMethod:(SEL)originalSel with:(SEL)newSel;
 
 @end

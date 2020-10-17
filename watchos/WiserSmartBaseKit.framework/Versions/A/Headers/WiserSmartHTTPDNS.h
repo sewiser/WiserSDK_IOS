@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 异步解析接口，首先查询缓存，若存在则返回结果，若不存在返回 nil 并且进行异步域名解析更新缓存
  *
- * @param host 域名(如www.wiser.com)
+ * @param host 域名(如www.tuya.com)
  * @return 域名对应的解析结果
  */
 - (NSString *)getIpWithHost:(NSString *)host;

@@ -12,7 +12,8 @@
 
 typedef enum : NSInteger{
     kGeoFenceTypeReach,
-    kGeoFenceTypeExit
+    kGeoFenceTypeExit,
+    kGeoFenceTypeNotSet
 }GeoFenceType;
 
 //为了方便处理多语言，本类不处理条件的exprDisplay，也就是条件显示相关的逻辑，需要上层自行拼装处理。
@@ -76,6 +77,20 @@ en$
  @return WiserSmartSceneConditionModel object.
  */
 + (WiserSmartSceneConditionModel *)createTimerConditionWithExprModel:(WiserSmartSceneExprModel *)exprModel;
+
+/**
+zh^
+创建一个和日出日落时间相关的定时条件。
+zh$
+en^
+Create a timer condition related to sunrise and sunset times
+en$
+
+@param city City to be operated.
+@param exprModel Create with WSSmartSceneConditionExprBuilder.
+@return WiserSmartSceneConditionModel object.
+*/
++ (WiserSmartSceneConditionModel *)createSunsetriseTimerConditionWithCity:(WiserSmartCityModel *)city ExprModel:(WiserSmartSceneExprModel *)exprModel;
 
 /**
  zh^

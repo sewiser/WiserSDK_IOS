@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-WiserSDKDemo/Pods-WiserSDKDemo-frameworks.sh
+${PODS_ROOT}/TuyaSmartQUIC/Carthage/Build/iOS/TuyaSmartQUIC.framework
+${PODS_ROOT}/TuyaSmartQUIC/Carthage/Build/iOS/TuyaSmartQUIC.framework.dSYM

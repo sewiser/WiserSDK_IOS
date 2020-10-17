@@ -8,10 +8,16 @@
 #import <Foundation/Foundation.h>
 #import "WiserSmartSceneExprModel.h"
 
-typedef enum {
+typedef enum : NSInteger {
     kExprTypeWhether,
     kExprTypeDevice
 }ExprType;
+
+typedef enum : NSInteger {
+    kSunTypeNotDetermin,
+    kSunTypeRise,
+    kSunTypeSet
+}SunType;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -92,6 +98,21 @@ en$
  @return An ExprModel object.
  */
 + (WiserSmartSceneExprModel *)createTimerExprWithTimeZoneId:(NSString *)timeZoneId loops:(NSString *)loops date:(NSString *)date time:(NSString *)time;
+
+/**
+zh^
+创建一个和日出日落时间相关的定时条件表达式，如「日出前x分钟」。「日出时」依然作为一个普通天气条件来处理。
+zh$
+en^
+Create a timer condition's expression related to sunrise or sunset times, For example, "x minutes before sunrise". "at sunrise" is still handled as a normal weather condition.
+en$
+
+@param city City that needs to be set
+@param type Identify sunrise or sunset
+@param minutes From -300 minutes to 300 minutes
+@return An ExprModel object.
+*/
++ (WiserSmartSceneExprModel *)createSunsetriseTimerExprWithCity:(WiserSmartCityModel *)city type:(SunType)type deltaMinutes:(NSInteger)minutes;
 
 @end
 

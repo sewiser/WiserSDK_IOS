@@ -9,16 +9,16 @@
 
 @interface WSSDKDevice : NSObject
 
-+ (NSString *)tysdk_UUID __deprecated_msg("Use +[WiserSmartSDK SharedInstance].uuid instead.");
++ (NSString *)wssdk_UUID __deprecated_msg("Use +[WiserSmartSDK sharedInstance].uuid instead.");
 
-+ (NSString *)tysdk_generateUUID;
++ (NSString *)wssdk_generateUUID;
 
-+ (NSString *)tysdk_deviceNameString;
++ (NSString *)wssdk_deviceNameString;
 
-+ (NSString *)tysdk_model;
++ (NSString *)wssdk_model;
 
-+ (NSString *)tysdk_systemName;
++ (NSString *)wssdk_systemName;
 
-+ (NSString *)tysdk_systemVersion;
++ (NSString *)wssdk_systemVersion;
 
 @end

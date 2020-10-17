@@ -20,9 +20,15 @@ typedef enum : NSUInteger {
 
 typedef enum : NSUInteger {
     WiserSmartSceneRecommendTypeNone,        //不是推荐场景/This not a recommend scene.
-    WiserSmartSceneRecommendTypeScene,       //推荐的场景类型/This is a normal recommended scene.
+    WiserSmartSceneRecommendTypeScene,       //推荐的一键执行场景类型/This is a normal recommended scene.
     WiserSmartSceneRecommendTypeAutomation   //推荐的自动化场景类型//This is a recommended automatic scene.
 } WiserSmartSceneRecommendType;
+
+typedef enum : NSUInteger {
+    WiserSmartSceneCollectionTypeNone,        //不是收藏场景/This not a collection scene.
+    WiserSmartSceneCollectionTypeScene,       //收藏的一件执行场景类型/This is a normal collection scene.
+    WiserSmartSceneCollectionTypeAutomation   //收藏的自动化场景类型//This is a collection automatic scene.
+} WiserSmartSceneCollectionType;
 
 /**
  * 场景Model, 有conditons的场景称为自动化。
@@ -118,7 +124,7 @@ typedef enum : NSUInteger {
 
 /**
  * 背景图片url, 目前仅可使用涂鸦提供的图片url。查看WiserSmartSceneManager中的API。
- * scene background url, when created a new scene, use the url provided. API in WiserSmartSceneManager.
+ * scene background url, when created a new scene, use the url provided by tuya. API in WiserSmartSceneManager.
  */
 @property (nonatomic, strong) NSString *background;
 
@@ -163,6 +169,12 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) WiserSmartSceneRecommendType recommendType;
 
 /**
+* 收藏场景类型
+* Collection scene type.
+*/
+@property (nonatomic, assign) WiserSmartSceneCollectionType collectionType;
+
+/**
 * 推荐场景描述
 * Recommend description.
 */
@@ -179,5 +191,13 @@ typedef enum : NSUInteger {
  * The timeStamp when automation will be disabled automatically.0 means net setted.
  */
 @property (nonatomic, assign) long long  disableTime;
+
+#pragma mark - 业务字段 Business field
+
+/**
+* 用于标记该场景是否获取过详情。
+* Used to mark whether the scene has obtained details.
+*/
+@property (nonatomic, assign) BOOL cached;
 
 @end

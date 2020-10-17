@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSMutableDictionary (WSSDKCategory)
 
-- (void)tysdk_safeSetObject:(id)anObject forKey:(id<NSCopying>)aKey;
+- (void)wssdk_safeSetObject:(id)anObject forKey:(id<NSCopying>)aKey;
 
 @end
 

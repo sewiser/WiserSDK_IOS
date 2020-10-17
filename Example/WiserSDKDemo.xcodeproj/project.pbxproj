@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		250B7054329EA87C3F8BBC68 /* libPods-WiserSDKDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28E351876F0AD4CEBBF26C90 /* libPods-WiserSDKDemo.a */; };
 		D554219E23BB2D3300E58652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D554219D23BB2D3300E58652 /* AppDelegate.m */; };
-		D55421A123BB2D3300E58652 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D55421A023BB2D3300E58652 /* SceneDelegate.m */; };
 		D55421A423BB2D3300E58652 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55421A323BB2D3300E58652 /* ViewController.m */; };
 		D55421A723BB2D3300E58652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55421A523BB2D3300E58652 /* Main.storyboard */; };
 		D55421A923BB2D3500E58652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D55421A823BB2D3500E58652 /* Assets.xcassets */; };
@@ -17,6 +16,17 @@
 		D55421AF23BB2D3500E58652 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D55421AE23BB2D3500E58652 /* main.m */; };
 		D55421B923BB2D3600E58652 /* WiserSDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D55421B823BB2D3600E58652 /* WiserSDKDemoTests.m */; };
 		D55421C423BB2D3600E58652 /* WiserSDKDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D55421C323BB2D3600E58652 /* WiserSDKDemoUITests.m */; };
+		D56B6939253AD45B00AEBA0C /* WiserSmartSceneKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B692F253AD45B00AEBA0C /* WiserSmartSceneKit.podspec */; };
+		D56B693A253AD45B00AEBA0C /* WiserSmartTimerKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6930253AD45B00AEBA0C /* WiserSmartTimerKit.podspec */; };
+		D56B693B253AD45B00AEBA0C /* WiserSmartDeviceKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6931253AD45B00AEBA0C /* WiserSmartDeviceKit.podspec */; };
+		D56B693C253AD45B00AEBA0C /* WiserSmartSocketChannelKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6932253AD45B00AEBA0C /* WiserSmartSocketChannelKit.podspec */; };
+		D56B693D253AD45B00AEBA0C /* WiserSmartUtil.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6933253AD45B00AEBA0C /* WiserSmartUtil.podspec */; };
+		D56B693E253AD45B00AEBA0C /* WiserSmartMQTTChannelKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6934253AD45B00AEBA0C /* WiserSmartMQTTChannelKit.podspec */; };
+		D56B693F253AD45B00AEBA0C /* WiserSmartActivatorKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6935253AD45B00AEBA0C /* WiserSmartActivatorKit.podspec */; };
+		D56B6940253AD45B00AEBA0C /* WiserSmartBaseKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6936253AD45B00AEBA0C /* WiserSmartBaseKit.podspec */; };
+		D56B6941253AD45B00AEBA0C /* WiserSmartMessageKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6937253AD45B00AEBA0C /* WiserSmartMessageKit.podspec */; };
+		D56B6942253AD45B00AEBA0C /* WiserSmartFeedbackKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6938253AD45B00AEBA0C /* WiserSmartFeedbackKit.podspec */; };
+		D56B69B0253AD6E900AEBA0C /* WiserSmartDeviceCoreKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B69AF253AD6E900AEBA0C /* WiserSmartDeviceCoreKit.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +53,6 @@
 		D554219923BB2D3300E58652 /* WiserSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiserSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D554219C23BB2D3300E58652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D554219D23BB2D3300E58652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D554219F23BB2D3300E58652 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		D55421A023BB2D3300E58652 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		D55421A223BB2D3300E58652 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D55421A323BB2D3300E58652 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D55421A623BB2D3300E58652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +66,17 @@
 		D55421BF23BB2D3600E58652 /* WiserSDKDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiserSDKDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D55421C323BB2D3600E58652 /* WiserSDKDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WiserSDKDemoUITests.m; sourceTree = "<group>"; };
 		D55421C523BB2D3600E58652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D56B692F253AD45B00AEBA0C /* WiserSmartSceneKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartSceneKit.podspec; path = ../../../WiserSmartSceneKit.podspec; sourceTree = "<group>"; };
+		D56B6930253AD45B00AEBA0C /* WiserSmartTimerKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartTimerKit.podspec; path = ../../../WiserSmartTimerKit.podspec; sourceTree = "<group>"; };
+		D56B6931253AD45B00AEBA0C /* WiserSmartDeviceKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartDeviceKit.podspec; path = ../../../WiserSmartDeviceKit.podspec; sourceTree = "<group>"; };
+		D56B6932253AD45B00AEBA0C /* WiserSmartSocketChannelKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartSocketChannelKit.podspec; path = ../../../WiserSmartSocketChannelKit.podspec; sourceTree = "<group>"; };
+		D56B6933253AD45B00AEBA0C /* WiserSmartUtil.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartUtil.podspec; path = ../../../WiserSmartUtil.podspec; sourceTree = "<group>"; };
+		D56B6934253AD45B00AEBA0C /* WiserSmartMQTTChannelKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartMQTTChannelKit.podspec; path = ../../../WiserSmartMQTTChannelKit.podspec; sourceTree = "<group>"; };
+		D56B6935253AD45B00AEBA0C /* WiserSmartActivatorKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartActivatorKit.podspec; path = ../../../WiserSmartActivatorKit.podspec; sourceTree = "<group>"; };
+		D56B6936253AD45B00AEBA0C /* WiserSmartBaseKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartBaseKit.podspec; path = ../../../WiserSmartBaseKit.podspec; sourceTree = "<group>"; };
+		D56B6937253AD45B00AEBA0C /* WiserSmartMessageKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartMessageKit.podspec; path = ../../../WiserSmartMessageKit.podspec; sourceTree = "<group>"; };
+		D56B6938253AD45B00AEBA0C /* WiserSmartFeedbackKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartFeedbackKit.podspec; path = ../../../WiserSmartFeedbackKit.podspec; sourceTree = "<group>"; };
+		D56B69AF253AD6E900AEBA0C /* WiserSmartDeviceCoreKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartDeviceCoreKit.podspec; path = ../../../WiserSmartDeviceCoreKit.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +138,9 @@
 		D554219B23BB2D3300E58652 /* WiserSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D56B692E253AD44A00AEBA0C /* Specs */,
 				D554219C23BB2D3300E58652 /* AppDelegate.h */,
 				D554219D23BB2D3300E58652 /* AppDelegate.m */,
-				D554219F23BB2D3300E58652 /* SceneDelegate.h */,
-				D55421A023BB2D3300E58652 /* SceneDelegate.m */,
 				D55421A223BB2D3300E58652 /* ViewController.h */,
 				D55421A323BB2D3300E58652 /* ViewController.m */,
 				D55421A523BB2D3300E58652 /* Main.storyboard */,
@@ -152,13 +170,30 @@
 			path = WiserSDKDemoUITests;
 			sourceTree = "<group>";
 		};
+		D56B692E253AD44A00AEBA0C /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				D56B6935253AD45B00AEBA0C /* WiserSmartActivatorKit.podspec */,
+				D56B6936253AD45B00AEBA0C /* WiserSmartBaseKit.podspec */,
+				D56B69AF253AD6E900AEBA0C /* WiserSmartDeviceCoreKit.podspec */,
+				D56B6931253AD45B00AEBA0C /* WiserSmartDeviceKit.podspec */,
+				D56B6938253AD45B00AEBA0C /* WiserSmartFeedbackKit.podspec */,
+				D56B6937253AD45B00AEBA0C /* WiserSmartMessageKit.podspec */,
+				D56B6934253AD45B00AEBA0C /* WiserSmartMQTTChannelKit.podspec */,
+				D56B692F253AD45B00AEBA0C /* WiserSmartSceneKit.podspec */,
+				D56B6932253AD45B00AEBA0C /* WiserSmartSocketChannelKit.podspec */,
+				D56B6930253AD45B00AEBA0C /* WiserSmartTimerKit.podspec */,
+				D56B6933253AD45B00AEBA0C /* WiserSmartUtil.podspec */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
 		FF1E9E72C09F2620E3A1E1CE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				4813F28368AA9EC52525C9C3 /* Pods-WiserSDKDemo.debug.xcconfig */,
 				0A42F3F61D68C0035FF8F1E8 /* Pods-WiserSDKDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -174,6 +209,7 @@
 				D554219623BB2D3300E58652 /* Frameworks */,
 				D554219723BB2D3300E58652 /* Resources */,
 				B5505E9245464650C10BC6BA /* [CP] Copy Pods Resources */,
+				4DA58A6F2EC1B8393149C635 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -267,8 +303,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D56B693F253AD45B00AEBA0C /* WiserSmartActivatorKit.podspec in Resources */,
+				D56B693C253AD45B00AEBA0C /* WiserSmartSocketChannelKit.podspec in Resources */,
+				D56B693D253AD45B00AEBA0C /* WiserSmartUtil.podspec in Resources */,
+				D56B6940253AD45B00AEBA0C /* WiserSmartBaseKit.podspec in Resources */,
+				D56B693B253AD45B00AEBA0C /* WiserSmartDeviceKit.podspec in Resources */,
+				D56B69B0253AD6E900AEBA0C /* WiserSmartDeviceCoreKit.podspec in Resources */,
 				D55421AC23BB2D3500E58652 /* LaunchScreen.storyboard in Resources */,
+				D56B6939253AD45B00AEBA0C /* WiserSmartSceneKit.podspec in Resources */,
+				D56B693A253AD45B00AEBA0C /* WiserSmartTimerKit.podspec in Resources */,
 				D55421A923BB2D3500E58652 /* Assets.xcassets in Resources */,
+				D56B693E253AD45B00AEBA0C /* WiserSmartMQTTChannelKit.podspec in Resources */,
+				D56B6941253AD45B00AEBA0C /* WiserSmartMessageKit.podspec in Resources */,
+				D56B6942253AD45B00AEBA0C /* WiserSmartFeedbackKit.podspec in Resources */,
 				D55421A723BB2D3300E58652 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +359,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4DA58A6F2EC1B8393149C635 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WiserSDKDemo/Pods-WiserSDKDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WiserSDKDemo/Pods-WiserSDKDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WiserSDKDemo/Pods-WiserSDKDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B5505E9245464650C10BC6BA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,7 +403,6 @@
 				D55421A423BB2D3300E58652 /* ViewController.m in Sources */,
 				D554219E23BB2D3300E58652 /* AppDelegate.m in Sources */,
 				D55421AF23BB2D3500E58652 /* main.m in Sources */,
-				D55421A123BB2D3300E58652 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

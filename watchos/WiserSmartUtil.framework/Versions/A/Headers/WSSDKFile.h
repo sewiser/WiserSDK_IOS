@@ -13,15 +13,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedInstance;
 
-- (NSString *)tysdk_getAtDocumentPath:(NSString *)fileName;
+- (NSString *)wssdk_getAtDocumentPath:(NSString *)fileName;
 
-- (BOOL)tysdk_mkdirAtPath:(NSString *)dir;
+- (BOOL)wssdk_mkdirAtPath:(NSString *)dir;
 
-- (BOOL)tysdk_fileExistsAtPath:(NSString *)filePath;
+- (BOOL)wssdk_fileExistsAtPath:(NSString *)filePath;
 
-- (BOOL)tysdk_delFileAtPath:(NSString *)filepath;
+- (BOOL)wssdk_delFileAtPath:(NSString *)filepath;
 
-- (BOOL)tysdk_createFileAtPath:(NSString *)filePath;
+- (BOOL)wssdk_createFileAtPath:(NSString *)filePath;
 
 
 @end

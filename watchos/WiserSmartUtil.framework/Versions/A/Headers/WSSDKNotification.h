@@ -10,11 +10,11 @@
 
 @interface WSSDKNotification : NSObject
 
-+ (void)tysdk_postNotificationName:(nonnull NSString *)aName;
++ (void)wssdk_postNotificationName:(nonnull NSString *)aName;
 
-+ (void)tysdk_postNotificationName:(nonnull NSString *)aName object:(nullable id)anObject;
++ (void)wssdk_postNotificationName:(nonnull NSString *)aName object:(nullable id)anObject;
 
-+ (void)tysdk_postNotificationName:(nonnull NSString *)aName object:(nullable id)anObject userInfo:(nullable NSDictionary *)aUserInfo;
++ (void)wssdk_postNotificationName:(nonnull NSString *)aName object:(nullable id)anObject userInfo:(nullable NSDictionary *)aUserInfo;
 
 
 @end

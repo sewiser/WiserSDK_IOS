@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "WiserSmartHomeModel.h"
-#import "WiserSmartDeviceModel.h"
+#import <WiserSmartDeviceCoreKit/WiserSmartDeviceCoreKit.h>
 #import "WiserSmartRoomModel.h"
-#import "WiserSmartGroupModel.h"
 #import "WiserSmartHomeMemberModel.h"
+#import "WiserSmartHomeAddMemberRequestModel.h"
 
 @class WiserSmartHome;
 
@@ -34,14 +34,6 @@
  *  @param home instance
  */
 - (void)homeDidUpdateSharedInfo:(WiserSmartHome *)home;
-
-/**
- *  the delegate of relation update of home and room.(deprecated)
- *  家庭下房间信息信息变化代理回调（已废弃）
- *
- *  @param home instance
- */
-- (void)homeDidUpdateRoomInfo:(WiserSmartHome *)home __deprecated_msg("Use -[WiserSmartHomeDelegate home:didAddRoom:] or [WiserSmartHomeDelegate home:didRemoveRoom:] instead.");
 
 /**
  *  the delegate when a new room is added.
@@ -127,14 +119,14 @@
 - (void)home:(WiserSmartHome *)home device:(WiserSmartDeviceModel *)device warningInfoUpdate:(NSDictionary *)warningInfo;
 
 /**
- *  the delegate of device firmware upgrade status update
- *  家庭下设备升级状态的回调
- *
- *  @param home           instance
- *  @param device         deviceModel
- *  @param upgradeStatus  upgrade status
- */
-- (void)home:(WiserSmartHome *)home device:(WiserSmartDeviceModel *)device upgradeStatus:(WiserSmartDeviceUpgradeStatus)upgradeStatus;
+*  the delegate of device firmware upgrade status update
+*  家庭下设备升级状态的回调
+*
+*  @param home                家庭实例 home instance
+*  @param device              设备模型 deviceModel
+*  @param upgradeStatusModel  设备升级状态模型 upgradeStatusModel
+*/
+- (void)home:(WiserSmartHome *)home device:(WiserSmartDeviceModel *)device firmwareUpgradeStatusModel:(WiserSmartFirmwareUpgradeStatusModel *)upgradeStatusModel;
 
 /**
  *  the delegate when a new group is added.
@@ -173,6 +165,24 @@
  */
 - (void)home:(WiserSmartHome *)home groupInfoUpdate:(WiserSmartGroupModel *)group;
 
+#pragma mark - deprecated
+/**
+ *  the delegate of relation update of home and room.(deprecated)
+ *  家庭下房间信息信息变化代理回调（已废弃）
+ *
+ *  @param home instance
+ */
+- (void)homeDidUpdateRoomInfo:(WiserSmartHome *)home __deprecated_msg("Use -[WiserSmartHomeDelegate home:didAddRoom:] or [WiserSmartHomeDelegate home:didRemoveRoom:] instead.");
+
+/**
+ *  the delegate of device firmware upgrade status update
+ *  家庭下设备升级状态的回调(废弃)
+ *
+ *  @param home           instance
+ *  @param device         deviceModel
+ *  @param upgradeStatus  upgrade status
+ */
+- (void)home:(WiserSmartHome *)home device:(WiserSmartDeviceModel *)device upgradeStatus:(WiserSmartDeviceUpgradeStatus)upgradeStatus __deprecated_msg("This method is deprecated, Use home:device:firmwareUpgradeStatusModel: instead");
 
 @end
 
@@ -329,44 +339,18 @@
 - (void)getHomeMemberListWithSuccess:(void(^)(NSArray <WiserSmartHomeMemberModel *> *memberList))success
                              failure:(WSFailureError)failure;
 
+
 /**
- *  Add a home member
- *  添加家庭成员 将会废弃
- *
- *  @param name         Member name
- *  @param headPic      Member portrait
- *  @param countryCode  Country code
- *  @param account      User account
- *  @param isAdmin      Whether the administrator
- *  @param success      Success block
- *  @param failure      Failure block
- */
-- (void)addHomeMemberWithName:(NSString *)name
-                      headPic:(UIImage *)headPic
-                  countryCode:(NSString *)countryCode
-                  userAccount:(NSString *)account
-                      isAdmin:(BOOL)isAdmin
-                      success:(WSSuccessDict)success
-                      failure:(WSFailureError)failure __deprecated_msg("This method is deprecated, Use [WiserSmartHomeMember   addHomeMemberWithName:headPic:countryCode:userAccount:role:success:failure:]");
-/**
- *  Add a home member
- *  添加家庭成员
- *
- *  @param name         Member name
- *  @param headPic      Member portrait
- *  @param countryCode  Country code
- *  @param account      User account
- *  @param role         home role type
- *  @param success      Success block
- *  @param failure      Failure block
- */
-- (void)addHomeMemberWithName:(NSString *)name
-                      headPic:(UIImage *)headPic
-                  countryCode:(NSString *)countryCode
-                  userAccount:(NSString *)account
-                         role:(WSHomeRoleType)role
-                      success:(WSSuccessDict)success
-                      failure:(WSFailureError)failure;
+*  Add a home member
+*  添加家庭成员
+*
+*  @param requestModel member model
+*  @param success      Success block
+*  @param failure      Failure block
+*/
+- (void)addHomeMemberWithAddMemeberRequestModel:(WiserSmartHomeAddMemberRequestModel *)requestModel
+                                        success:(WSSuccessDict)success
+                                        failure:(WSFailureError)failure;
 
 /**
  *  Accept or reject to shared home
@@ -379,4 +363,5 @@
 - (void)joinFamilyWithAccept:(BOOL)accept
                      success:(WSSuccessBOOL)success
                      failure:(WSFailureError)failure;
+
 @end

@@ -9,43 +9,51 @@
 
 @interface NSString (WSSDKEnCrypt)
 
-- (NSString *)tysdk_sha1String;
+- (NSString *)wssdk_sha1String;
 
-- (NSString *)tysdk_md5String;
+- (NSString *)wssdk_md5String;
 
-- (NSString *)tysdk_sha256String;
+- (NSString *)wssdk_sha256String;
 
-- (NSString *)tysdk_aes128EncryptWithKey:(NSString *)key;
+- (NSString *)wssdk_aes128EncryptWithKey:(NSString *)key;
 
-- (NSString *)tysdk_aes128DecryptWithKey:(NSString *)key;
+- (NSString *)wssdk_aes128NoPaddingEncryptWithKey:(NSString *)key;
 
-- (NSString *)tysdk_aes256EncryptWithKey:(NSString *)key;
+- (NSString *)wssdk_aes128DecryptWithKey:(NSString *)key;
 
-- (NSString *)tysdk_aes256DecryptWithKey:(NSString *)key;
+- (NSString *)wssdk_aes128NoPaddingDecryptWithKey:(NSString *)key;
 
-- (NSString *)tysdk_hexRSAEncryptWithPublicKey:(NSString *)publicKey;
+- (NSString *)wssdk_aes256EncryptWithKey:(NSString *)key;
 
-- (NSString *)tysdk_hexRSANoPaddingEncryptWithPublicKey:(NSString *)publicKey;
+- (NSString *)wssdk_aes256DecryptWithKey:(NSString *)key;
 
-- (NSString *)tysdk_hmacSHA256StringWithKey:(NSString *)key;
+- (NSString *)wssdk_hexRSAEncryptWithPublicKey:(NSString *)publicKey;
+
+- (NSString *)wssdk_hexRSANoPaddingEncryptWithPublicKey:(NSString *)publicKey;
+
+- (NSString *)wssdk_hmacSHA256StringWithKey:(NSString *)key;
 
 @end
 
 
 @interface NSData (WSSDKEncrypt)
 
-- (NSString *)tysdk_md5String;
+- (NSString *)wssdk_md5String;
 
-- (NSString *)tysdk_sha256String;
+- (NSString *)wssdk_sha256String;
 
-- (NSData *)tysdk_aes128EncryptWithKeyData:(NSData *)keyData;
+- (NSData *)wssdk_aes128EncryptWithKeyData:(NSData *)keyData;
 
-- (NSData *)tysdk_aes128DecryptWithKeyData:(NSData *)keyData;
+- (NSData *)wssdk_aes128NoPaddingEncryptWithKeyData:(NSData *)keyData;
 
-- (NSData *)tysdk_aes256EncryptWithKeyData:(NSData *)keyData;
+- (NSData *)wssdk_aes128DecryptWithKeyData:(NSData *)keyData;
 
-- (NSData *)tysdk_aes256DecryptWithKeyData:(NSData *)keyData;
+- (NSData *)wssdk_aes128NoPaddingDecryptWithKeyData:(NSData *)keyData;
 
-- (NSData *)tysdk_hmacSHA256DataWithKey:(NSString *)key;
+- (NSData *)wssdk_aes256EncryptWithKeyData:(NSData *)keyData;
+
+- (NSData *)wssdk_aes256DecryptWithKeyData:(NSData *)keyData;
+
+- (NSData *)wssdk_hmacSHA256DataWithKey:(NSString *)key;
 
 @end

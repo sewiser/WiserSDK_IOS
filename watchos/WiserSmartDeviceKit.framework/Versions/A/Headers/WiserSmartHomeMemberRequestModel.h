@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WiserSmartDeviceModelUtils.h"
+#import "WiserSmartHomeModelUtils.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

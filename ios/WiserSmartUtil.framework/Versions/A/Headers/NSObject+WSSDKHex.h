@@ -9,16 +9,16 @@
 
 @interface NSString (WSSDKHex)
 
-+ (instancetype)tysdk_stringFromHexString:(NSString *)hexString;
++ (instancetype)wssdk_stringFromHexString:(NSString *)hexString;
 
-- (NSString *)tysdk_hexString;
+- (NSString *)wssdk_hexString;
 
 @end
 
 @interface NSData (WSSDKHex)
 
-+ (instancetype)tysdk_dataFromHexString:(NSString *)hexString;
++ (instancetype)wssdk_dataFromHexString:(NSString *)hexString;
 
-- (NSString *)tysdk_hexString;
+- (NSString *)wssdk_hexString;
 
 @end

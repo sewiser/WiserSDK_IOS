@@ -22,6 +22,13 @@ typedef enum : NSUInteger {
     WSActivatorModeWired, // wired mode
 } WSActivatorMode;
 
+typedef enum : NSUInteger {
+    WSActivatorStepFound = 1,// device found
+    WSActivatorStepRegisted = 2,// device registed
+    WSActivatorStepIntialized = 3,// device intialized
+    WSActivatorStepTimeOut = 4, // device config timeout
+} WSActivatorStep;
+
 @class WiserSmartActivator;
 
 @protocol WiserSmartActivatorDelegate<NSObject>
@@ -39,6 +46,17 @@ typedef enum : NSUInteger {
 - (void)activator:(WiserSmartActivator *)activator didReceiveDevice:(WiserSmartDeviceModel *)deviceModel error:(NSError *)error;
 
 @optional
+
+/**
+ Callback of Config Network Status Update
+ 配网状态更新的回调，wifi单品，zigbee网关，zigbee子设备
+
+ @param activator   instance
+ @param deviceModel deviceModel
+ @param step        activator step
+ @param error       error
+ */
+- (void)activator:(WiserSmartActivator *)activator didReceiveDevice:(WiserSmartDeviceModel *)deviceModel step:(WSActivatorStep)step error:(NSError *)error;
 
 /**
  Callback of Config Network Status Update (mesh gateway),deprecated
@@ -175,7 +193,7 @@ typedef enum : NSUInteger {
  *  @param mode     Config mode, EZ or AP
  *  @param ssid     Name of route
  *  @param password Password of route
- *  @param token    配网 Token
+ *  @param token    Config Token
  *  @param timeout  Timeout, default 100 seconds
  */
 - (void)startConfigWiFi:(WSActivatorMode)mode
@@ -197,8 +215,8 @@ typedef enum : NSUInteger {
  *  start config with productId (Wired config)
  *  开始配网（有线配网）只去激活一个品类的设备
  *
- *  @param token        配网Token
- *  @param productId    productId 设备的产品Id
+ *  @param token        Config Token
+ *  @param productId    ProductId of device
  *  @param timeout      Timeout, default 100 seconds
  */
 - (void)startConfigWiFiWithToken:(NSString *)token
@@ -211,7 +229,7 @@ typedef enum : NSUInteger {
  *
  *  @param ssid     Name of route 路由器热点名称
  *  @param password Password of route 路由器热点密码
- *  @param token    配网 Token
+ *  @param token    Config Token 配网 token
  *  @param timeout  Timeout, default 100 seconds
  */
 - (void)startEZMultiConfigWiFiWithSsid:(NSString *)ssid
@@ -232,7 +250,7 @@ typedef enum : NSUInteger {
  *  激活子设备 如 zigbee、Wi-Fi 子设备 ...
  *  active sub device
  *
- *  @param gwId     gateway Id
+ *  @param gwId     Gateway Id
  *  @param timeout  Timeout, default 100 seconds
  */
 - (void)activeSubDeviceWithGwId:(NSString *)gwId timeout:(NSTimeInterval)timeout;
@@ -242,7 +260,7 @@ typedef enum : NSUInteger {
  *  stop active sub device
  *  停止激活子设备
  *
- *  @param gwId     gateway Id
+ *  @param gwId     Gateway Id
  */
 - (void)stopActiveSubDeviceWithGwId:(NSString *)gwId;
 

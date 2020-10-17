@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "WiserSmartSocketReadModel.h"
 #import "WiserSmartSocketWriteModel.h"
+#import <WiserSmartBaseKit/WiserSmartBaseKit.h>
 
 // 协议
 #define SOCKET_TYPE_BROADCAST             0x00
 #define SOCKET_TYPE_BROADCAST_V4          0x13
+#define SOCKET_TYPE_BROADCAST_V34         0x23
 #define SOCKET_TYPE_AP_ERROR              0x15
 #define SOCKET_TYPE_AP_CONFIG             0x01
 #define SOCKET_TYPE_AP_ACTIVATE           0x02
@@ -30,6 +32,13 @@
 #define SOCKET_TYPE_INITIATIVE_QUERY_DPS  0x12
 #define SOCKET_TYPE_AP_CONFIG             0x01
 #define SOCKET_TYPE_AP_CONFIG_NEW         0x14
+
+#define SOCKET_TYPE_HANDSHAKE_RAND_A      0x03
+#define SOCKET_TYPE_HANDSHAKE_RAND_B      0x04
+#define SOCKET_TYPE_HANDSHAKE_RAND_ACK_B  0x05
+
+#define SOCKET_TYPE_IPC_AP_SET_PWD        0x21
+
 
 @class WiserSmartSocketChannel;
 
@@ -74,7 +83,14 @@
 - (void)initTcpClientWithHost:(NSString *)host devInfo:(NSDictionary *)devInfo;
 
 // send TCP message
-- (void)sendTcpRequest:(WiserSmartSocketWriteModel *)request success:(WSSuccessDict)success failure:(WSFailureHandler)failure;
+- (void)sendTcpRequest:(WiserSmartSocketWriteModel *)request
+               success:(WSSuccessDict)success
+               failure:(WSFailureHandler)failure __deprecated_msg("This method is deprecated, Use sendTcpWithRequest:success:failure: instead");
+
+// send TCP message
+- (void)sendTcpWithRequest:(WiserSmartSocketWriteModel *)request
+                   success:(WSSuccessDict)success
+                   failure:(WSFailureError)failure;
 
 - (void)removeInactiveDevice:(NSString *)gwId;
 

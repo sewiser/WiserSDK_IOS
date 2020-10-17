@@ -7,27 +7,27 @@
 
 #import <Foundation/Foundation.h>
 
-void tysdk_dispatch_async_on_default_global_thread(dispatch_block_t block);
-void tysdk_dispatch_async_on_main_thread(dispatch_block_t block);
-void tysdk_dispatch_sync_on_main_thread(dispatch_block_t block);
+void wssdk_dispatch_async_on_default_global_thread(dispatch_block_t block);
+void wssdk_dispatch_async_on_main_thread(dispatch_block_t block);
+void wssdk_dispatch_sync_on_main_thread(dispatch_block_t block);
 
 @interface WSSDKUtil : NSObject
 
 #if TARGET_OS_IOS
 
-+ (NSString *)tysdk_currentWifiSSID;
++ (NSString *)wssdk_currentWifiSSID;
 
-+ (NSString *)tysdk_currentWifiBSSID;
++ (NSString *)wssdk_currentWifiBSSID;
 
 #endif
 
-+ (uint32_t)tysdk_getIntValueByHex:(NSString *)str;
++ (uint32_t)wssdk_getIntValueByHex:(NSString *)str;
 
-+ (NSString *)tysdk_getISOcountryCode;
++ (NSString *)wssdk_getISOcountryCode;
 
-+ (BOOL)tysdk_compareVesionWithDeviceVersion:(NSString *)deviceVersion appVersion:(NSString *)appVersion;
++ (BOOL)wssdk_compareVesionWithDeviceVersion:(NSString *)deviceVersion appVersion:(NSString *)appVersion;
 
-+ (NSData *)tysdk_xorEncodeData:(NSData *)sourceData keyData:(NSData *)keyData;
++ (NSData *)wssdk_xorEncodeData:(NSData *)sourceData keyData:(NSData *)keyData;
 
 @end
 
@@ -45,12 +45,12 @@ extern NSString * const WSUtilWatchKitExtensionString;
  */
 @interface WSSDKUtil (AppSDKExtension)
 
-+ (NSString *)tysdk_currentExtensionString;
++ (NSString *)wssdk_currentExtensionString;
 
-+ (BOOL)tysdk_isHostApp;
++ (BOOL)wssdk_isHostApp;
 
-+ (BOOL)tysdk_isAppExtension;
++ (BOOL)wssdk_isAppExtension;
 
-+ (BOOL)tysdk_isWatchKitExtension;
++ (BOOL)wssdk_isWatchKitExtension;
 
 @end

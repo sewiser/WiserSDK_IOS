@@ -1,0 +1,28 @@
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#else
+#ifndef FOUNDATION_EXPORT
+#if defined(__cplusplus)
+#define FOUNDATION_EXPORT extern "C"
+#else
+#define FOUNDATION_EXPORT extern
+#endif
+#endif
+#endif
+
+#ifdef __OBJC__
+  #import <WiserSmartBaseKit/WiserSmartBaseKit.h>
+  #undef WSLog
+  #undef WSSDKLogDebug
+  #undef WSSDKLogInfo
+  #undef WSSDKLogWarn
+  #undef WSSDKLogError
+  #define WSSDKLogDebug(...)         WSSDKLog(0, @"WiserSmartBaseKit", __FILE__, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+  #define WSSDKLogInfo(...)         WSSDKLog(1, @"WiserSmartBaseKit", __FILE__, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+  #define WSSDKLogWarn(...)         WSSDKLog(2, @"WiserSmartBaseKit", __FILE__, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+  #define WSSDKLogError(...)         WSSDKLog(3, @"WiserSmartBaseKit", __FILE__, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
+  #import <YYModel/YYModel.h>
+  #import "TYBaseNotificationUtils.h"
+
+#endif

@@ -93,6 +93,7 @@
              success:(WSSuccessHandler)success
              failure:(WSFailureError)failure;
 
+#pragma mark - deprecated
 /**
  *  Accept or reject to shared home
  *  接受或拒绝加⼊分享过来的家庭

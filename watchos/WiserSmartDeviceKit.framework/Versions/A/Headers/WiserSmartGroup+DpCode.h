@@ -5,7 +5,7 @@
 //
 //
 
-#import "WiserSmartGroup.h"
+#import <WiserSmartDeviceCoreKit/WiserSmartGroup.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
                      categoryCode:(NSString *)categoryCode
                         devIdList:(NSArray<NSString *> *)devIdList
                           success:(nullable void (^)(WiserSmartGroup *group))success
-                          failure:(nullable WSFailureError)failure;
+                          failure:(nullable WSFailureError)failure; DEPRECATED_MSG_ATTRIBUTE("use createDpCodeGroupWithName:homeId:devIdList:success:failure: instead");
 
 
 /**
@@ -44,8 +44,38 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)getDpCodeDevListWithHomeId:(long long)homeId
                       categoryCode:(NSString *)categoryCode
                            success:(nullable void(^)(NSArray <WiserSmartGroupDevListModel *> *list))success
-                           failure:(nullable WSFailureError)failure;
+                           failure:(nullable WSFailureError)failure; DEPRECATED_MSG_ATTRIBUTE("use getDpCodeDevListWithHomeId:success:failure: instead");
 
+
+
+/**
+ *  Creating Groups of Wifi Standard Code Devices
+ *  创建标准DPCode wifi 设备群组
+ *
+ *  @param name      Group name
+ *  @param homeId    Home ID
+ *  @param devIdList DeviceId list
+ *  @param success   Success block
+ *  @param failure   Failure block
+ */
++ (void)createDpCodeGroupWithName:(NSString *)name
+                           homeId:(long long)homeId
+                        devIdList:(NSArray<NSString *> *)devIdList
+                          success:(nullable void (^)(WiserSmartGroup *group))success
+                          failure:(nullable WSFailureError)failure;
+
+
+/**
+ *  Get list of WiFi devices that support standard code groups based on category code
+ *  根据 categoryCode 获取对应的支持标准DPCode群组的 wifi 设备列表
+ *
+ *  @param homeId    Home ID
+ *  @param success   Success block
+ *  @param failure   Failure block
+ */
++ (void)getDpCodeDevListWithHomeId:(long long)homeId
+                           success:(nullable void(^)(NSArray <WiserSmartGroupDevListModel *> *list))success
+                           failure:(nullable WSFailureError)failure;
 
 /**
 *  Get the device list for the group based

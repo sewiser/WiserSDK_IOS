@@ -9,28 +9,36 @@ PODS:
     - MQTTClient/Min
   - MQTTClient/Min (0.15.2)
   - Reachability (3.2)
-  - WiserSmartActivatorKit (3.14.1):
+  - TuyaSmartQUIC (1.1.1)
+  - WiserSmartActivatorKit (3.19.0):
     - Reachability
     - WiserSmartDeviceKit
-  - WiserSmartBaseKit (3.14.1):
+  - WiserSmartBaseKit (3.19.0):
     - WiserSmartUtil
     - YYModel
-  - WiserSmartDeviceKit (3.14.1):
+  - WiserSmartDeviceCoreKit (3.19.0):
     - WiserSmartBaseKit
     - WiserSmartMQTTChannelKit
     - WiserSmartSocketChannelKit
-  - WiserSmartMQTTChannelKit (3.14.1):
-    - MQTTClient (= 0.15.2)
+  - WiserSmartDeviceKit (3.19.0):
     - WiserSmartBaseKit
-  - WiserSmartSocketChannelKit (3.14.1):
+    - WiserSmartDeviceCoreKit
+    - WiserSmartMQTTChannelKit
+    - WiserSmartSocketChannelKit
+  - WiserSmartMQTTChannelKit (3.19.0):
+    - MQTTClient (= 0.15.2)
+    - TuyaSmartQUIC
+    - WiserSmartBaseKit
+  - WiserSmartSocketChannelKit (3.19.0):
     - CocoaAsyncSocket
     - WiserSmartBaseKit
-  - WiserSmartUtil (3.14.1)
+  - WiserSmartUtil (3.19.0)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - WiserSmartActivatorKit (from `../`)
   - WiserSmartBaseKit (from `../`)
+  - WiserSmartDeviceCoreKit (from `../`)
   - WiserSmartDeviceKit (from `../`)
   - WiserSmartMQTTChannelKit (from `../`)
   - WiserSmartSocketChannelKit (from `../`)
@@ -41,12 +49,15 @@ SPEC REPOS:
     - CocoaAsyncSocket
     - MQTTClient
     - Reachability
+    - TuyaSmartQUIC
     - YYModel
 
 EXTERNAL SOURCES:
   WiserSmartActivatorKit:
     :path: "../"
   WiserSmartBaseKit:
+    :path: "../"
+  WiserSmartDeviceCoreKit:
     :path: "../"
   WiserSmartDeviceKit:
     :path: "../"
@@ -61,14 +72,16 @@ SPEC CHECKSUMS:
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   MQTTClient: 902c7bcac1501595f3d0b15178c7205b40331fb0
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  WiserSmartActivatorKit: 55be165d3278aba306c4e66f06e2e7609701ec16
-  WiserSmartBaseKit: e07ef704783313ea88b285daf3ee0c883a4654b4
-  WiserSmartDeviceKit: d79fb1b5789c0760f5a9d989c686fa16b82cbb7c
-  WiserSmartMQTTChannelKit: fa4ec5b0994b2ea1c2d170eaf448a175d27949ef
-  WiserSmartSocketChannelKit: 90d9d7118abd0269f6df62c7edcf4149f130c6c6
-  WiserSmartUtil: 2b8a00dabf30387ff2f3d4e7b601d0a443d2be83
+  TuyaSmartQUIC: 5bb81563fedf5b739ac50a5abbf42ec807cfb64b
+  WiserSmartActivatorKit: 5aea432baf15c2be5e4b09e4ca5179e743bcf9ab
+  WiserSmartBaseKit: a7b869e3f318e651a83f3c2e21f1c30833705fc6
+  WiserSmartDeviceCoreKit: 9cc33342ab1ddca8a2b53f2cb75a3e0bba805246
+  WiserSmartDeviceKit: 625a63d723392705dfcf0e8267ae02813e35c256
+  WiserSmartMQTTChannelKit: 59e0fef6a362e1214d7c2899e952faa552809412
+  WiserSmartSocketChannelKit: ead67319df031a82213f9c12375d3c0236c2f567
+  WiserSmartUtil: 3ced16a9c28fe40feb79107479bbd77084b3eb3e
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 57c04ef108bfbf5b91e7dea5744c424202ffadd3
+PODFILE CHECKSUM: 5f2081985b5d8b24711061071e821d698db1e0b8
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

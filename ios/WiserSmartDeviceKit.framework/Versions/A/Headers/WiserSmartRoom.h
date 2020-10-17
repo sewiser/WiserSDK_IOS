@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WiserSmartRoomModel.h"
-#import "WiserSmartDeviceModel.h"
-#import "WiserSmartGroupModel.h"
+#import <WiserSmartDeviceCoreKit/WiserSmartDeviceCoreKit.h>
 
 @interface WiserSmartRoom : NSObject
 
@@ -54,6 +53,16 @@
  *  @param failure     Failure block
  */
 - (void)updateRoomName:(NSString *)roomName success:(WSSuccessHandler)success failure:(WSFailureError)failure;
+
+/**
+ *  Edit room icon.
+ *  修改房间图片
+ *
+ *  @param icon     icon
+ *  @param success  Success block
+ *  @param failure  Failure block
+ */
+- (void)updateIcon:(UIImage *)icon success:(nullable WSSuccessHandler)success failure:(nullable WSFailureError)failure;
 
 /**
  *  Add device to the room
