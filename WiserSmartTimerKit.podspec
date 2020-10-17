@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "WiserSmartTimerKit"
-  s.version = "3.14.3"
+  s.version = "3.19.0"
   s.summary = "A short description of #{s.name}."
   s.homepage = "https://github.com/sewiser/WiserSDK_IOS"
    s.license = {"type"=>"MIT"}
