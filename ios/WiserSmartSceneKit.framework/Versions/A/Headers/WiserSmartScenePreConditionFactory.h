@@ -2,7 +2,7 @@
 //  WiserSmartScenePreConditionFactory.h
 //  WiserSmartSceneKit
 //
-//
+//  Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 //
 
 #import <Foundation/Foundation.h>
@@ -10,79 +10,76 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// @brief WiserSmartScenePreConditionFactory provides convenient construction methods for developers to generate precondition object.
 @interface WiserSmartScenePreConditionFactory : NSObject
 
-/**
- zh^
- 创建全天生效的前置条件
- zh$
- en^
- Create a allday valid precondition.
- en$
+/// Create an all-day valid precondition.
+///
+/// @param sceneId The scene id. You can pass nil when create an automation scene.
+/// @param conditionId The current condition id. You need to pass the original condition id when editing scene for automation scene.
+/// @param loops The loop description, the data format is "1111111". Each bit indicates the Sunday to Saturday, 1 means valid, 0 means invalid.
+/// @param timeZoneId The timezone id, eg:"Asia/Shanghai".
+///
+/// @return The WiserSmartScenePreConditionModel instance.
++ (WiserSmartScenePreConditionModel *)creatAllDayPreConditionWithSceneId:(NSString *__nullable)sceneId
+                                                       existConditionId:(NSString * __nullable)conditionId
+                                                                  loops:(NSString *)loops
+                                                             timeZoneId:(NSString *)timeZoneId;
 
- @param sceneId zh^ 所属的场景Id，新建时可以传空 zh$ en^ scene Id, can be nil when create a automation. en$
- @param conditionId zh^ 如果是编辑生效时间段，需要传递原有的preConditionModel的id zh$ en^ If you created a preconditon and saved the automation,there will be a precondition Id. en$
- @param loops zh^ 格式为"1111111",每一位分别代表周日到周一 zh$ en^ @"1111111" each present from sunday to saturday. en$
- @param timeZoneId zh^ 时区名 如 "Asia/Shanghai" zh$ en^ timeZoneId eg:"Asia/Shanghai" en$
- @return preCondition
- */
-+ (WiserSmartScenePreConditionModel *)creatAllDayPreConditionWithSceneId:(NSString *__nullable)sceneId existConditionId:(NSString * __nullable)conditionId loops:(NSString *)loops timeZoneId:(NSString *)timeZoneId;
+/// Create a daytime valid precondition.
+/// 
+/// @param sceneId The scene id. You can pass nil when create an automation scene.
+/// @param conditionId The current condition id. You need to pass the original condition id when editing scene for automation scene.
+/// @param loops The loop description, the data format is "1111111". Each bit indicates the Sunday to Saturday, 1 means valid, 0 means invalid.
+/// @param cityId The current city id.
+/// @param cityName The current city name.
+/// @param timeZoneId The timezone id, eg:"Asia/Shanghai".
+///
+/// @return The WiserSmartScenePreConditionModel instance.
++ (WiserSmartScenePreConditionModel *)createDayTimePreConditionWithSceneId:(NSString *__nullable)sceneId
+                                                         existConditionId:(NSString * __nullable)conditionId
+                                                                    loops:(NSString *)loops
+                                                                   cityId:(NSString *)cityId
+                                                                 cityName:(NSString *)cityName
+                                                               timeZoneId:(NSString *)timeZoneId;
 
-/**
- zh^
- 创建白天生效的前置条件
- zh$
- en^
- Create a daytime valid precondition.
- en$
+/// Create a night valid precondition.
+///
+/// @param sceneId The scene id. You can pass nil when create an automation scene.
+/// @param conditionId The current condition id. You need to pass the original condition id when editing scene for automation scene.
+/// @param loops The loop description, the data format is "1111111". Each bit indicates the Sunday to Saturday, 1 means valid, 0 means invalid.
+/// @param cityId The current city id.
+/// @param cityName The current city name.
+/// @param timeZoneId The timezone id, eg:"Asia/Shanghai".
+///
+/// @return The WiserSmartScenePreConditionModel instance.
++ (WiserSmartScenePreConditionModel *)createNightTimePreConditionWithSceneId:(NSString *__nullable)sceneId
+                                                           existConditionId:(NSString * __nullable)conditionId
+                                                                      loops:(NSString *)loops
+                                                                     cityId:(NSString *)cityId
+                                                                   cityName:(NSString *)cityName
+                                                                 timeZoneId:(NSString *)timeZoneId;
 
- @param sceneId zh^ 所属的场景Id，新建时可以传空 zh$ en^ scene Id, can be nil when create a automation. en$
- @param conditionId zh^ 如果是编辑生效时间段，需要传递原有的preConditionModel的id zh$ en^ If you created a preconditon and saved the automation,there will be a precondition Id. en$
- @param loops zh^ 格式为"1111111",每一位分别代表周日到周一 zh$ en^ @"1111111" each present from sunday to saturday. en$
- @param cityId zh^ 所在城市的城市Id zh$ en^ The cityId of current city. en$
- @param cityName zh^ 所在城市的城市名称 zh$ en^ City name. en$
- @param timeZoneId zh^ 时区名 如 "Asia/Shanghai" zh$ en^ timeZoneId eg:"Asia/Shanghai" en$
- @return preCondition
- */
-+ (WiserSmartScenePreConditionModel *)createDayTimePreConditionWithSceneId:(NSString *__nullable)sceneId existConditionId:(NSString * __nullable)conditionId loops:(NSString *)loops cityId:(NSString *)cityId cityName:(NSString *)cityName timeZoneId:(NSString *)timeZoneId;
-
-/**
- zh^
- 创建夜间生效的前置条件
- zh$
- en^
- Create a night valid precondition.
- en$
-
-  @param sceneId zh^ 所属的场景Id，新建时可以传空 zh$ en^ scene Id, can be nil when create a automation. en$
- @param conditionId zh^ 如果是编辑生效时间段，需要传递原有的preConditionModel的id zh$ en^ If you created a preconditon and saved the automation,there will be a precondition Id. en$
- @param loops zh^ 格式为"1111111",每一位分别代表周日到周一 zh$ en^ @"1111111" each present from sunday to saturday. en$
- @param cityId zh^ 所在城市的城市Id zh$ en^ The cityId of current city. en$
- @param cityName zh^ 所在城市的城市名称 zh$ en^ City name. en$
- @param timeZoneId zh^ 时区名 如 "Asia/Shanghai" zh$ en^ timeZoneId eg:"Asia/Shanghai" en$
- @return preCondition
- */
-+ (WiserSmartScenePreConditionModel *)createNightTimePreConditionWithSceneId:(NSString *__nullable)sceneId existConditionId:(NSString * __nullable)conditionId loops:(NSString *)loops cityId:(NSString *)cityId cityName:(NSString *)cityName timeZoneId:(NSString *)timeZoneId;
-
-/**
- zh^
- 创建自定义时间段生效的前置条件
- zh$
- en^
- Create a valid preconditon of custom time period.
- en$
-
- @param sceneId zh^ 所属的场景Id，新建时可以传空 zh$ en^ scene Id, can be nil when create a automation. en$
- @param conditionId zh^ 如果是编辑生效时间段，需要传递原有的preConditionModel的id zh$ en^ If you created a preconditon and saved the automation,there will be a precondition Id. en$
- @param loops zh^ 格式为"1111111",每一位分别代表周日到周一 zh$ en^ @"1111111" each present from sunday to saturday. en$
- @param cityId zh^ 所在城市的城市Id zh$ en^ The cityId of current city. en$
- @param cityName zh^ 所在城市的城市名称 zh$ en^ City name. en$
- @param timeZoneId zh^ 时间段所属的时区名 如 "Asia/Shanghai" zh$ en^ timeZoneId eg:"Asia/Shanghai" en$
- @param begin zh^ 自定义开始时间 eg:"00:59" zh$ en^ custom begin time, eg:"00:59" en$
- @param end zh^ 自定义结束时间 eg:"18:30" zh$ en^ custom end time, eg:"18:30" en$
- @return preCondition
- */
-+ (WiserSmartScenePreConditionModel *)createCustomTimePreConditionWithSceneId:(NSString *__nullable)sceneId existConditionId:(NSString * __nullable)conditionId loops:(NSString *)loops cityId:(NSString *)cityId cityName:(NSString *)cityName timeZoneId:(NSString *)timeZoneId beginTime:(NSString *)begin endTime:(NSString *)end;
+/// Create a valid precondition of custom time period.
+///
+/// @param sceneId The scene id. You can pass nil when create an automation scene.
+/// @param conditionId The current condition id. You need to pass the original condition id when editing scene for automation scene.
+/// @param loops The loop description, the data format is "1111111". Each bit indicates the Sunday to Saturday, 1 means valid, 0 means invalid.
+/// @param cityId The current city id.
+/// @param cityName The current city name.
+/// @param timeZoneId The timezone id, eg:"Asia/Shanghai".
+/// @param begin The begin date. eg:"00:59".
+/// @param end The end date. eg:"18:30".
+///
+/// @return The WiserSmartScenePreConditionModel instance.
++ (WiserSmartScenePreConditionModel *)createCustomTimePreConditionWithSceneId:(NSString *__nullable)sceneId
+                                                            existConditionId:(NSString * __nullable)conditionId
+                                                                       loops:(NSString *)loops
+                                                                      cityId:(NSString *)cityId
+                                                                    cityName:(NSString *)cityName
+                                                                  timeZoneId:(NSString *)timeZoneId
+                                                                   beginTime:(NSString *)begin
+                                                                     endTime:(NSString *)end;
 
 @end
 

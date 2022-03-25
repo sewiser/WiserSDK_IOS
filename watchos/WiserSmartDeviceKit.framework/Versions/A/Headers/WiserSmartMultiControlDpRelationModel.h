@@ -1,9 +1,8 @@
 //
-//  WiserSmartMultiControlDpRelationModel.h
-//  WiserSmartDeviceKit
+// WiserSmartMultiControlDpRelationModel.h
+// WiserSmartDeviceKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <Foundation/Foundation.h>
 #import "WiserSmartMultiControlParentRuleModel.h"
@@ -14,26 +13,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (copy, nonatomic) NSString *detailId;
 @property (copy, nonatomic) NSString *dpId;///< dp id
-@property (copy, nonatomic) NSString *dpName;///< dp 名称
-@property (copy, nonatomic) NSString *devId;///< 设备 id
-@property (copy, nonatomic) NSString *devName;///< 设备名称
-@property (assign, nonatomic) BOOL enabled;///< 是否可用
-@property (copy, nonatomic) NSString *multiControlId;///< 多控组 id
+@property (copy, nonatomic) NSString *dpName;///< dp name
+@property (copy, nonatomic) NSString *devId;///< device id
+@property (copy, nonatomic) NSString *devName;///< Device name.
+@property (assign, nonatomic) BOOL enabled;///< Availability.
+@property (copy, nonatomic) NSString *multiControlId;///< Multi-control group id.
 
 @end
 
 
 @interface WiserSmartMcGroupModel : NSObject
 
-@property (copy, nonatomic) NSString *multiControlId;///< 多控组id
-@property (copy, nonatomic) NSString *groupName;///< 多控组名称
-@property (strong, nonatomic) NSArray<WiserSmartMcGroupDetailModel *> *groupDetail;///< 多控组关联详情
+@property (copy, nonatomic) NSString *multiControlId;///< Multi-control group id.
+@property (copy, nonatomic) NSString *groupName;///< Multi-control group name.
+@property (strong, nonatomic) NSArray<WiserSmartMcGroupDetailModel *> *groupDetail;///< Multi-control group association details.
 
 @property (assign, nonatomic) BOOL enabled;
-@property (assign, nonatomic) NSInteger groupType;///< 多控组类型
+@property (assign, nonatomic) NSInteger groupType;///< Multi-control group type.
 @property (copy, nonatomic) NSString *multiRuleId;
-@property (copy, nonatomic) NSString *ownerId;///< 家庭id
-@property (copy, nonatomic) NSString *uid;///< 用户id
+@property (copy, nonatomic) NSString *ownerId;///< Family ID.
+@property (copy, nonatomic) NSString *uid;///< User ID.
 
 @end
 

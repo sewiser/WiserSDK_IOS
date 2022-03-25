@@ -20,6 +20,10 @@
 
 - (double)wssdk_toDouble;
 
+- (NSArray *)wssdk_toArray;
+
+- (NSDictionary *)wssdk_toDictionary;
+
 - (BOOL)wssdk_toBool;
 
 + (BOOL)wssdk_swizzleInstanceMethod:(SEL)originalSel with:(SEL)newSel;

@@ -1,9 +1,8 @@
 //
-//  WiserSmartDeviceShareModel.h
-//  WiserSmartDeviceKit
+// WiserSmartDeviceShareModel.h
+// WiserSmartDeviceKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <Foundation/Foundation.h>
 
@@ -11,16 +10,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WiserSmartDeviceShareRequestModel : NSObject
 
-/// 家庭ID home id
+/// Home ID
 @property (nonatomic, assign) long long homeID;
 
-/// 国家码 country code
+/// Country Code
 @property (nonatomic, copy) NSString *countryCode;
 
-/// 账号 account
+/// Account
 @property (nonatomic, copy) NSString *userAccount;
 
-/// 设备ID列表 device id list
+/// Device list ID
 @property (nonatomic, copy) NSArray<NSString *> *devIds;
 
 @end

@@ -1,9 +1,11 @@
 //
-//  WiserSmartSDK+Log.h
-//  WiserSmartBaseKit
+// WiserSmartSDK+Log.h
+// WiserSmartBaseKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
+
+#ifndef WiserSmartSDK_Log_h
+#define WiserSmartSDK_Log_h
 
 #import "WiserSmartSDK.h"
 
@@ -31,10 +33,11 @@ void WSSDKLog(NSInteger level, NSString *module, const char *file, const char *f
 
 @interface WiserSmartSDK (Log)
 
-/// Debug mode
-/// 调试模式
+/// Debug mode, default is false. Verbose log will print into console if opened.
 @property (nonatomic, assign) BOOL debugMode;
 
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif /* WiserSmartSDK_Log_h */

@@ -29,6 +29,8 @@
 #import "WSSDKNotification.h"
 #import "WSSDKLogUtils.h"
 #import "WSSDKFile.h"
+#import "WSSDKLocalNetworkManager.h"
+#import "WSSDKOpenSSLHelper.h"
 #if TARGET_OS_IOS
 #import "WiserSmartReachability.h"
 #endif

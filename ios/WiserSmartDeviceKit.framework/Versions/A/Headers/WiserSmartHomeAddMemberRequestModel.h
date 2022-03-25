@@ -1,9 +1,8 @@
 //
-//  WiserSmartHomeAddMemberRequestModel.h
-//  WiserSmartDeviceKit
+// WiserSmartHomeAddMemberRequestModel.h
+// WiserSmartDeviceKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <Foundation/Foundation.h>
 
@@ -11,68 +10,62 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WiserSmartHomeAddMemberRequestModel : NSObject
 
-/** 为受邀请者设置的昵称  Member name */
+/// Nicknames for invitees.
 @property (nonatomic, copy) NSString *name;
 
-/** 受邀请账号 Invited account */
+/// Invited accounts.
 @property (nonatomic, copy) NSString *account;
 
-/** 受邀请者账号对应国家码 Country code */
+/// Invitee account corresponding to the country code.
 @property (nonatomic, copy) NSString *countryCode;
 
-/**
- * 成员角色 请正确设置你想设置的角色类型。
- * role，Please set the type of role you want to set.
- */
+/// Member role, please set the correct role type you want to set.
 @property (nonatomic, assign) WSHomeRoleType role;
 
-/** 为受邀请者设置的头像 nil时使用受邀请者个人头像 Head portraits of members Can be nil */
+/// The avatar set for the invitee, if set to nil, the invitee's personal avatar will be used.
 @property (nonatomic, strong) UIImage *headPic;
 
-/**
- * 是否需要受邀请者同意接受邀请 YES-受邀请账号自动接受该家庭邀请，无需受邀请者确认 NO-需要受邀请者同意后才可加入该家庭
- * Is it necessary for the invitee to agree to accept the invitation? YES-The invited account automatically accepts the family invitation. No-need for the invitee to confirm.
- */
+/// Whether the invitee needs to agree to accept the invitation. YES - the invited account automatically accepts the family invitation without the invitee's confirmation; NO - the invitee's consent is required to join the family.
 @property (nonatomic, assign) BOOL autoAccept;
 
 @end
 
 @interface WiserSmartHomeInvitationCreateRequestModel : NSObject
 
-/// 家庭 ID home ID
+/// Home ID
 @property (nonatomic, assign) long long homeID;
 
-/// 是否需要邀请文案信息 whether need invitation message
+/// A boolean value indicates whether need invitation message.
 @property (nonatomic, assign) BOOL needMsgContent;
 
 @end
 
 @interface WiserSmartHomeInvitationReinviteRequestModel : NSObject
 
-/// 邀请 ID invitation ID
+/// The invitation ID.
 @property (nonatomic, strong) NSNumber *invitationID;
 
-/// 是否需要邀请文案信息 whether need invitation message
+/// A boolean value indicates whether need invitation message.
 @property (nonatomic, assign) BOOL needMsgContent;
 
 @end
 
 @interface WiserSmartHomeInvitationInfoRequestModel : NSObject
 
-/// 邀请 ID invitation ID
+/// The invitation ID.
 @property (nonatomic, strong) NSNumber *invitationID;
 
-/// 邀请备注名 invitation name
+/// Invitation remark name.
 @property (nonatomic, copy) NSString *name;
 
 @end
 
 @interface WiserSmartHomeInvitationResultModel : NSObject
 
-/// 邀请文案信息 invitation message
+/// The Invitation message.
 @property (nonatomic, copy) NSString *invitationMsgContent;
 
-/// 邀请码 invitation code
+/// The invitation code.
 @property (nonatomic, copy) NSString *invitationCode;
 
 @end
@@ -80,16 +73,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WiserSmartHomeInvitationRecordModel : NSObject;
 
-/// 邀请码有效时间 单位:小时 invitation code valid time. unit:hour
+/// Invitation code valid time, unit:hour.
 @property (nonatomic, assign) NSInteger validTime;
 
-/// 邀请 ID invitation ID
+/// The invitation ID.
 @property (nonatomic, strong) NSNumber *invitationID;
 
-/// 邀请码 invitation code
+/// The invitation code.
 @property (nonatomic, copy) NSString *invitationCode;
 
-/// 邀请备注名 invitation name
+/// Invitation remark name.
 @property (nonatomic, copy) NSString *name;
 
 @end

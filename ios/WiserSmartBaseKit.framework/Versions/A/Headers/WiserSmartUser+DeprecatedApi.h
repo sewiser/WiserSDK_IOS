@@ -1,9 +1,11 @@
 //
-//  WiserSmartUser+DeprecatedApi.h
-//  WiserSmartBaseKit
+// WiserSmartUser+DeprecatedApi.h
+// WiserSmartBaseKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
+
+#ifndef WiserSmartUser_DeprecatedApi_h
+#define WiserSmartUser_DeprecatedApi_h
 
 #import "WiserSmartUser.h"
 
@@ -11,18 +13,29 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WiserSmartUser (DeprecatedApi)
 
+
+/// Send verification code. Used for mobile phone verification code login, register, password reset.
+/// @param countryCode Country code.
+/// @param phoneNumber Mobile phone number.
+/// @param type  0: mobile phone verification code login, 1: mobile phone verification code register, 2: mobile phone password reset.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+- (void)sendVerifyCode:(NSString *)countryCode
+           phoneNumber:(NSString *)phoneNumber
+                  type:(NSInteger)type
+               success:(nullable WSSuccessHandler)success
+               failure:(nullable WSFailureError)failure
+DEPRECATED_MSG_ATTRIBUTE("use sendVerifyCodeWithUserName:region:countryCode:type:success:failure: instead");
+
 #pragma mark email
 
-/**
- *  Email register 1.0.
- *  邮箱注册  1.0
- *
- *  @param countryCode Country code
- *  @param email       Email
- *  @param password    Password
- *  @param success     Success block
- *  @param failure     Failure block
- */
+/// Email register 1.0.
+/// @param countryCode Country code.
+/// @param email Email.
+/// @param password Password.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+/// @deprecated This method is deprecated, use WiserSmartUser::registerByEmail:email:password:code:success:failure: instead
 - (void)registerByEmail:(NSString *)countryCode
                   email:(NSString *)email
                password:(NSString *)password
@@ -33,16 +46,13 @@ DEPRECATED_MSG_ATTRIBUTE("use registerByEmail:email:password:code:success:failur
 
 #pragma mark phone
 
-/**
- *  Mobile phone verification code login and register.
- *  手机验证码登录和注册
- *
- *  @param countryCode Country code
- *  @param phoneNumber Mobile phone number
- *  @param code        Verification code
- *  @param success     Success block
- *  @param failure     Failure block
- */
+/// Mobile phone verification code login and register.
+/// @param countryCode Country code.
+/// @param phoneNumber Mobile phone number.
+/// @param code Verification code.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+/// @deprecated This method is deprecated, use WiserSmartUser::loginWithMobile:countryCode:code:success:failure: instead
 - (void)login:(NSString *)countryCode
   phoneNumber:(NSString *)phoneNumber
          code:(NSString *)code
@@ -52,16 +62,13 @@ DEPRECATED_MSG_ATTRIBUTE("use loginWithMobile:countryCode:code:success:failure: 
 
 #pragma mark Uid
 
-/**
- *  uid login/register. The account will be registered at first login.
- *  uid 登录注册接口（如果没有注册就注册，如果注册就登录）
- *
- *  @param countryCode  Country code
- *  @param uid          User ID
- *  @param password     Password
- *  @param success      Success block
- *  @param failure      Failure block
- */
+/// User ID login/register. The account will be registered at first login.
+/// @param countryCode Country code.
+/// @param uid User ID.
+/// @param password Password.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+/// @deprecated This method is deprecated, use WiserSmartUser::loginOrRegisterWithCountryCode:uid:password:success:failure: instead
 - (void)loginOrRegisterByPhone:(NSString *)countryCode
                            uid:(NSString *)uid
                       password:(NSString *)password
@@ -69,17 +76,14 @@ DEPRECATED_MSG_ATTRIBUTE("use loginWithMobile:countryCode:code:success:failure: 
                        failure:(nullable WSFailureError)failure
 DEPRECATED_MSG_ATTRIBUTE("use loginOrRegisterWithCountryCode:uid:password:success:failure: instead");
 
-/**
- *  uid login/register. The account will be registered at first login.
- *  uid 登录注册接口（如果没有注册就注册，如果注册就登录）
- *
- *  @param countryCode  Country code
- *  @param uid          User ID
- *  @param password     Password
- *  @param createHome   Create default home
- *  @param success      Success block
- *  @param failure      Failure block
- */
+/// User ID login/register. The account will be registered at first login.
+/// @param countryCode Country code.
+/// @param uid User ID.
+/// @param password Password.
+/// @param createHome Create default home.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+/// @deprecated This method is deprecated, use WiserSmartUser::loginOrRegisterWithCountryCode:uid:password:createHome:success:failure: instead
 - (void)loginOrRegisterByPhone:(NSString *)countryCode
                            uid:(NSString *)uid
                       password:(NSString *)password
@@ -88,16 +92,13 @@ DEPRECATED_MSG_ATTRIBUTE("use loginOrRegisterWithCountryCode:uid:password:succes
                        failure:(nullable WSFailureError)failure
 DEPRECATED_MSG_ATTRIBUTE("use loginOrRegisterWithCountryCode:uid:password:createHome:success:failure: instead");
 
-/**
- *  uid register.
- *  uid注册
- *
- *  @param uid         User ID
- *  @param password    Password
- *  @param countryCode Country code
- *  @param success     Success block
- *  @param failure     Failure block
- */
+/// User ID register.
+/// @param uid User ID.
+/// @param password Password.
+/// @param countryCode Country code.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+/// @deprecated This method is deprecated, use WiserSmartUser::loginOrRegisterWithCountryCode:uid:password:createHome:success:failure: instead
 - (void)registerByUid:(NSString *)uid
              password:(NSString *)password
           countryCode:(NSString *)countryCode
@@ -105,16 +106,13 @@ DEPRECATED_MSG_ATTRIBUTE("use loginOrRegisterWithCountryCode:uid:password:create
               failure:(nullable WSFailureError)failure
 DEPRECATED_MSG_ATTRIBUTE("use loginOrRegisterWithCountryCode:uid:password:createHome:success:failure: instead");
 
-/**
- *  uid login.
- *  uid登录
- *
- *  @param uid         User ID
- *  @param password    Password
- *  @param countryCode Country code
- *  @param success     Success block
- *  @param failure     Failure block
- */
+/// User ID login.
+/// @param uid User ID.
+/// @param password Password.
+/// @param countryCode Country code.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+/// @deprecated This method is deprecated, use WiserSmartUser::loginOrRegisterWithCountryCode:uid:password:createHome:success:failure: instead
 - (void)loginByUid:(NSString *)uid
           password:(NSString *)password
        countryCode:(NSString *)countryCode
@@ -122,16 +120,13 @@ DEPRECATED_MSG_ATTRIBUTE("use loginOrRegisterWithCountryCode:uid:password:create
            failure:(nullable WSFailureError)failure
 DEPRECATED_MSG_ATTRIBUTE("use loginOrRegisterWithCountryCode:uid:password:createHome:success:failure: instead");
 
-/**
- *  uid login/register. The account will be registered at first login.
- *  uid 登录注册接口（如果没有注册就注册，如果注册就登录），不自动创建家庭
- *
- *  @param countryCode  Country code
- *  @param uid          User ID
- *  @param password     Password
- *  @param success      Success block
- *  @param failure      Failure block
- */
+/// User ID login/register. The account will be registered at first login.
+/// @param countryCode Country code.
+/// @param uid User ID.
+/// @param password Password.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+/// @deprecated This method is deprecated, use WiserSmartUser::loginOrRegisterWithCountryCode:uid:password:createHome:success:failure: instead
 - (void)loginOrRegisterWithCountryCode:(NSString *)countryCode
                                    uid:(NSString *)uid
                               password:(NSString *)password
@@ -139,6 +134,31 @@ DEPRECATED_MSG_ATTRIBUTE("use loginOrRegisterWithCountryCode:uid:password:create
                                failure:(nullable WSFailureError)failure
 DEPRECATED_MSG_ATTRIBUTE("use loginOrRegisterWithCountryCode:uid:password:createHome:success:failure: instead");
 
+
+/// Send verification code, used for email password reset.
+/// @param countryCode Country code.
+/// @param email Email.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+- (void)sendVerifyCodeByEmail:(NSString *)countryCode
+                        email:(NSString *)email
+                      success:(nullable WSSuccessHandler)success
+                      failure:(nullable WSFailureError)failure
+DEPRECATED_MSG_ATTRIBUTE("use sendVerifyCodeWithUserName:region:countryCode:type:success:failure: instead");
+
+/// Send verification code, used for email password register.
+/// @param countryCode Country code.
+/// @param email Email.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+- (void)sendVerifyCodeByRegisterEmail:(NSString *)countryCode
+                                email:(NSString *)email
+                              success:(nullable WSSuccessHandler)success
+                              failure:(nullable WSFailureError)failure
+DEPRECATED_MSG_ATTRIBUTE("use sendVerifyCodeWithUserName:region:countryCode:type:success:failure: instead");
+
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif /* WiserSmartUser_DeprecatedApi_h */

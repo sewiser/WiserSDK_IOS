@@ -1,0 +1,41 @@
+{
+  "name": "WiserSmartSceneKit",
+  "version": "3.26.5",
+  "summary": "A short description of WiserSmartSceneKit.",
+  "homepage": "https://github.com/sewiser/WiserSDK_IOS",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": {
+    "wiser": "wiser@wiser.com"
+  },
+  "source": {
+    "git": "https://github.com/sewiser/WiserSDK_IOS.git",
+    "tag": "3.26.5"
+  },
+  "static_framework": true,
+  "platforms": {
+    "ios": "9.0",
+    "watchos": "2.0"
+  },
+  "ios": {
+    "vendored_frameworks": "ios/WiserSmartSceneKit.framework"
+  },
+  "frameworks": [
+    "UIKit",
+    "Foundation",
+    "CoreLocation"
+  ],
+  "watchos": {
+    "vendored_frameworks": "watchos/WiserSmartSceneKit.framework"
+  },
+  "source_files": "ios/WiserSmartSceneKit.framework/Versions/A/Headers/*.h",
+  "dependencies": {
+    "WiserSmartBaseKit": [
+
+    ],
+    "WiserSmartDeviceKit": [
+
+    ]
+  }
+}

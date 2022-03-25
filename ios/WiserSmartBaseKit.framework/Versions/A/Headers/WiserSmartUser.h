@@ -1,13 +1,11 @@
 //
-//  WiserSmartUser.h
-//  WiserSmartKit
+// WiserSmartUser.h
+// WiserSmartBaseKit
 //
-//
-//  Copyright (c) 2015年 Wiser. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
-#ifndef WiserSmart_WiserSmartUser
-#define WiserSmart_WiserSmartUser
+#ifndef WiserSmartUser_h
+#define WiserSmartUser_h
 
 #import <UIKit/UIKit.h>
 #import <WiserSmartUtil/WiserSmartUtil.h>
@@ -15,151 +13,172 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// Notification will be sent when user session is invalid.
-/// 当用户登录信息过期后发出的通知
 extern NSString *const WiserSmartUserNotificationUserSessionInvalid;
 
-/// User register type
-/// 账号注册的类型
+/// User register type.
 typedef NS_ENUM(NSInteger, WSRegType) {
-    WSRegEmailType,         // Register from email
-    WSRegPhoneType,         // Register from mobile phone
-    WSRegOtherType,         // Register from other
-    WSRegQQType,            // Register from QQ
-    WSRegWeiboType,         // Register from Weibo
-    WSRegFacebookType,      // Register from Facebook
-    WSRegTwitterType,       // Register from Twitter
-    WSRegWechatType,        // Register from Wechat
-    WSRegAppleIdType,        // Register from Apple
-    WSRegGoogleType,        //Register from google
+    /// Register from email.
+    WSRegEmailType,
+    /// Register from mobile phone.
+    WSRegPhoneType,
+    /// Register from other.
+    WSRegOtherType,
+    /// Register from QQ.
+    WSRegQQType,
+    /// Register from Weibo.
+    WSRegWeiboType,
+    /// Register from Facebook.
+    WSRegFacebookType,
+    /// Register from Twitter.
+    WSRegTwitterType,
+    /// Register from WeChat.
+    WSRegWechatType,
+    /// Register from Apple.
+    WSRegAppleIdType,
+    /// Register from google.
+    WSRegGoogleType,
+    /// Register from Line.
+    WSRegLineType,
 };
 
-/// User-related functions.
-/// 用户相关功能
+/// Password strength type
+typedef NS_ENUM(NSInteger, WSPasswordRegularType) {
+    WSPasswordRegularLow = 1,       // 8-20 character,include letters and numbers
+    WSPasswordRegularMiddle = 2,       // 8-20 character,include capital and lower-case letter and numbers
+    WSPasswordRegularHigh = 3,     // 8-20 character,include capital and lower-case letter and numbers and special character
+};
+
+/// @brief WiserSmartUser is used for user-related functions.
+///
+/// This class is used to do the user-related things, such as register, login, logout, reset password, and so on.
+///
+/// Currently we support the following account type:
+/// Main:
+///     - Email
+///     - Phone
+/// Third-party:
+///     - QQ
+///     - Weibo
+///     - WeChat
+///     - Facebook
+///     - Twitter
+///     - Google
+///     - AppleID
+/// Other:
+///     - UID (for advance usage)
+///     - Anonymous
+///     - QRCode
+///
+/// For email and phone account, usually we need to send a verify code to continue the following steps.
+///
+/// For uid account, it is designed for developers who already has the account system for their own. The developer can register the uid account without any verification. So please keep your username/password in safe place.
+///
+/// @warning Wiser server have many regions over the world, China/Europe/America, and so on. Account system between regions are separated. When user is not logged in, Wiser SDK will select a nearest region for the initial API request. During the register step, Wiser Cloud will see the account country code and create it in the right region. After the register or login step, the API request will be sent to the right region. So, the country code is part of the account username, please do not ignore it.
+///
 @interface WiserSmartUser : NSObject
 
-/// Singleton
+/// Returns the singleton of the class.
 + (instancetype)sharedInstance;
 
-/// Session ID
+/// Session ID.
 @property (nonatomic, strong, readonly) NSString *sid;
 
-/// User ID
+/// User ID.
 @property (nonatomic, strong, readonly) NSString *uid;
 
-/// Head icon
+/// Head icon.
 @property (nonatomic, strong, readonly) NSString *headIconUrl;
 
-/// Nick name
+/// Nick name.
 @property (nonatomic, strong, readonly) NSString *nickname;
 
 /// Username. If account is mobile phone, this is mobile phone. If account is email, this is email.
-/// 用户名。如果主账号是手机号，userName就是手机号.如果主账号是邮箱，userName就是邮箱。
 @property (nonatomic, strong, readonly) NSString *userName;
 
-/// Mobile phone
+/// Mobile phone.
 @property (nonatomic, strong, readonly) NSString *phoneNumber;
 
-/// Email
+/// Email.
 @property (nonatomic, strong, readonly) NSString *email;
 
 /// Country code. `86` for China, `1` for America.
-/// 国家区号。86：中国，1：美国。
 @property (nonatomic, strong, readonly) NSString *countryCode;
 
-/// Login state
+/// Login status.
 @property (nonatomic, assign, readonly) BOOL isLogin;
 
 /// The region code of current account. `AY` for China, `AZ` for America, `EU` for Europe.
-/// 当前账号所在的国家区域。AY：中国，AZ：美国，EU：欧洲。
 @property (nonatomic, strong, readonly) NSString *regionCode;
 
 /// The api domains of current account region.
-/// 当前账号所在区域的接口域名地址
 @property (nonatomic, strong, readonly) NSDictionary *domain;
 
 /// Timezone ID. e.g. `Asia/Shanghai`.
-/// 用户时区信息
 @property (nonatomic, strong, readonly) NSString *timezoneId;
 
 @property (nonatomic, strong, readonly) NSString *partnerIdentity;
 
-/// mqtt host
-/// mqtt 域名
+/// MQTT host.
 @property (nonatomic, strong, readonly) NSString *mbHost;
 
 @property (nonatomic, strong, readonly) NSString *gwHost;
 
-/// mqtt port
-/// mqtt 端口号
+/// MQTT port.
 @property (nonatomic, assign, readonly) NSInteger port;
 
-/// SSL
-/// 是否开启SSL
+/// Whether to enable SSL.
 @property (nonatomic, assign, readonly) BOOL useSSL;
 
-/// quic host
-/// quic 域名
+/// QUIC host.
 @property (nonatomic, strong, readonly) NSString *quicHost;
 
-/// quic port
-/// quic 端口号
+/// QUIC port.
 @property (nonatomic, assign, readonly) NSInteger quicPort;
 
-/// QUIC
-/// 是否开启QUIC
+/// Whether to enable QUIC.
 @property (nonatomic, assign, readonly) BOOL useQUIC;
 
 /// Temperature unit. 1 for `°C`, 2 for `°F`.
-/// 温度单位。1：`°C`， 2：`°F`。
 @property (nonatomic, assign) NSInteger tempUnit;
 
-/// User register type
-/// 账号注册的类型
+/// User register type.
 @property (nonatomic, assign, readonly) WSRegType regFrom;
 
-/// Nickname of sns account.
-/// 第三方账号的昵称
+/// Nickname of SNS account.
 @property (nonatomic, strong, readonly) NSString *snsNickname;
 
 @property (nonatomic, strong, readonly) NSString *ecode;
 
-/// User type
-/// 用户类型
+/// User type.
 @property (nonatomic, assign, readonly) NSInteger userType;
 
-/// Extra parameters
-/// 额外参数
+/// Extra parameters.
 @property (nonatomic, strong, readonly) NSDictionary *extras;
 
 
 #pragma mark - Mobile phone verification code login
 
-/**
- *  Send verification code. Used for mobile phone verification code login, register, password reset.
- *  发送验证码，用于手机验证码登录/注册，手机密码重置。
- *
- *  @param countryCode Country code
- *  @param phoneNumber Mobile phone number
- *  @param type        0: mobile phone verification code login, 1: mobile phone verification code register, 2: mobile phone password reset.
- *  @param success     Success block
- *  @param failure     Failure block
- */
-- (void)sendVerifyCode:(NSString *)countryCode
-           phoneNumber:(NSString *)phoneNumber
-                  type:(NSInteger)type
-               success:(nullable WSSuccessHandler)success
-               failure:(nullable WSFailureError)failure;
+/// Send verification code, used for register/login/reset password.
+/// @param userName Mobile phone number or Email address.
+/// @param region For register is required, use [WiserSmartUser regionListWithCountryCode:success:failure:] or [WiserSmartUser getDefaultRegionWithCountryCode:] to get region.
+/// @param countryCode Country code.
+/// @param type 1: Mobile phone verification code register,2: Mobile phone verification code login,3: Mobile phone password reset. 5: Improve account information (in experience mode); 7: Account change; 8: Cancel account
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+- (void)sendVerifyCodeWithUserName:(NSString *)userName
+                            region:(NSString *_Nullable)region
+                       countryCode:(NSString *)countryCode
+                              type:(NSInteger)type
+                           success:(WSSuccessHandler)success
+                           failure:(WSFailureError)failure;
 
-/**
- *  Modile phone verification code login.
- *  手机验证码登录
- *
- *  @param mobile      Mobile phone number
- *  @param countryCode Country code
- *  @param code        Verification code
- *  @param success     Success block
- *  @param failure     Failure block
- */
+
+/// Mobile phone verification code login.
+/// @param mobile Mobile phone number.
+/// @param countryCode Country code.
+/// @param code Verification code.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)loginWithMobile:(NSString *)mobile
             countryCode:(NSString *)countryCode
                    code:(NSString *)code
@@ -169,30 +188,33 @@ typedef NS_ENUM(NSInteger, WSRegType) {
 
 #pragma mark - Mobile phone binding
 
-/**
- *  Send verification code. Used for mobile phone bind, mobile phone change.
- *  发送验证码，用于手机验证码绑定手机号，更换手机号。
- *
- *  @param countryCode Country code
- *  @param phoneNumber Mobile phone number
- *  @param success     Success block
- *  @param failure     Failure block
- */
+/// Send verification code. Used for mobile phone bind, mobile phone change.
+/// @param countryCode Country code.
+/// @param phoneNumber Mobile phone number.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)sendBindVerifyCode:(NSString *)countryCode
                phoneNumber:(NSString *)phoneNumber
                    success:(nullable WSSuccessHandler)success
                    failure:(nullable WSFailureError)failure;
 
-/**
- *  Mobile phone bind.
- *  手机绑定
- *
- *  @param countryCode Country code
- *  @param phoneNumber Mobile phone number
- *  @param code        Verification code
- *  @param success     Success block
- *  @param failure     Failure block
- */
+
+/// Send verification code. Used for mobile phone bind for more service.
+/// @param countryCode Country code.
+/// @param phoneNumber Mobile phone number.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+- (void)sendBindVasVerifyCode:(NSString *)countryCode
+                  phoneNumber:(NSString *)phoneNumber
+                      success:(nullable WSSuccessHandler)success
+                      failure:(nullable WSFailureError)failure;
+
+/// Mobile phone bind.
+/// @param countryCode Country code.
+/// @param phoneNumber Mobile phone number.
+/// @param code Verification code.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)mobileBinding:(NSString *)countryCode
           phoneNumber:(NSString *)phoneNumber
                  code:(NSString *)code
@@ -201,17 +223,13 @@ typedef NS_ENUM(NSInteger, WSRegType) {
 
 #pragma mark - Mobile phone password login
 
-/**
- *  Mobile phone register.
- *  手机注册
- *
- *  @param countryCode Country code
- *  @param phoneNumber Mobile phone number
- *  @param password    Password
- *  @param code        Verification code
- *  @param success     Success block
- *  @param failure     Failure block
- */
+/// Mobile phone register.
+/// @param countryCode Country code.
+/// @param phoneNumber Mobile phone number.
+/// @param password Password.
+/// @param code Verification code.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)registerByPhone:(NSString *)countryCode
             phoneNumber:(NSString *)phoneNumber
                password:(NSString *)password
@@ -219,33 +237,25 @@ typedef NS_ENUM(NSInteger, WSRegType) {
                 success:(nullable WSSuccessHandler)success
                 failure:(nullable WSFailureError)failure;
 
-/**
- *  Mobile phone password login.
- *  手机密码登录
- *
- *  @param countryCode Country code
- *  @param phoneNumber Mobile phone number
- *  @param password    Password
- *  @param success     Success block
- *  @param failure     Failure block
- */
+/// Mobile phone password login.
+/// @param countryCode Country code.
+/// @param phoneNumber Mobile phone number.
+/// @param password Password.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)loginByPhone:(NSString *)countryCode
          phoneNumber:(NSString *)phoneNumber
             password:(NSString *)password
              success:(nullable WSSuccessHandler)success
              failure:(nullable WSFailureError)failure;
 
-/**
- *  Mobile phone password reset.
- *  手机密码重置
- *
- *  @param countryCode Country code
- *  @param phoneNumber Mobile phone number
- *  @param newPassword New password
- *  @param code        Verification code
- *  @param success     Success block
- *  @param failure     Failure block
- */
+/// Mobile phone password reset.
+/// @param countryCode  Country code.
+/// @param phoneNumber Mobile phone number.
+/// @param newPassword New password.
+/// @param code Verification code.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)resetPasswordByPhone:(NSString *)countryCode
                  phoneNumber:(NSString *)phoneNumber
                  newPassword:(NSString *)newPassword
@@ -255,47 +265,26 @@ typedef NS_ENUM(NSInteger, WSRegType) {
 
 #pragma mark - Email login
 
-/**
- *  Email login.
- *  邮箱登录
- *
- *  @param countryCode Country code
- *  @param email       Email
- *  @param password    Password
- *  @param success     Success block
- *  @param failure     Failure block
- */
+/// Email login.
+/// @param countryCode Country code.
+/// @param email Email.
+/// @param password Password.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)loginByEmail:(NSString *)countryCode
                email:(NSString *)email
             password:(NSString *)password
              success:(nullable WSSuccessHandler)success
              failure:(nullable WSFailureError)failure;
 
-/**
- *  Send verification code, used for email password reset.
- *  发送验证码，用于邮箱密码重置
- *
- *  @param countryCode Country code
- *  @param email       Email
- *  @param success     Success block
- *  @param failure     Failure block
- */
-- (void)sendVerifyCodeByEmail:(NSString *)countryCode
-                        email:(NSString *)email
-                      success:(nullable WSSuccessHandler)success
-                      failure:(nullable WSFailureError)failure;
 
-/**
- *  Email password reset.
- *  邮箱密码重置
- *
- *  @param countryCode Country code
- *  @param email       Email
- *  @param newPassword New password
- *  @param code        Verification code
- *  @param success     Success block
- *  @param failure     Failure block
- */
+/// Email password reset.
+/// @param countryCode Country code.
+/// @param email Email.
+/// @param newPassword New password.
+/// @param code Verification code.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)resetPasswordByEmail:(NSString *)countryCode
                        email:(NSString *)email
                  newPassword:(NSString *)newPassword
@@ -306,31 +295,13 @@ typedef NS_ENUM(NSInteger, WSRegType) {
 
 #pragma mark - Email register 2.0
 
-/**
- *  Send verification code, used for email password register.
- *  发送验证码，用于邮箱注册
- *
- *  @param countryCode Country code
- *  @param email       Email
- *  @param success     Success block
- *  @param failure     Failure block
- */
-- (void)sendVerifyCodeByRegisterEmail:(NSString *)countryCode
-                                email:(NSString *)email
-                              success:(nullable WSSuccessHandler)success
-                              failure:(nullable WSFailureError)failure;
-
-/**
- *  Email register 2.0.
- *  邮箱注册 2.0
- *
- *  @param countryCode Country code
- *  @param email       Email
- *  @param password    Password
- *  @param code        Verification code
- *  @param success     Success block
- *  @param failure     Failure block
- */
+/// Email register 2.0.
+/// @param countryCode Country code.
+/// @param email Email.
+/// @param password Password.
+/// @param code Verification code.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)registerByEmail:(NSString *)countryCode
                   email:(NSString *)email
                password:(NSString *)password
@@ -340,31 +311,49 @@ typedef NS_ENUM(NSInteger, WSRegType) {
 
 #pragma mark - Email verification code login
 
-/**
- *  Email verification code login.
- *  邮箱验证码登录
- *
- *  @param email       Email
- *  @param countryCode Country code
- *  @param code        Verification code
- *  @param success     Success block
- *  @param failure     Failure block
- */
+/// Email verification code login.
+/// @param email Email.
+/// @param countryCode Country code.
+/// @param code Verification code.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)loginWithEmail:(NSString *)email countryCode:(NSString *)countryCode code:(NSString *)code success:(WSSuccessHandler)success failure:(WSFailureError)failure;
+
+#pragma mark - Email bind
+
+/// Get email binding verification code.
+/// @param email E-mail.
+/// @param countryCode Country Code.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+- (void)sendBindingVerificationCodeWithEmail:(NSString *)email
+                                 countryCode:(NSString *)countryCode
+                                     success:(nullable WSSuccessHandler)success
+                                     failure:(nullable WSFailureError)failure;
+
+/// Binding email.
+/// @param email E-mail.
+/// @param countryCode Country Code.
+/// @param code Verification Code.
+/// @param sId User session ID.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+- (void)bindEmail:(NSString *)email
+  withCountryCode:(NSString *)countryCode
+             code:(NSString *)code
+              sId:(NSString *)sId
+          success:(nullable WSSuccessHandler)success
+          failure:(nullable WSFailureError)failure;
 
 #pragma mark - uid login
 
-/**
- *  uid login/register. The account will be registered at first login.
- *  uid 登录注册接口（如果没有注册就注册，如果注册就登录）
- *
- *  @param countryCode  Country code
- *  @param uid          User ID
- *  @param password     Password
- *  @param createHome   Create default home
- *  @param success      Success block
- *  @param failure      Failure block
- */
+/// User ID. login/register. The account will be registered at first login.
+/// @param countryCode Country code.
+/// @param uid User ID.
+/// @param password Password.
+/// @param createHome Create default home.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)loginOrRegisterWithCountryCode:(NSString *)countryCode
                                    uid:(NSString *)uid
                               password:(NSString *)password
@@ -374,80 +363,57 @@ typedef NS_ENUM(NSInteger, WSRegType) {
 
 #pragma mark - Social login
 
-/**
- *  QQ login.
- *  QQ登录
- *
- *  @param countryCode Country code
- *  @param userId userId from QQ authorization login
- *  @param accessToken accessToken from QQ authorization login
- *  @param success Success block
- *  @param failure Failure block
- */
+/// QQ login.
+/// @param countryCode Country code.
+/// @param userId UserId from QQ authorization login.
+/// @param accessToken AccessToken from QQ authorization login.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)loginByQQ:(NSString *)countryCode
            userId:(NSString *)userId
       accessToken:(NSString *)accessToken
           success:(nullable WSSuccessHandler)success
           failure:(nullable WSFailureError)failure;
 
-/**
- *  Wechat login.
- *  微信登录
- *
- *  @param countryCode Country code
- *  @param code code from Wechat authorization login
- *  @param success Success block
- *  @param failure Failure block
- */
+/// WeChat login.
+/// @param countryCode Country code.
+/// @param code Code from WeChat authorization login.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)loginByWechat:(NSString *)countryCode
                  code:(NSString *)code
               success:(nullable WSSuccessHandler)success
               failure:(nullable WSFailureError)failure;
 
-
-/**
- *  Facebook Login.
- *  Facebook登录
- *
- *  @param countryCode Country code
- *  @param token token from Facebook authorization login
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Facebook Login.
+/// @param countryCode Country code.
+/// @param token Token from Facebook authorization login
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)loginByFacebook:(NSString *)countryCode
                   token:(NSString *)token
                 success:(nullable WSSuccessHandler)success
                 failure:(nullable WSFailureError)failure;
 
-
-
-/**
- *  Twitter login.
- *  Twitter登录
- *
- *  @param countryCode Country code
- *  @param key key from Twitter authorization login
- *  @param secret secret from Twitter authorization login
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Twitter login.
+/// @param countryCode Country code.
+/// @param key Key from Twitter authorization login.
+/// @param secret Secret from Twitter authorization login.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)loginByTwitter:(NSString *)countryCode
                    key:(NSString *)key
                 secret:(NSString *)secret
                success:(nullable WSSuccessHandler)success
                failure:(nullable WSFailureError)failure;
 
-
-/**
-*  third login.
-*
-*  @param type login type(ap for "login with apple")
-*  @param countryCode countryCode
-*  @param accessToken token from third authorization login
-*  @param extraInfo extra params
-*  @param success Success block
-*  @param failure Failure block
-*/
+/// Third login.
+/// @param type Login type(ap for "login with apple").
+/// @param countryCode Country code.
+/// @param accessToken  Token from third authorization login.
+/// @param extraInfo Extra params.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)loginByAuth2WithType:(NSString *)type
                  countryCode:(NSString *)countryCode
                  accessToken:(NSString *)accessToken
@@ -457,95 +423,86 @@ typedef NS_ENUM(NSInteger, WSRegType) {
 
 #pragma mark -
 
-/**
- *  Logout.
- *  登出
- *
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Logout.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)loginOut:(nullable WSSuccessHandler)success
          failure:(nullable WSFailureError)failure;
 
-/**
- *  Edit nick name.
- *  修改昵称
- *
- *  @param nickName Nick name
- *  @param success  Success block
- *  @param failure  Failure block
- */
+/// Edit nick name.
+/// @param nickName Nick name.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)updateNickname:(NSString *)nickName
                success:(nullable WSSuccessHandler)success
                failure:(nullable WSFailureError)failure;
 
-/**
- *  Edit head icon.
- *  修改头像
- *
- *  @param headIcon Head icon
- *  @param success  Success block
- *  @param failure  Failure block
- */
+/// Edit head icon.
+/// @param headIcon Head icon.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)updateHeadIcon:(UIImage *)headIcon
                success:(nullable WSSuccessHandler)success
                failure:(nullable WSFailureError)failure;
 
-
-/**
- *  Update user information.
- *  更新用户信息
- *
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Update user information.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)updateUserInfo:(nullable WSSuccessHandler)success
                failure:(nullable WSFailureError)failure;
 
-
-/**
- *  Edit user timezone information.
- *  更新用户时区
- *
- *  @param timeZoneId TimeZone ID. e.g. `Asia/Shanghai`.
- *  @param success    Success block
- *  @param failure    Failure block
- */
+/// Edit user timezone information.
+/// @param timeZoneId TimeZone ID. e.g. `Asia/Shanghai`.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)updateTimeZoneWithTimeZoneId:(NSString *)timeZoneId
                              success:(nullable WSSuccessHandler)success
                              failure:(nullable WSFailureError)failure;
 
-/**
- *  Edit user temperature unit
- *  更新用户温度单位
- *
- *  @param tempUnit   Temperature unit. 1 for `°C`, 2 for `°F`.
- *  @param success    Success block
- *  @param failure    Failure block
- */
+/// Edit user temperature unit.
+/// @param tempUnit Temperature unit. 1 for `°C`, 2 for `°F`.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)updateTempUnitWithTempUnit:(NSInteger)tempUnit
                            success:(nullable WSSuccessHandler)success
                            failure:(nullable WSFailureError)failure;
 
-/**
- *  Destory account. One week after, all of the account information will be removed from server forever. If you login before removed, the destory request will be canceled.
- *  停用帐号（注销用户）
- *  一周后账号才会永久停用并删除以下你账户中的所有信息，在此之前重新登录，则你的停用请求将被取消
- *
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Destroy account. One week after, all of the account information will be removed from server forever. If you login before removed, the destroy request will be canceled.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)cancelAccount:(nullable WSSuccessHandler)success
               failure:(nullable WSFailureError)failure;
 
 
+/**
+ * Check password format by password regular type
+ *
+ * @param password  Inputed password
+ * @param regularType Password regular type
+ * @return Result of check password format
+ */
+- (BOOL)checkPasswordFormat:(NSString *)password withPasswordRegularType:(WSPasswordRegularType)regularType;
+
+
+#pragma mark - Ticket from third cloud login
+
+/// Login with ticket.
+/// Ticket is created from a third-party cloud platform, for more information, please refer to the tuya cloud-to-cloud solution.
+///
+/// @param ticket User ticket from service.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+- (void)loginWithTicket:(NSString *)ticket
+                success:(WSSuccessHandler)success
+                failure:(WSFailureError)failure;
+
 #pragma mark -
 
-/// Cancel network request
+/// Cancel network request.
 - (void)cancelRequest;
 
 @end
 
-#endif
-
 NS_ASSUME_NONNULL_END
+
+#endif /* WiserSmartUser_h */

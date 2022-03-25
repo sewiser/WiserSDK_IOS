@@ -1,25 +1,24 @@
 //
-//  WiserSmartFirmwareUpgradeStatusModel.h
-//  CocoaAsyncSocket
+// WiserSmartFirmwareUpgradeStatusModel.h
+// WiserSmartDeviceCoreKit
 //
-//
-//
-//  固件升级状态Model
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <Foundation/Foundation.h>
 #import "WiserSmartDeviceModelUtils.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// device firmware upgrade status
 @interface WiserSmartFirmwareUpgradeStatusModel : NSObject
 
-/** 固件升级状态 firmware upgrade status */
+/// firmware upgrade status
 @property (nonatomic, assign) WiserSmartDeviceUpgradeStatus upgradeStatus;
-/** 固件类型 firmware type */
+/// firmware type
 @property (nonatomic, assign) NSInteger type;
-/** 固件升级对应状态提示文案 firmware upgrade explain text */
+/// firmware upgrade explain text
 @property (nonatomic, copy) NSString *statusText;
-/** 固件升级对应状态提示文案标题 firmware upgrade explain text title */
+/// firmware upgrade explain text title
 @property (nonatomic, copy) NSString *statusTitle;
 
 @end

@@ -32,6 +32,7 @@
 #define SOCKET_TYPE_INITIATIVE_QUERY_DPS  0x12
 #define SOCKET_TYPE_AP_CONFIG             0x01
 #define SOCKET_TYPE_AP_CONFIG_NEW         0x14
+#define SOCKET_TYPE_AP_CONFIG_BROADCAST   0x11
 
 #define SOCKET_TYPE_HANDSHAKE_RAND_A      0x03
 #define SOCKET_TYPE_HANDSHAKE_RAND_B      0x04
@@ -77,6 +78,8 @@
  */
 @property (nonatomic, strong) WSSDKSafeMutableDictionary   *inactiveDevices;
 
+@property (nonatomic, strong) WSSDKSafeMutableDictionary    *HKDFDic;
+
 #pragma mark - TCP
 
 // connect TCP
@@ -112,6 +115,8 @@
 
 // send UDP message
 - (void)sendUdpRequestWithHost:(NSString *)host port:(NSInteger)port type:(int)type body:(NSDictionary *)body success:(WSSuccessHandler)success failure:(WSFailureHandler)failure;
+
+- (void)sendUdpRequestWithHost:(NSString *)host port:(NSInteger)port type:(int)type body:(NSDictionary *)body lpv:(NSString *)lpv success:(WSSuccessHandler)success failure:(WSFailureHandler)failure;
 
 // close UDP serve
 - (void)closeUdpServerWithPort:(uint16_t)port;

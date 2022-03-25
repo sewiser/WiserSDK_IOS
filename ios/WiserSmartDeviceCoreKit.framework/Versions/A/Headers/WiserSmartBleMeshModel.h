@@ -1,10 +1,8 @@
 //
-//  WiserSmartBleMeshModel.h
-//  WiserSmartKit
+// WiserSmartBleMeshModel.h
+// WiserSmartDeviceCoreKit
 //
-//
-//  Copyright © 2017年 Wiser. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #ifndef WiserSmart_WiserSmartBleMeshModel
 #define WiserSmart_WiserSmartBleMeshModel

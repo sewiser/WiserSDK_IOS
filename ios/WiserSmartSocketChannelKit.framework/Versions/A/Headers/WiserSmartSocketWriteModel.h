@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property (nonatomic, copy) WSSuccessDict       successBlock;
+@property (nonatomic, copy) WSFailureError      failureErrorBlock;
 @property (nonatomic, copy) WSFailureHandler    failureBlock;
 
 // data encryption

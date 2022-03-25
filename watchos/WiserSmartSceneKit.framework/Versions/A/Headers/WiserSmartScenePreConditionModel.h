@@ -1,59 +1,32 @@
 //
 //  WiserSmartScenePreConditionModel.h
-//  WSSmartSceneModule
+//  WiserSmartSceneKit
 //
-//
-//
-
-/*
- * 自动化场景前置条件，例如“生效时间段”条件
- */
+//  Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <Foundation/Foundation.h>
 
+/// @brief WiserSmartScenePreConditionModel provides more attributes for developers to create pre-conditions for automation scene.
 @interface WiserSmartScenePreConditionModel : NSObject<NSCoding>
 
-/**
- * 场景id
- * scene's Id
- */
+/// The scene id.
 @property (nonatomic, copy) NSString *scenarioId;
 
-/**
- * 条件id
- * condition's Id
- */
+/// The condition id in the scene.
 @property (nonatomic, copy) NSString *conditionId;
 
-/**
- * 前置条件类型
- * "timeCheck" 生效时间段
- *
- * precondition type
- * "timeCheck", valid time period
- */
+/// The precondition type for automation scene.
 @property (nonatomic, copy) NSString *condType;
 
-
-/**
- * 前置条件参数字典
- * "timeInterval":"custom",           //时间区间：custom|daytime|night|allDay
- * "timeZoneId": "Asia/Shanghai",     //时区id必传
- * "loops" : "1111111",               //每一位分别代表周日到周一的七天，1表示生效
- * "start" : "20:30",                 //type为timeCheck且timeInterval为custom生效
- * "end"   : "06:30",                 //type为timeCheck且timeInterval为custom生效
- * "cityId" : "793409534348627968",   //城市ID
- * "cityName" : "杭州市"               //城市名称，服务端不做任何处理保存，并在查询时返回
- *
- * precondition's exepression
- * "timeInterval":"custom",           //time period：custom|daytime|night|allDay
- * "timeZoneId": "Asia/Shanghai",     //needed, timezone Id
- * "loops" : "1111111",               //each bit representing from sunday to saturday, "1" for valid.
- * "start" : "20:30",                 //type is timeCheck and timeInterval is custom, this property will be useful.
- * "end"   : "06:30",                 //type is timeCheck and timeInterval is custom, this property will be useful.
- * "cityId" : "793409534348627968",   //city Id
- * "cityName" : "杭州市"               //city name, this property is only saved in the cloud, will not be changed by cloud.
- */
+/// The precondition expression information, it contains more fields. For detail:
+///
+/// timeInterval: it's enumeration string type, you can select custom/daytime/night/allDay. eg: "timeInterval": "allDay"
+/// timeZoneId: it's string type, indicates the time zone id. eg: "timeZoneId": "Asia/Shanghai"
+/// loops: it's string type, every bit representing from Sunday to Saturday, "1" means for valid. eg: "1111111".
+/// start: it's string type, if type is timeCheck and timeInterval is custom, this property will be useful. eg: "start": "20:30".
+/// end: it's string type, if type is timeCheck and timeInterval is custom, this property will be useful. eg: "end": "06:30".
+/// cityId: it's string type, the city id. eg: "cityId": "793409534348627968".
+/// cityName: it's string type, the city name. eg: "cityName": "hangzhou".
 @property (nonatomic, strong) NSDictionary *expr;
 
 @end
