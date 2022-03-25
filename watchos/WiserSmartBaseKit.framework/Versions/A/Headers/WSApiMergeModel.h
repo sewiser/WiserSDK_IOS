@@ -1,43 +1,36 @@
 //
-//  WSApiMergeModel.h
-//  WiserSmartKit
+// WSApiMergeModel.h
+// WiserSmartBaseKit
 //
-//
-//  Copyright © 2017年 Wiser. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
+
+#ifndef WSApiMergeModel_h
+#define WSApiMergeModel_h
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
+/// @brief WSApiMergeModel is an object of response data from WSApiMergeService.
 @interface WSApiMergeModel : NSObject
 
-
-/**
- success
- */
+/// Success.
 @property (nonatomic, assign) BOOL      success;
 
-
-/**
- api name
- */
+/// Api name.
 @property (nonatomic, strong) NSString  *apiName;
 
-
-/**
- error
- */
+/// Error.
 @property (nonatomic, strong) NSError   *error;
 
-
-/**
- response result
- */
+/// Response result.
 @property (nonatomic, strong) id        result;
 
-
-/**
- timestamp
- */
+/// Timestamp.
 @property (nonatomic, assign) NSTimeInterval time;
 
 @end
+
+NS_ASSUME_NONNULL_END
+
+#endif /* WSApiMergeModel_h */

@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define WSErrorDomain @"com.tuya.www"
+#define WSErrorDomain @"com.wiser.www"
 
 /**
  *
@@ -83,6 +83,9 @@ typedef enum {
     
     //局域网离线
     WISER_SOCKET_TCP_DISCONNECT,
+    
+    //局域网解析错误
+    WISER_SOCKET_TCP_RESPONSE_ERROR,
     
 } WSSDKErrorCode;
 

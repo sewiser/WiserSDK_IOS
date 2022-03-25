@@ -1,34 +1,26 @@
 //
-//  WiserSmartMQTTMessageModel.h
-//  WiserSmartDeviceKit
+// WiserSmartMQTTMessageModel.h
+// WiserSmartDeviceCoreKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// mqtt message
 @interface WiserSmartMQTTMessageModel : NSObject
 
-/**
- protocol
- */
+/// protocol
 @property (nonatomic, assign) NSInteger    protocol;
 
-/**
- type
- */
+/// message type
 @property (nonatomic, strong) NSString     *type;
 
-/**
- data
- */
+/// message data
 @property (nonatomic, strong) id           data;
 
-/**
- devId
- */
+/// device ID
 @property (nonatomic, strong) NSString     *devId;
 
 @end

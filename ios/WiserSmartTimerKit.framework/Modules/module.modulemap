@@ -1,0 +1,6 @@
+framework module WiserSmartTimerKit {
+  umbrella header "WiserSmartTimerKit.h"
+
+  export *
+  module * { export * }
+}

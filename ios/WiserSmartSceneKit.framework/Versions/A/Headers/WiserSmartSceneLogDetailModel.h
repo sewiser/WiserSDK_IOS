@@ -2,194 +2,68 @@
 //  WiserSmartSceneLogDetailModel.h
 //  WiserSmartSceneKit
 //
-//
-//
+//  Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class WiserSmartSceneLogDetailData;
+
+/// @brief WiserSmartSceneLogDetailModel provides more attributes for developers to generate log detail model object.
 @interface WiserSmartSceneLogDetailModel : NSObject
-/**
- [^en]
- id of the action entity
- [$en]
 
- [^zh]
- 动作实体对象
- [$zh]
- */
-@property (nonatomic, strong) NSString * actionEntityId;
+/// The action entity id.
+@property (nonatomic, strong) NSString *actionEntityId;
 
-/**
- [^en]
- name of the action entity
- [$en]
+/// The action entity name.
+@property (nonatomic, strong) NSString *actionEntityName;
 
- [^zh]
- 动作实体名称
- [$zh]
- */
-@property (nonatomic, strong) NSString * actionEntityName;
+/// The action entity URL.
+@property (nonatomic, strong) NSString *actionEntityUrl;
 
-/**
- [^en]
- icon url of the action entity
- [$en]
+/// The action executor type, eg: dpIssue, groupDpIssue.
+@property (nonatomic, strong) NSString *actionExecutor;
 
- [^zh]
- 动作实体图片url
- [$zh]
- */
-@property (nonatomic, strong) NSString * actionEntityUrl;
+/// The action id.
+@property (nonatomic, strong) NSString *actionId;
 
-/**
- [^en]
- executor of the action
- [$en]
+/// The error code.
+@property (nonatomic, strong) NSString *errorCode;
 
- [^zh]
- 动作执行者类型
- [$zh]
- */
-@property (nonatomic, strong) NSString * actionExecutor;
+/// The error information of scene execution.
+@property (nonatomic, strong) NSString *errorMsg;
 
-/**
- [^en]
- id of the action
- [$en]
-
- [^zh]
- 动作ID
- [$zh]
- */
-@property (nonatomic, strong) NSString * actionId;
-
-/**
- [^en]
- error code
- [$en]
-
- [^zh]
- 错误编码
- [$zh]
- */
-@property (nonatomic, strong) NSString * errorCode;
-
-/**
- [^en]
- reason of the error
- [$en]
-
- [^zh]
- 错误原因
- [$zh]
- */
-@property (nonatomic, strong) NSString * errorMsg;
-
-/**
- [^en]
- execute status of the action
- [$en]
-
- [^zh]
- 执行状态
- [$zh]
- */
+/// The execute status of the action in the scene.
 @property (nonatomic, assign) NSInteger execStatus;
 
-/**
- [^en]
- execute time of the action
- [$en]
+/// The execute time of the action in the scene.
+@property (nonatomic, strong) NSString *executeTime;
 
- [^zh]
- 执行时间
- [$zh]
- */
-@property (nonatomic, strong) NSString * executeTime;
-
-/**
- [^en]
- error detail info
- [$en]
-
- [^zh]
- 错误详情
- [$zh]
- */
+/// The detail data list of scene log.
 @property (nonatomic, strong) NSArray<WiserSmartSceneLogDetailData *> *detail;
 
 @end
 
+/// @brief WiserSmartSceneLogDetailData provides more attributes for developers to generate log detail data object.
 @interface WiserSmartSceneLogDetailData: NSObject
 
-/**
- [^en]
- execute code
- [$en]
+/// The execute code of the action in the scene.
+@property (nonatomic, strong) NSString *code;
 
- [^zh]
- 执行编码
- [$zh]
- */
-@property (nonatomic, strong) NSString * code;
+/// The error message.
+@property (nonatomic, strong) NSString *msg;
 
-/**
- [^en]
- error message
- [$en]
-
- [^zh]
- 错误信息
- [$zh]
- */
-@property (nonatomic, strong) NSString * msg;
-
-/**
- 
- [^en]
- status of action
- [$en]
-
- [^zh]
- 动作执行状态
- [$zh]
- */
+/// The execute status of the action in the scene.
 @property (nonatomic, assign) NSInteger status;
 
-/**
- [^en]
- username
- [$en]
+/// The detail user name.
+@property (nonatomic, strong) NSString *detailName;
 
- [^zh]
- 用户名称
- [$zh]
- */
-@property (nonatomic, strong) NSString * detailName;
+/// The user id.
+@property (nonatomic, strong) NSString *detailId;
 
-/**
- [^en]
- user id
- [$en]
-
- [^zh]
- 用户uid
- [$zh]
- */
-@property (nonatomic, strong) NSString * detailId;
-
-/**
- [^en]
- picture url
- [$en]
-
- [^zh]
- 图片路径
- [$zh]
- */
+/// The icon URL.
 @property (nonatomic, strong) NSString * icon;
 
 @end

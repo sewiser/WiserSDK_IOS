@@ -1,22 +1,22 @@
 //
-//  WiserSmartDeviceModelUtils.h
-//  WiserSmartDeviceKit
+// WiserSmartDeviceModelUtils.h
+// WiserSmartDeviceCoreKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #ifndef WiserSmartDeviceModelUtils_h
 #define WiserSmartDeviceModelUtils_h
 
+/// device upgrade status
 typedef enum : NSUInteger {
-    WiserSmartDeviceUpgradeStatusDefault = 0,    // default 默认不需要升级的
-    WiserSmartDeviceUpgradeStatusReady,          // ready  硬件准备就绪
-    WiserSmartDeviceUpgradeStatusUpgrading,      // upgrading  升级中
-    WiserSmartDeviceUpgradeStatusSuccess,        // success  升级完成
-    WiserSmartDeviceUpgradeStatusFailure,        // failure 升级异常
-    WiserSmartDeviceUpgradeStatusWaitingExectue, // for nb, waiting exectue nb设备任务已下发，但还未执行
-    WiserSmartDeviceUpgradeStatusDownloaded,     // for nb, downloaded nb设备固件已下载
-    WiserSmartDeviceUpgradeStatusTimeout         // timeout 升级超时
+    WiserSmartDeviceUpgradeStatusDefault = 0,    // Default. No upgrade required by default.
+    WiserSmartDeviceUpgradeStatusReady,          // Ready. Hardware readiness.
+    WiserSmartDeviceUpgradeStatusUpgrading,      // Upgrading. Upgrade in progress.
+    WiserSmartDeviceUpgradeStatusSuccess,        // Success. Upgrade completed.
+    WiserSmartDeviceUpgradeStatusFailure,        // Failure. Upgrade Exception.
+    WiserSmartDeviceUpgradeStatusWaitingExectue, // For nb,waiting execute nb. Equipment tasks have been issued, but not yet executed.
+    WiserSmartDeviceUpgradeStatusDownloaded,     // For nb,downloaded nb. Device firmware has been downloaded.
+    WiserSmartDeviceUpgradeStatusTimeout         // Timeout. Upgrade timeout.
 } WiserSmartDeviceUpgradeStatus;
 
 #endif /* WiserSmartDeviceModelUtils_h */

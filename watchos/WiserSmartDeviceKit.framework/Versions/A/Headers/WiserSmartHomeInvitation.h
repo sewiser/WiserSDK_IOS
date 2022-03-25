@@ -1,9 +1,8 @@
 //
-//  WiserSmartHomeInvitation.h
-//  WiserSmartDeviceKit
+// WiserSmartHomeInvitation.h
+// WiserSmartDeviceKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <Foundation/Foundation.h>
 
@@ -11,59 +10,59 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WiserSmartHomeInvitation : NSObject
 
-/// 邀请码方式邀请新成员 invitation code invite home member
-/// @param createRequestModel 请求Model createRequestModel
-/// @param success 成功回调 success
-/// @param failure 失败回调 failure
+/// Invite new members by invitation code.
+/// @param createRequestModel The request model.
+/// @param success Called when the task finishes successfully. WiserSmartHomeInvitationResultModel will be returned.
+/// @param failure If error occurred while adding the task, this block will be called.
 - (void)createInvitationWithCreateRequestModel:(WiserSmartHomeInvitationCreateRequestModel *)createRequestModel
                                        success:(void(^)(WiserSmartHomeInvitationResultModel *invitationResultModel))success
                                        failure:(WSFailureError)failure;
 
-/// 取消邀请 cancel invitation
+/// Cancel invitation.
 /// @param invitationID invitation ID
-/// @param success 成功回调 success
-/// @param failure 失败回调 failure
+/// @param success Called when the task finishes successfully.
+/// @param failure If error occurred while adding the task, this block will be called.
 - (void)cancelInvitationWithInvitationID:(NSNumber *)invitationID
                                  success:(WSSuccessBOOL)success
                                  failure:(WSFailureError)failure;
 
-/// 重新邀请成员 reinvite member
-/// @param reinviteRequestModel 重新邀请Model reinviteRequestModel
-/// @param success 成功回调 success
-/// @param failure 失败回调 failure
+/// Re-invite members.
+/// @param reinviteRequestModel The re-invite request model.
+/// @param success Called when the task finishes successfully. WiserSmartHomeInvitationResultModel will be returned.
+/// @param failure If error occurred while adding the task, this block will be called.
 - (void)reinviteInvitationWithReinviteRquestModel:(WiserSmartHomeInvitationReinviteRequestModel *)reinviteRequestModel
                                           success:(void(^)(WiserSmartHomeInvitationResultModel *invitationResultModel))success
                                           failure:(WSFailureError)failure;
 
-/// 获取邀请记录列表信息 fetch invitation record list
-/// @param homeID 家庭 ID homeID
-/// @param success 成功回调 success
-/// @param failure 失败回调 failure
+/// Get invitation record list information.
+/// @param homeID homeID
+/// @param success Called when the task finishes successfully. A list of WiserSmartHomeInvitationRecordModel will be returned.
+/// @param failure If error occurred while adding the task, this block will be called.
 - (void)fetchInvitationRecordListWithHomeID:(long long)homeID
                                     success:(void(^)(NSArray<WiserSmartHomeInvitationRecordModel *> *invitationRecordList))success
                                     failure:(WSFailureError)failure;
 
-/// 更新邀请信息 update invitation info
-/// @param invitationInfoRequestModel 邀请信息请求Model invitationInfoRequestModel
-/// @param success 成功回调 success
-/// @param failure 失败回调 failure
+/// Update invitation information.
+/// @param invitationInfoRequestModel The invitation info request model.
+/// @param success Called when the task finishes successfully.
+/// @param failure If error occurred while adding the task, this block will be called.
 - (void)updateInvitationInfoWithInvitationInfoRequestModel:(WiserSmartHomeInvitationInfoRequestModel *)invitationInfoRequestModel
                                                    success:(WSSuccessBOOL)success
                                                    failure:(WSFailureError)failure;
 
 
-/// 获取邀请者的家庭信息 fetch home info from invitation code
-/// @param invitationCode 邀请码 invitation code
-/// @param success 成功回调 success
-/// @param failure 失败回调 failure
+/// Get family information of the invitee.
+/// @param invitationCode The invitation code.
+/// @param success Called when the task finishes successfully. WiserSmartHomeModel will be returned.
+/// @param failure If error occurred while adding the task, this block will be called.
 - (void)fetchInvitationHomeInfoWithInvitationCode:(NSString *)invitationCode
                                           success:(void(^)(WiserSmartHomeModel *homeModel))success
                                           failure:(WSFailureError)failure;
 
-/// 加入家庭 join home
-/// @param invitationCode 邀请码 invitation code
-/// @param success 成功回调 success
-/// @param failure 失败回调 failure
+/// Join the family.
+/// @param invitationCode The invitation code.
+/// @param success Called when the task finishes successfully.
+/// @param failure If error occurred while adding the task, this block will be called.
 - (void)joinHomeWithInvitationCode:(NSString *)invitationCode
                            success:(WSSuccessBOOL)success
                            failure:(WSFailureError)failure;

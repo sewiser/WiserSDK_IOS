@@ -1,26 +1,22 @@
 //
-//  WiserSmartReceiveMemberDetailModel.h
-//  WiserSmartKitExample
+// WiserSmartReceiveMemberDetailModel.h
+// WiserSmartDeviceKit
 //
-//
-//  Copyright © 2017年 tuya. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 @class WiserSmartShareDeviceModel;
 
 @interface WiserSmartReceiveMemberDetailModel : NSObject
 
-
 @property (nonatomic, strong) NSArray <WiserSmartShareDeviceModel *> *devices;
 
-//账号信息 邮箱或者手机号
+/// Account information, email or cell phone number.
 @property (nonatomic, strong) NSString *mobile;
 
-//用户昵称
+/// User nickname.
 @property (nonatomic, strong) NSString *name;
 
-//备注
+/// Remarks.
 @property (nonatomic, strong) NSString *remarkName;
-
 
 @end

@@ -1,19 +1,20 @@
 Pod::Spec.new do |s|
   s.name = "WiserSmartMQTTChannelKit"
-  s.version = "3.19.0"
+  s.version = "3.26.5"
   s.summary = "A short description of #{s.name}."
   s.homepage = "https://github.com/sewiser/WiserSDK_IOS"
   s.license = {"type"=>"MIT"}
   s.authors = {"wiser"=>"wiser@wiser.com"}
   s.source = { :git => "https://github.com/sewiser/WiserSDK_IOS.git", :tag => s.version.to_s }
 
-  s.ios.deployment_target     = '8.0'
+  s.ios.deployment_target     = '9.0'
+  s.ios.frameworks = 'CoreData'
 
   s.static_framework          = true
   s.vendored_frameworks       = 'ios/WiserSmartMQTTChannelKit.framework'
-
+  s.source_files = 'ios/WiserSmartMQTTChannelKit.framework/Versions/A/Headers/*.h'
+  
   s.dependency 'WiserSmartBaseKit'
-  s.dependency 'MQTTClient', '0.15.2'
-  s.dependency 'TuyaSmartQUIC'
+  s.dependency 'TuyaSmartQUIC', '1.1.1'
 
 end

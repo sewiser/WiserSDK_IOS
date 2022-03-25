@@ -1,51 +1,48 @@
 //
-//  WiserSmartWeattherOptionModel.h
-//  Bolts
+// WiserSmartWeatherOptionModel.h
+// WiserSmartDeviceKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <Foundation/Foundation.h>
 
 typedef enum : NSUInteger {
-    WiserSmartWeattherOptionPressureUnit_unknown = 0,
-    WiserSmartWeattherOptionPressureUnit_hPa = 1,
-    WiserSmartWeattherOptionPressureUnit_inHg = 2,
-    WiserSmartWeattherOptionPressureUnit_mmHg = 3,
-    WiserSmartWeattherOptionPressureUnit_mb = 4,
-} WiserSmartWeattherOptionPressureUnit;
+    WiserSmartWeatherOptionPressureUnit_unknown = 0,
+    WiserSmartWeatherOptionPressureUnit_hPa = 1,
+    WiserSmartWeatherOptionPressureUnit_inHg = 2,
+    WiserSmartWeatherOptionPressureUnit_mmHg = 3,
+    WiserSmartWeatherOptionPressureUnit_mb = 4,
+} WiserSmartWeatherOptionPressureUnit;
 
 typedef enum : NSUInteger {
-    WiserSmartWeattherOptionWindSpeedUnit_unknown = 0,
-    WiserSmartWeattherOptionWindSpeedUnit_mph = 1,
-    WiserSmartWeattherOptionWindSpeedUnit_m_s = 2,// m/s
-    WiserSmartWeattherOptionWindSpeedUnit_kph = 3,
-    WiserSmartWeattherOptionWindSpeedUnit_km_h = 4// km/h
-} WiserSmartWeattherOptionWindSpeedUnit;
+    WiserSmartWeatherOptionWindSpeedUnit_unknown = 0,
+    WiserSmartWeatherOptionWindSpeedUnit_mph = 1,
+    WiserSmartWeatherOptionWindSpeedUnit_m_s = 2,// m/s
+    WiserSmartWeatherOptionWindSpeedUnit_kph = 3,
+    WiserSmartWeatherOptionWindSpeedUnit_km_h = 4// km/h
+} WiserSmartWeatherOptionWindSpeedUnit;
 
 typedef enum : NSUInteger {
-    WiserSmartWeattherOptionTemperatureUnit_unknown = 0,
-    WiserSmartWeattherOptionTemperatureUnit_Centigrade = 1,// ℃
-    WiserSmartWeattherOptionTemperatureUnit_Fahrenheit = 2,// ℉
-} WiserSmartWeattherOptionTemperatureUnit;
+    WiserSmartWeatherOptionTemperatureUnit_unknown = 0,
+    WiserSmartWeatherOptionTemperatureUnit_Centigrade = 1,// ℃
+    WiserSmartWeatherOptionTemperatureUnit_Fahrenheit = 2,// ℉
+} WiserSmartWeatherOptionTemperatureUnit;
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- * 获取家庭天气请求入参
- */
+/// Get home weather request entry.
 @interface WiserSmartWeatherOptionModel : NSObject
 
-/// 气压单位
-@property (nonatomic, assign) WiserSmartWeattherOptionPressureUnit pressureUnit;
+/// Barometric unit.
+@property (nonatomic, assign) WiserSmartWeatherOptionPressureUnit pressureUnit;
 
-/// 风速单位
-@property (nonatomic, assign) WiserSmartWeattherOptionWindSpeedUnit windspeedUnit;
+/// Wind speed unit
+@property (nonatomic, assign) WiserSmartWeatherOptionWindSpeedUnit windspeedUnit;
 
-/// 温度单位
-@property (nonatomic, assign) WiserSmartWeattherOptionTemperatureUnit temperatureUnit;
+/// Temperature units
+@property (nonatomic, assign) WiserSmartWeatherOptionTemperatureUnit temperatureUnit;
 
-/// 请求多少个天气详情，若不配置，则默认全部返回
+/// The number of requests for weather details, if not configured, all are returned by default.
 @property (nonatomic, assign) NSInteger limit;
 
 @end

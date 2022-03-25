@@ -1,9 +1,8 @@
 //
-//  WiserSmartAutoActivator.h
-//  WiserSmartDeviceKit
+// WiserSmartAutoActivator.h
+// WiserSmartActivatorKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <WiserSmartDeviceKit/WiserSmartDeviceKit.h>
 
@@ -13,126 +12,92 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol WiserSmartAutoActivatorDelegate <NSObject>
 
-
-/**
- Callback of Config Network Status Update
- 配网状态更新的回调
-
- @param activator   instance
- @param deviceModel devicemodel
- @param error       error
- */
+/// Configure callbacks for status updates of the network.
+/// @param activator instance
+/// @param deviceModel Device model.
+/// @param error error
 - (void)autoActivator:(WiserSmartAutoActivator *)activator didReceiveAutoConfigDevice:(WiserSmartDeviceModel *)deviceModel error:(NSError *)error;
 
 @end
 
+/// @brief WiserSmartAutoActivator is used for password-free configuration.
+///
+/// This class provides password-free configuration capabilities.
+///
 @interface WiserSmartAutoActivator : NSObject
 
-
-/**
- delegate
- */
+/// Return the delegate of WiserSmartAutoActivator.
 @property (nonatomic, weak) id<WiserSmartAutoActivatorDelegate> delegate;
 
-/**
- Single
- 单例
- 
- @return instance
- */
+/// Returns the single of the class.
 + (instancetype)sharedInstance;
 
-
-/**
- * Get a list of all devices that support auto atvice in the current home
- * 获取当前家庭下所有支持免密配网的设备列表
- *
- * @param homeId HomeId
- * @return 当前家庭所有支持免密配网的设备列表
- */
+/// Get a list of all the devices under the current household that support password-free configuration.
+/// @param homeId HomeId
+/// @return Current list of all devices in the home that support password-free configuration.
 - (NSArray <WiserSmartDeviceModel *> *)autoActiveSupportedDeviceListWithHomeId:(long long)homeId;
 
-/**
- * Get a list of all devices that support route atvice in the current home
- * 获取当前家庭下所有网关路由器设备列表
- *
- * @param homeId 当前家庭的id
- * @return 当前家庭所有网关路由器设备列表
- */
+/// Get the list of all gateway router devices under the current family.
+/// @param homeId Current home ID.
+/// @return Current list of all home gateway router devices.
+/// @deprecated This method is deprecated, Use WiserSmartRouterActivator::autoActiveRouterDeviceListWithHomeId: instead.
 - (NSArray <WiserSmartDeviceModel *> *)autoActiveRouterDeviceListWithHomeId:(long long)homeId __deprecated_msg("Use -[WiserSmartRouterActivator autoActiveRouterDeviceListWithHomeId:] instead.");
 
-/**
- * start discover device
- * 开始发现设备
- *
- * @param devIds  Device Id list
- * @param timeout Timeout, default 100 seconds
- * @param success Success block
- * @param failure Failure block
- */
+/// Start discovering devices.
+///
+/// The 'devIds' should be obtained form WiserSmartAutoActivator::autoActiveSupportedDeviceListWithHomeId:
+///
+/// @param devIds Device Id list
+/// @param timeout Timeout, default 100 seconds.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)startDiscoverWithDevIds:(NSArray<NSString *> *)devIds
                         timeout:(NSTimeInterval)timeout
                         success:(WSSuccessHandler)success
                         failure:(WSFailureError)failure;
 
-/**
- *  To obtain token (valid for 10 minutes)
- *  获取配网Token（有效期10分钟）
- *
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Obtain configuration token (valid for 10 minutes).
+/// @param success Called when the task finishes successfully. WSSuccessString will be returned.
+/// @param failure Called when the task is interrupted by an error.
 - (void)getTokenSuccess:(WSSuccessString)success
                 failure:(WSFailureError)failure;
 
-/**
- * start discover device
- * 开始发现设备
- *
- * @param devIds  Device Id list
- * @param token   Config Token
- * @param timeout Timeout, default 100 seconds
- * @param success Success block
- * @param failure Failure block
- */
+/// Start discovering devices.
+///
+/// The 'devIds' should be obtained form WiserSmartAutoActivator::autoActiveSupportedDeviceListWithHomeId:
+///
+/// @param devIds Device ID list.
+/// @param token Configuration token.
+/// @param timeout Timeout, default 100 seconds.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)startDiscoverWithDevIds:(NSArray<NSString *> *)devIds
                           token:(NSString *)token
                         timeout:(NSTimeInterval)timeout
                         success:(WSSuccessHandler)success
                         failure:(WSFailureError)failure;
 
-/**
- * start discover gateway route
- * 开始发现网关路由器
- *
- * @param devIds    Device Id list
- * @param type      Type,  0 to start discover device
- * @param timeout   Timeout, default 100 seconds
- * @param success   Success block
- * @param failure   Failure block
- */
+/// Start discovering gateway routers.
+/// @param devIds Device ID list.
+/// @param type Type,  0 to start discover device.
+/// @param timeout Timeout, default 100 seconds
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+/// @deprecated This method is deprecated, Use WiserSmartRouterActivator::startDiscoverRouterWithDevIds:type:timeout:success:failure: instead.
 - (void)startDiscoverRouterWithDevIds:(NSArray<NSString *> *)devIds
                                  type:(NSInteger)type
                               timeout:(NSTimeInterval)timeout
                               success:(WSSuccessHandler)success
                               failure:(WSFailureError)failure __deprecated_msg("Use -[WiserSmartRouterActivator startDiscoverRouterWithDevIds:type:timeout:success:failure:] instead.");
 
-/**
- * stop discover
- * 停止发现设备
- */
+/// Stop discovery devices.
 - (void)stopDiscover;
 
-
-/**
- * Binding device to the home
- * 将设备绑定家庭
- *
- * @param homeId  HomeId
- * @param devIds  Deivce Id list
- * @param success Success block
- * @param failure Failure block
- */
+/// Binding devices to a specified home.
+/// @param homeId HomeId
+/// @param devIds Device ID list.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)bindDeviceWithHomeId:(long long)homeId devIds:(NSArray <NSString *>*)devIds success:(WSSuccessHandler)success failure:(WSFailureError)failure;
 
 

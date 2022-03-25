@@ -1,31 +1,21 @@
 //
-//  WiserSmartShareMemberModel.h
-//  WiserSmartKit
+// WiserSmartShareMemberModel.h
+// WiserSmartDeviceKit
 //
-//
-//  Copyright © 2015年 Wiser. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 @interface WiserSmartShareMemberModel : NSObject
 
-/**
- *  关系Id
- */
+/// Relationship Id
 @property (nonatomic, assign) NSInteger memberId;
 
-/**
- *  备注名称
- */
+/// Remark name
 @property (nonatomic, strong) NSString  *nickName;
 
-/**
- *  用户名(手机号/邮箱号)
- */
+/// User name (cell phone number/email number)
 @property (nonatomic, strong) NSString  *userName;
 
-/**
- *  头像地址
- */
+/// Avatar address.
 @property (nonatomic, strong) NSString *iconUrl;
 
 @end

@@ -1,10 +1,8 @@
 //
-//  WiserSmartDevice.h
-//  WiserSmartKit
+// WiserSmartDevice.h
+// WiserSmartDeviceCoreKit
 //
-//
-//  Copyright (c) 2015年 Wiser. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #ifndef WiserSmart_WiserSmartDevice
 #define WiserSmart_WiserSmartDevice
@@ -14,428 +12,338 @@
 #import "WiserSmartFirmwareUpgradeStatusModel.h"
 #import "WiserSmartDeviceModel.h"
 #import "WiserSmartMQTTMessageModel.h"
+#import "WiserSmartLanMessageModel.h"
+#import "WiserSmartBackupWifiModel.h"
+#import "WiserSmartDeviceOTAModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// Device online status
-/// 设备的在线状态
 typedef enum : NSUInteger {
-    WSDeviceOnlineModeLocal, // Local network online
-    WSDeviceOnlineModeInternet, // Internet online
-    WSDeviceOnlineModeOffline, // offline
+    /// Local network online
+    WSDeviceOnlineModeLocal,
+    /// Internet online
+    WSDeviceOnlineModeInternet,
+    /// Offline
+    WSDeviceOnlineModeOffline,
 } WSDeviceOnlineMode;
 
-/// dp publish channel
-/// 设备控制的方式
+/// Dp publish channel
 typedef enum : NSUInteger {
-    WSDevicePublishModeLocal, // Through local network
-    WSDevicePublishModeInternet, // Through internet
-    WSDevicePublishModeAuto, // Auto (If local network is avaliable, use local)
+    /// Through local network
+    WSDevicePublishModeLocal,
+    /// Through internet
+    WSDevicePublishModeInternet,
+    /// Auto choose channel to publish
+    WSDevicePublishModeAuto,
 } WSDevicePublishMode;
 
 @class WiserSmartDevice;
 
+/// The delegate for WiserSmartDevice class, used for getting all device status updates.
 @protocol WiserSmartDeviceDelegate<NSObject>
 
 @optional
 
-/**
- *  Device info update, such as the name, online
- *  设备基本信息（例如名字，在线状态等）变化代理回调
- *
- *  @param device instance
- */
+/// Device info update, such as the name, online.
+/// @param device The device instance.
 - (void)deviceInfoUpdate:(WiserSmartDevice *)device;
 
-/**
- *  Device removed
- *  设备被移除变化代理回调
- *
- *  @param device instance
- */
+/// Device removed.
+/// @param device The device instance.
 - (void)deviceRemoved:(WiserSmartDevice *)device;
 
-/**
- *  dp data update
- *  设备 dps 变化代理回调
- *
- *  @param device  instance
- *  @param dps     dps
- */
+/// Dp data update.
+/// @param device The device instance.
+/// @param dps Command dictionary.
 - (void)device:(WiserSmartDevice *)device dpsUpdate:(NSDictionary *)dps;
 
-/**
- *  dp data update
- *  设备 dpCodes 变化代理回调
- *
- *  @param device  instance
- *  @param dpCodes dpCodes
- */
+/// Dp data update.
+/// @param device The device instance.
+/// @param dpCodes dpCodes.
 - (void)device:(WiserSmartDevice *)device dpCommandsUpdate:(NSDictionary *)dpCodes;
 
-/**
- *  Firmware upgrade progress.
- *  固件升级进度
- *
- *  @param device   instance
- *  @param type     device type
- *  @param progress upgrade progress
- */
+/// Firmware upgrade progress.
+/// @param device The device instance.
+/// @param type The device type.
+/// @param progress Upgrade progress
 - (void)device:(WiserSmartDevice *)device firmwareUpgradeProgress:(NSInteger)type progress:(double)progress;
 
-/**
-*  the delegate of device firmware upgrade status update
-*  设备升级状态的回调
-*
-*  @param device              设备模型 deviceModel
-*  @param upgradeStatusModel  设备升级状态模型 upgradeStatusModel
-*/
+/// The delegate of device firmware upgrade status update.
+/// @param device The device instance.
+/// @param upgradeStatusModel Equipment upgrade status model.
 - (void)device:(WiserSmartDevice *)device firmwareUpgradeStatusModel:(WiserSmartFirmwareUpgradeStatusModel *)upgradeStatusModel;
 
-/**
- *  Wifi signal strength callback.
- *  Wifi信号强度
- *
- *  @param device   instance
- *  @param signal   Signal strength
- */
+/// Wifi signal strength callback.
+/// @param device The device instance.
+/// @param signal Signal strength.
 - (void)device:(WiserSmartDevice *)device signal:(NSString *)signal;
 
-/**
- *  Recv custom message
- *  收到自定义消息
- *
- *  @param device   instance
- *  @param message  custom message
- */
+/// Receive MQTT custom message.
+/// @param device The device instance.
+/// @param message Custom message.
 - (void)device:(WiserSmartDevice *)device didReceiveCustomMessage:(WiserSmartMQTTMessageModel *)message;
 
-/**
- *  the delegate of warning information update
- *  设备的告警信息变化的代理回调
- *
- *  @param device       instance
- *  @param warningInfo  warning info
- */
+/// Receive LAN custom message.
+- (void)device:(WiserSmartDevice *)device didReceiveLanMessage:(WiserSmartLanMessageModel *)message;
+
+/// The delegate of warning information update.
+/// @param device The device instance.
+/// @param warningInfo Warning info.
 - (void)device:(WiserSmartDevice *)device warningInfoUpdate:(NSDictionary *)warningInfo;
 
 #pragma - deprecated
 
-/**
- *  the delegate of device firmware upgrade status update
- *  设备升级状态的回调
- *
- *  @param device         deviceModel
- *  @param upgradeStatus  upgrade status
- */
+/// The delegate of device firmware upgrade status update.
+/// @param device The device instance.
+/// @param type The device type.
+/// @param upgradeStatus The device upgrade status.
+/// @deprecated This method is deprecated, Use WiserSmartDeviceDelegate::device:firmwareUpgradeStatusModel: instead.
 - (void)device:(WiserSmartDevice *)device type:(NSInteger)type upgradeStatus:(WiserSmartDeviceUpgradeStatus)upgradeStatus __deprecated_msg("This method is deprecated, Use device:firmwareUpgradeStatusModel: instead");
 
-/**
- *  Device firmware upgrade success
- *  固件升级成功代理回调
- *
- *  @param device instance
- *  @param type   device type
- */
+/// Device firmware upgrade success.
+/// @param device The device instance.
+/// @param type The device type.
+/// @deprecated This method is deprecated, Use WiserSmartDeviceDelegate::device:upgradeStatus: instead.
 - (void)deviceFirmwareUpgradeSuccess:(WiserSmartDevice *)device type:(NSInteger)type __deprecated_msg("This method is deprecated, Use device:upgradeStatus: instead");
 
-/**
- *  Device firmware upgrade failure
- *  固件升级失败代理回调
- *
- *  @param device instance
- *  @param type   device type
- */
+/// Device firmware upgrade failure.
+/// @param device The device instance.
+/// @param type The device type.
+/// @deprecated This method is deprecated, Use WiserSmartDeviceDelegate::device:upgradeStatus: instead
 - (void)deviceFirmwareUpgradeFailure:(WiserSmartDevice *)device type:(NSInteger)type __deprecated_msg("This method is deprecated, Use device:upgradeStatus: instead");
 
-/**
- *  Device firmware upgrading
- *  固件升级中代理回调
- *
- *  @param device instance
- *  @param type   device type
- */
+/// Device firmware upgrading.
+/// @param device The device instance.
+/// @param type The device type.
+/// @deprecated This method is deprecated, Use WiserSmartDeviceDelegate::device:upgradeStatus: instead.
 - (void)deviceFirmwareUpgrading:(WiserSmartDevice *)device type:(NSInteger)type __deprecated_msg("This method is deprecated, Use device:upgradeStatus: instead");
 
 @end
 
-/// Device-related functions.
-/// 设备相关功能
+/// @brief The basic operation class of the Wiser Smart Device contains the basic information model of the device, commands to publish, update device information and other common operation interfaces.
+///
+/// No matter what type of device, can be operated by initializing an instance of this class if the function supports it.
+///
 @interface WiserSmartDevice : NSObject
 
+/// Get the basic device information model
 @property (nonatomic, strong, readonly) WiserSmartDeviceModel *deviceModel;
+
 @property (nonatomic, weak, nullable) id<WiserSmartDeviceDelegate> delegate;
 
-/**
- *  Get WiserSmartDevice instance. If current user don't have this device, a nil will be return.
- *  获取设备实例。如果当前用户没有该设备，将会返回nil。
- *
- *  @param devId Device ID
- *  @return instance
- */
+/// Get WiserSmartDevice instance. If current user don't have this device, a nil will be return.
+/// @param devId The device ID.
 + (nullable instancetype)deviceWithDeviceId:(NSString *)devId;
 
-/**
- *  Get WiserSmartDevice instance. If current user don't have this device, a nil will be return.
- *  获取设备实例。如果当前用户没有该设备，将会返回nil。
- *
- *  @param devId Device ID
- *  @return instance
- */
+/// Get WiserSmartDevice instance. If current user don't have this device, a nil will be return.
+/// @param devId The device ID.
 - (nullable instancetype)initWithDeviceId:(NSString *)devId NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)init NS_UNAVAILABLE;
 
-/**
- *  Get device online status.
- *  获取设备在线状态
- */
+/// Get device online status.
 - (WSDeviceOnlineMode)onlineMode;
 
-/**
- *  dp command publish.
- *  dp命令下发
- *
- *  @param dps     dp dictionary
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Dp command publish.
+/// @param dps The dp dictionary.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)publishDps:(NSDictionary *)dps
            success:(nullable WSSuccessHandler)success
            failure:(nullable WSFailureError)failure;
 
-/**
- *  dp command publish.
- *  dp命令下发
- *
- *  @param dps     dp dictionary
- *  @param mode    Publish mode(Lan/Internet/Auto)
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Dp command publish.
+/// @param dps The dp dictionary.
+/// @param mode Publish mode(Lan/Internet/Auto).
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)publishDps:(NSDictionary *)dps
               mode:(WSDevicePublishMode)mode
            success:(nullable WSSuccessHandler)success
            failure:(nullable WSFailureError)failure;
 
-/**
- *  Edit device name.
- *  修改设备名称
- *
- *  @param name Device name
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Edit device name.
+/// @param name The device name.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)updateName:(NSString *)name
            success:(nullable WSSuccessHandler)success
            failure:(nullable WSFailureError)failure;
 
-/**
- *  Edit device icon.
- *  修改设备图片
- *
- *  @param icon     icon
- *  @param success  Success block
- *  @param failure  Failure block
- */
+/// Edit device icon.
+/// @param icon The device icon.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)updateIcon:(UIImage *)icon
            success:(nullable WSSuccessHandler)success
            failure:(nullable WSFailureError)failure;
 
-/**
- *  Sync device information.
- *  同步设备信息到缓存
- *
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Edit device icon.
+/// @param cloudKey Cloud Key.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+- (void)updateIconWithCloudKey:(NSString *)cloudKey
+                       success:(nullable WSSuccessHandler)success
+                       failure:(nullable WSFailureError)failure;
+
+/// Sync device information.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)syncWithCloud:(nullable WSSuccessHandler)success
               failure:(nullable WSFailureError)failure;
 
-/**
- *  Sync device information.
- *  同步设备信息
- *
- *  @param devId   Device ID
- *  @param homeId  Home ID
- *  @param success Success block
- *  @param failure Failure block
- */
+
+/// Sync device information.
+/// @param devId The device ID.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 + (void)syncDeviceInfoWithDevId:(NSString *)devId
-                         homeId:(long long)homeId
-                        success:(nullable WSSuccessHandler)success
+                        success:(nullable void (^)(WiserSmartDeviceModel *device))success
                         failure:(nullable WSFailureError)failure;
 
-/**
- *  Sync subdevice information.
- *  同步子设备信息
- *
- *  @param gatewayId  Gateway ID
- *  @param devId   Device ID
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Sync subdevice information.
+/// @param gatewayId The gateway ID.
+/// @param devId The device ID.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 + (void)syncSubDeviceInfoWithGatewayId:(NSString *)gatewayId
                                  devId:(NSString *)devId
                                success:(nullable WSSuccessHandler)success
                                failure:(nullable WSFailureError)failure;
 
-/**
- *  Remove device. Unbind the device with current user.
- *  移除设备，解除与当前用户的关联关系。
- *
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Remove device. Unbind the device with current user.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)remove:(nullable WSSuccessHandler)success failure:(nullable WSFailureError)failure;
 
-/**
- *  Restore factory settings.
- *  恢复出厂设置
- *
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Restore factory settings.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)resetFactory:(nullable WSSuccessHandler)success failure:(nullable WSFailureError)failure;
 
-/**
- *  Get sub-device list of current gateway.
- *  获取当前网关下的子设备列表
- *
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Get sub-device list of current gateway.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)getSubDeviceListFromCloudWithSuccess:(nullable void (^)(NSArray <WiserSmartDeviceModel *> *subDeviceList))success failure:(nullable WSFailureError)failure;
 
-/**
- *  Synchronize the Longitude and Latitude of the Mobile Phone to the Device
- *  将手机的经纬度同步到设备
- *
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Synchronize the Longitude and Latitude of the Mobile Phone to the Device.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)syncLocationToDeviceWithSucecess:(nullable WSSuccessHandler)success failure:(nullable WSFailureError)failure;
 
 #pragma mark - firmware upgrade
 
-/**
- *  Get firmware upgrade information.
- *  获取设备升级信息
- *
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Get firmware upgrade information.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)getFirmwareUpgradeInfo:(nullable void (^)(NSArray <WiserSmartFirmwareUpgradeModel *> *upgradeModelList))success
                        failure:(nullable WSFailureError)failure;
 
-/**
- *  Upgrade firmware. Receive success or failure callback from WiserSmartDeviceDelegate.
- *  下发升级指令，设备开始升级, 升级成功或失败会通过WiserSmartDeviceDelegate返回
- *
- *  @param type    Device type of `WiserSmartFirmwareUpgradeModel`
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Upgrade firmware. Receive success or failure callback from WiserSmartDeviceDelegate.
+/// @param type The device type of "WiserSmartFirmwareUpgradeModel".
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)upgradeFirmware:(NSInteger)type success:(nullable WSSuccessHandler)success failure:(nullable WSFailureError)failure;
 
-/**
- *  Cancel firmware upgrade network request.
- *  取消未完成的固件升级接口请求
- */
+/// Cancel firmware upgrade, currently only supports canceling upgrade tasks that have not been published
+/// @param type Device type of `WiserSmartFirmwareUpgradeModel`
+/// @param success  Called when the task finishes successfully.
+/// @param failure  Called when the task is interrupted by an error.
+- (void)cancelUpgradeFirmware:(NSInteger)type success:(nullable WSSuccessHandler)success failure:(nullable WSFailureError)failure;
+
+/// Cancel firmware upgrade network request.
 - (void)cancelFirmwareRequest;
 
-
-/**
- *  Report device firmware version.
- *  上报设备固件的版本号
- *
- *  @param version Version
- *  @param type    Device type
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Report device firmware version.
+/// @param version The device version.
+/// @param type The device type.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)updateDeviceVersion:(NSString *)version
                        type:(NSInteger)type
                     success:(nullable WSSuccessHandler)success
                     failure:(nullable WSFailureError)failure;
 
+/// Get the switch value for the device OTA auto-upgrade
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+- (void)getAutoUpgradeSwitchInfoWithSuccess:(nullable WSSuccessID)success
+                                    failure:(nullable WSFailureError)failure;
+
+/// Save the switch value for automatic device OTA upgrade.
+/// @param switchValue The value of the auto switch. 0 represents off, and 1 means on.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+- (void)saveUpgradeInfoWithSwitchValue:(NSInteger)switchValue
+                               success:(nullable WSSuccessHandler)success
+                               failure:(nullable WSFailureError)failure;
+
+
+/// Access to the device's custom data, such as recording and storing custom data information
+/// @param success  Called when the task finishes successfully. The device property will return.
+/// @param failure Called when the task is interrupted by an error.
+- (void)getDevPropertyWithSuccess:(WSSuccessDict)success
+                          failure:(nullable WSFailureError)failure;
+
+
+/// Set the device's custom data, which can be used to record and store custom data information
+/// @param code The custom data key
+/// @param value The custom data value
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
+- (void)setDevPropertyWithCode:(NSString *)code
+                         value:(id)value
+                       success:(WSSuccessBOOL)success
+                       failure:(nullable WSFailureError)failure;
 
 #if TARGET_OS_IOS
 
-/**
- *  Get wifi signal strength. Receive signal strength from`-[WiserSmartDeviceDelegate device:signal:]`.
- *  获取wifi的信号强度。通过`-[WiserSmartDeviceDelegate device:signal:]`接收回调
- *
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Get wifi signal strength. Receive signal strength from`-[WiserSmartDeviceDelegate device:signal:]`.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)getWifiSignalStrengthWithSuccess:(nullable WSSuccessHandler)success failure:(nullable WSFailureError)failure;
 
-/**
- *  publish message in lan
- *  发送局域网消息
- *
- *  @param body     message body
- *  @param type     message type
- *  @param success  Success block
- *  @param failure  Failure block
- */
+/// Publish message in LAN.
+/// @param body The message body.
+/// @param type The message type.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)publishMessageInLanWithBody:(NSDictionary *)body
                                type:(NSInteger)type
                             success:(nullable WSSuccessDict)success
                             failure:(nullable WSFailureError)failure;
 
-/**
- *  Query dp initiative. Some dp won't report initiative when changed.
- *  获取主动查询的dp点，这些dp点只有在主动查询的时候才上报，否则不会上报。
- *
- *  @param dpsArray dpId array. If nil or empty array passed in，All dp will be queried。
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Query dp initiative. Some dp won't report initiative when changed.
+/// @param dpsArray DpId array. If nil or empty array passed in, All dp will be queried.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)getInitiativeQueryDpsInfoWithDpsArray:(nullable NSArray *)dpsArray
                                       success:(nullable WSSuccessHandler)success
                                       failure:(nullable WSFailureError)failure;
 
-/**
- *  Awake low energy device.
- *  唤醒低功耗设备
- *
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Awake low energy device.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)awakeDeviceWithSuccess:(nullable WSSuccessHandler)success failure:(nullable WSFailureError)failure;
-
 
 #pragma mark - publish custom message
 
-/**
- *  add custom message delegate.  Receive custom message from `- (void)device:(WiserSmartDevice *)device didReceiveCustomMessage:(WiserSmartMQTTMessageModel *)message`.
- *  添加自定义消息代理  通过`- (void)device:(WiserSmartDevice *)device didReceiveCustomMessage:(WiserSmartMQTTMessageModel *)message` 回调
- *
- *  @param delegate Delegate
- *  @param protocol Protocol
- */
+/// Add custom message delegate.  Receive custom message from `- (void)device:(WiserSmartDevice *)device didReceiveCustomMessage:(WiserSmartMQTTMessageModel *)message`.
+/// @param delegate The delegate of WiserSmartDevice.
+/// @param protocol Protocol.
 - (void)addDelegate:(id<WiserSmartDeviceDelegate>)delegate forProtocol:(NSInteger)protocol;
 
-/**
- *  remove custom message delegate
- *  删除自定义消息代理
- *
- *  @param delegate Delegate
- *  @param protocol Protocol
- */
+/// Remove custom message delegate.
+/// @param delegate The delegate of WiserSmartDevice.
+/// @param protocol Protocol
 - (void)removeDelegate:(id<WiserSmartDeviceDelegate>)delegate forProtocol:(NSInteger)protocol;
 
-/**
- *  send to custom message
- *  自定义（非dps）消息发送
- *
- *  @param data     Data
- *  @param protocol Protocol
- *  @param success  Success block
- *  @param failure  Failure block
- */
+/// Send to custom message.
+/// @param data Data.
+/// @param protocol Protocol.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)publishCustomMessageWithData:(NSDictionary *)data
                             protocol:(NSInteger)protocol
                              success:(nullable WSSuccessHandler)success
@@ -443,14 +351,10 @@ typedef enum : NSUInteger {
 
 #endif
 
-/**
- *  dp command publish.
- *  标准 dp 命令下发
- *
- *  @param commands dpCode - value dictionary
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Dp command publish.
+/// @param commands DpCode - value dictionary.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)publishDpWithCommands:(NSDictionary *)commands
                       success:(nullable WSSuccessHandler)success
                       failure:(nullable WSFailureError)failure;

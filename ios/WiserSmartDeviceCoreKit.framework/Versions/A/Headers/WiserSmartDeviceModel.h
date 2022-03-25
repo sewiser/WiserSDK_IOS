@@ -1,10 +1,8 @@
 //
-//  TuysSmartDeviceModel.h
-//  WiserSmartKit
+// WiserSmartDeviceModel.h
+// WiserSmartDeviceCoreKit
 //
-//
-//  Copyright (c) 2015年 Wiser. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #ifndef WiserSmart_WiserSmartDeviceModel
 #define WiserSmart_WiserSmartDeviceModel
@@ -12,118 +10,163 @@
 #import "WiserSmartSchemaModel.h"
 #import "WiserSmartDeviceModuleModel.h"
 #import "WiserSmartStandSchemaModel.h"
+#import "WiserSmartCommunication.h"
 
+/// device types
 typedef enum : NSUInteger {
     
-    WiserSmartDeviceModelTypeWifiDev,         /// Wi-Fi
+    /// Wi-Fi
+    WiserSmartDeviceModelTypeWifiDev,
     
-    WiserSmartDeviceModelTypeBle,             /// Single Point Bluetooth Device
+    /// Single Point Bluetooth Device
+    WiserSmartDeviceModelTypeBle,
     
-    WiserSmartDeviceModelTypeGprs,            /// Gprs
+    /// Gprs
+    WiserSmartDeviceModelTypeGprs,
     
-    WiserSmartDeviceModelTypeNBIoT,           /// NB-IoT
+    /// NB-IoT
+    WiserSmartDeviceModelTypeNBIoT,
     
-    WiserSmartDeviceModelTypeZigbeeGateway,   /// Zigbee Gateway
+    /// Zigbee Gateway
+    WiserSmartDeviceModelTypeZigbeeGateway,
     
-    WiserSmartDeviceModelTypeZigbeeSubDev,    /// Zigbee subDevice
+    /// Zigbee subDevice
+    WiserSmartDeviceModelTypeZigbeeSubDev,
     
-    WiserSmartDeviceModelTypeMeshBleSubDev,   /// Mesh
+    /// Mesh
+    WiserSmartDeviceModelTypeMeshBleSubDev,
     
-    WiserSmartDeviceModelTypeInfraredGateway, /// Infrared gateway
+    /// Infrared gateway
+    WiserSmartDeviceModelTypeInfraredGateway,
     
-    WiserSmartDeviceModelTypeInfraredSubDev,  /// Infrared subDevice
+    /// Infrared subDevice
+    WiserSmartDeviceModelTypeInfraredSubDev,
     
-    WiserSmartDeviceModelTypeWifiGateway,     /// Wi-Fi Gateway
+    /// Wi-Fi Gateway
+    WiserSmartDeviceModelTypeWifiGateway,
     
-    WiserSmartDeviceModelTypeWifiSubDev,      /// Wi-Fi subDevice
+    /// Wi-Fi subDevice
+    WiserSmartDeviceModelTypeWifiSubDev,
     
-    WiserSmartDeviceModelTypeSIGMeshGateway,  /// SIG Mesh Gateway
+    /// SIG Mesh Gateway
+    WiserSmartDeviceModelTypeSIGMeshGateway,
     
-    WiserSmartDeviceModelTypeSIGMeshSubDev,   /// SIG Mesh subDevice
+    /// SIG Mesh subDevice
+    WiserSmartDeviceModelTypeSIGMeshSubDev,
+
+    /// Ble Beacon
+    WiserSmartDeviceModelTypeBeacon,
     
+    /// Cat.1
+    WiserSmartDeviceModelTypeCat1,
 } WiserSmartDeviceModelType;
 
+
+typedef NS_OPTIONS(NSUInteger, WiserSmartDeviceOnlineType) {
+    /// Offline
+    WiserSmartDeviceOnlineTypeOffline = 0,
+    /// Wi-Fi online
+    WiserSmartDeviceOnlineTypeWifi = 1 << 0,
+    /// Local online
+    WiserSmartDeviceOnlineTypeLan = 1 << 1,
+    /// BLE online
+    WiserSmartDeviceOnlineTypeBLE = 1 << 2,
+    /// Mesh BLE  online
+    WiserSmartDeviceOnlineTypeMeshBLE = 1 << 3
+};
+
+/// device information.
 @interface WiserSmartDeviceModel : NSObject
 
-// device Id
+/// device Id
 @property (nonatomic, strong) NSString     *devId;
 
-// name of device
+/// name of device
 @property (nonatomic, strong) NSString     *name;
 
-// link of device icon
+/// link of device icon
 @property (nonatomic, strong) NSString     *iconUrl;
 
-// ability of device
+/// ability of device
 @property (nonatomic, assign) NSInteger    ability;
 
-// online of device
+/// online of device
 @property (nonatomic, assign) BOOL         isOnline;
 
-// cloud online of device
+/// cloud online of device
 @property (nonatomic, assign) BOOL         isCloudOnline;
 
-// whether the device is shared
+@property (nonatomic, assign) WiserSmartDeviceOnlineType onlineType;
+
+/// Communication Information. Gateway-sub-device, mesh-like device communication node information. Communication priority. Device connectivity.
+@property (nonatomic, strong) WiserSmartCommunication *communication;
+
+/// whether the device is shared
 @property (nonatomic, assign) BOOL         isShare;
 
-//
 @property (nonatomic, strong) NSString     *verSw;
 
-// data point of device
+/// data point of device
 @property (nonatomic, strong) NSDictionary *dps;
 
-// data point execution time of device
+/// data point execution time of device
 @property (nonatomic, strong) NSDictionary *dpsTime;
 
-// product Id
+/// product Id
 @property (nonatomic, strong) NSString     *productId;
 
-// whether to support group
+/// whether to support group
 @property (nonatomic, assign) BOOL         supportGroup;
 
-// whether to support standard group
+/// whether to support standard group
 @property (nonatomic, assign) BOOL         supportSGroup;
 
-// type of gateway
+/// type of gateway
 @property (nonatomic, strong) NSString     *gwType;
 
-// protocol version of gateway
+/// protocol version of gateway
 @property (nonatomic, assign) double       pv;
 
 #if TARGET_OS_IOS
 
-// online status of LAN
+/// online status of LAN
 @property (nonatomic, assign) BOOL         isLocalOnline;
 
-// gateway protocol version of LAN
+/// gateway protocol version of LAN
 @property (nonatomic, assign) double       lpv;
 
 #endif
 
-// hardware baseline version
+/// hardware baseline version
 @property (nonatomic, assign) double       bv;
 
-// lat, lon
+/// device latitude
 @property (nonatomic, strong) NSString     *latitude;
+
+/// device longitude
 @property (nonatomic, strong) NSString     *longitude;
 
-// dp name
+/// dp name
 @property (nonatomic, strong) NSDictionary *dpName;
 
-// schema of device
+/// schema of device
 @property (nonatomic, strong) NSString     *schema;
 @property (nonatomic, strong) NSString     *schemaExt;
 @property (nonatomic, strong) NSArray<WiserSmartSchemaModel *> *schemaArray;
 
 @property (nonatomic, strong) NSString     *runtimeEnv;
 
-// attribute
-@property (nonatomic, assign) NSUInteger    attribute;
+/// attribute
+@property (nonatomic, assign) NSUInteger   attribute;
 
 @property (nonatomic, strong) NSString     *localKey;
 
 @property (nonatomic, strong) NSString     *uuid;
-// The network communication ability:0.wifi;1.cable;2.gprs;3.nb-iot; 10:bluetooth;11.blemesh;12.zigbee
+
+/// Media Access Control Address
+@property (nonatomic, strong) NSString     *mac;
+
+/// The network communication ability:0.wifi;1.cable;2.gprs;3.nb-iot; 10:bluetooth;11.blemesh;12.zigbee.
 @property (nonatomic, assign) NSUInteger   capability;
 
 @property (nonatomic, strong) NSString     *timezoneId;
@@ -132,13 +175,13 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) long long    roomId;
 @property (nonatomic, assign) long long    sharedTime;
 
-// order
+/// order
 @property (nonatomic, assign) NSInteger    displayOrder;
 @property (nonatomic, assign) NSInteger    homeDisplayOrder;
 
 @property (nonatomic, strong) NSString     *ip;
 
-// skills
+/// skills
 @property (nonatomic, strong) NSDictionary *skills;
 
 @property (nonatomic, strong) NSString     *cloudId;
@@ -161,46 +204,97 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSArray      *displayDps;
 @property (nonatomic, strong) NSArray      *faultDps;
 @property (nonatomic, strong) NSDictionary *displayMsgs;
-@property (nonatomic, strong) NSString     *switchDp;
+@property (nonatomic, strong) NSString     *switchDp __deprecated_msg("Use switchDps instead");
+@property (nonatomic, strong) NSArray<NSNumber *> *switchDps;
+
+/// creates a dictionary containing entries constructed from `self.switchDps` and `self.dps`
+- (NSDictionary<NSString *, NSNumber *> *)switchDpsMap;
+/// return `or` operation on all values from `self.switchDpsMap`
+- (BOOL)switchDpsValue;
+
+/// creates a dictionary containing entries constructed from `self.switchDps` and `dps`
+/// @param dps the dps which contains the dp value
+- (NSDictionary<NSString *, NSNumber *> *)switchDpsMapFromDps:(NSDictionary<NSString *, id> *)dps;
+
+/// return `or` operation on all values from  `self.switchDps` and `dps`
+/// @param dps the dps which contains the dp value
+- (BOOL)switchDpsValueFromDps:(NSDictionary<NSString *, id> *)dps;
 
 @property (nonatomic, assign) BOOL         isNewFirmware;
 @property (nonatomic, assign) NSTimeInterval activeTime;
 @property (nonatomic, assign) long         errorCode;
 
 @property (nonatomic, assign) WiserSmartDeviceModelType deviceType;
-@property (nonatomic, assign) BOOL         upgrading;
+@property (nonatomic, assign) BOOL         upgrading  __deprecated_msg("Use WiserSmartDeviceOTAModel.otaUpgradeStatus instead");
 
 @property (nonatomic, strong) NSDictionary *originJson;
 
 @property (nonatomic, strong) WiserSmartDeviceModuleModel *moduleMap;
 
+@property (nonatomic, assign) NSUInteger    bizAttribute;
+
+@property (nonatomic, strong) NSDictionary *meta;
+
 - (BOOL)attributeIsSupport:(NSUInteger)i;
 - (BOOL)capabilityIsSupport:(NSUInteger)i;
 - (BOOL)devAttributeIsSupport:(NSUInteger)i;
+- (BOOL)baseAttributeIsSupport:(NSUInteger)i;
+- (BOOL)protocolAttributeIsSupport:(NSUInteger)i;
 
 #pragma mark - subdevice
-// node Id
+/// node Id
 @property (nonatomic, strong) NSString     *nodeId;
 @property (nonatomic, strong) NSString     *parentId;
 
-// mesh
+/// mesh
 @property (nonatomic, strong) NSString     *vendorInfo;
 @property (nonatomic, assign) BOOL         isMeshBleOnline;
 @property (nonatomic, strong) NSString     *pcc;
 
 #pragma mark - discovery device
-// mark:  0: 1<<0 auto  3：1<<3 route
+/// mark:  0: 1<<0 auto  3：1<<3 route
 @property (nonatomic, assign) NSUInteger devAttribute;
 
-// sig mesh dev key
+/// sig mesh dev key
 @property (nonatomic, strong) NSString     *devKey;
 
-/// 是否标准化
+/// Whether to standardize.
 @property (nonatomic, assign) BOOL standard;
 @property (nonatomic, strong) WiserSmartStandSchemaModel *standSchemaModel;
 
-// dpCodes
+/// dpCodes
 @property (nonatomic, strong, readonly) NSDictionary *dpCodes;
+
+/// Last dp update time.
+@property (nonatomic, assign) NSTimeInterval dpMaxTime;
+
+/// Is it a virtual device.
+@property (nonatomic, assign) BOOL isVirtualDevice;
+
+// Use `baseAttributeIsSupport: index` to check feature
+//
+// index rules:
+// 9: Wiser ble mesh device
+// 10: Support network check
+@property (nonatomic, assign) NSUInteger baseAttribute;
+
+// Use `protocolAttributeIsSupport: index` to check feature
+//
+// index rules:
+// 0: support sigmesh feature
+// 1: support zigbee feature
+// 2: support subpieces feature
+@property (nonatomic, assign) NSInteger protocolAttribute;
+
+/// Whether auto-upgrade is supported. Currently NB/Bluetooth mesh devices do not support auto-upgrade.
+@property (nonatomic, assign) BOOL supportAuto;
+
+/// Support OTA upgrade method, from left to right, decreasing priority:
+/// 0: WIFI, 1: BLE, 2: SIGMESH, 3: NB
+@property (nonatomic, strong) NSArray *otaUpgradeModes;
+
+/// Bluetooth connection configuration.
+@property (nonatomic, strong) NSDictionary *configMetas;
 
 @end
 

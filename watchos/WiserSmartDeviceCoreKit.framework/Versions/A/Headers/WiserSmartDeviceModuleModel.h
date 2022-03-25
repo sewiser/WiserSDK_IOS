@@ -1,10 +1,8 @@
 //
-//  WiserSmartDeviceModel.h
-//  WiserSmartKit
+// WiserSmartDeviceModel.h
+// WiserSmartDeviceCoreKit
 //
-//
-//  Copyright © 2017年 Wiser. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #ifndef WiserSmart_BleMeshSubDeviceModuleModel
 #define WiserSmart_BleMeshSubDeviceModuleModel
@@ -12,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "WiserSmartDeviceModelUtils.h"
 
+/// mcu device
 @interface WiserSmartDeviceMcuModel : NSObject
 
 @property (nonatomic, assign) BOOL     isOnline;
@@ -24,6 +23,7 @@
 
 @end
 
+/// zigbee device
 @interface WiserSmartDeviceZigbeeModel : NSObject
 
 @property (nonatomic, assign) BOOL     isOnline;
@@ -33,6 +33,7 @@
 
 @end
 
+/// bluetooth device
 @interface WiserSmartDeviceBluetoothModel : NSObject
 
 @property (nonatomic, assign) BOOL          isOnline;
@@ -43,6 +44,7 @@
 
 @end
 
+/// wifi device
 @interface WiserSmartDeviceWifiModel : NSObject
 
 @property (nonatomic, assign) BOOL         isOnline;
@@ -56,6 +58,7 @@
 
 @end
 
+/// infrared device
 @interface WiserSmartDeviceInfraredModel : NSObject
 
 @property (nonatomic, assign) BOOL         isOnline;
@@ -67,6 +70,7 @@
 
 @end
 
+/// gprs device
 @interface WiserSmartDeviceGprsModel : NSObject
 
 @property (nonatomic, assign) BOOL         isOnline;
@@ -78,6 +82,7 @@
 
 @end
 
+/// subpieces device
 @interface WiserSmartDeviceSubpiecesModel : NSObject
 
 @property (nonatomic, assign) BOOL         isOnline;
@@ -87,6 +92,7 @@
 
 @end
 
+/// nbiot device
 @interface WiserSmartDeviceNBIoTModel : NSObject
 
 @property (nonatomic, assign) BOOL         isOnline;
@@ -98,6 +104,7 @@
 
 @end
 
+/// device module
 @interface WiserSmartDeviceModuleModel : NSObject
 
 @property (nonatomic, strong) WiserSmartDeviceWifiModel           *wifi;
@@ -109,8 +116,6 @@
 @property (nonatomic, strong) WiserSmartDeviceInfraredModel       *infrared;
 @property (nonatomic, strong) WiserSmartDeviceSubpiecesModel      *subpieces;
 
-
 @end
-
 
 #endif

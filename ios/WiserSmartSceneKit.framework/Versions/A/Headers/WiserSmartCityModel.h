@@ -1,54 +1,36 @@
 //
 //  WiserSmartCityModel.h
-//  WiserSmartKit
+//  WiserSmartSceneKit
 //
-//
-//  Copyright © 2017年 Wiser. All rights reserved.
-//
+//  Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <CoreLocation/CoreLocation.h>
 
+/// @brief WiserSmartCityModel is used to save a city base info.
 @interface WiserSmartCityModel : NSObject
 
-
-/**
- * 城市的Id。
- * city's Id.
- */
+/// The city id
 @property (nonatomic, assign) long long cityId;
 
-/**
- * 城市的名字。
- * city's name.
- */
+/// The city name
 @property (nonatomic, strong) NSString *city;
 
-/**
- * 城市信息，从地图上获取，临时存储。
- * city Info, achieved from map.
- */
+/// The city info , achieved from map, for temporary storage.
 @property (nonatomic, copy) NSString *cityNameFromMap;
 
+/// The city latitude, set by mapView centerCoordinate.
 @property (nonatomic, assign) CLLocationDegrees tempLatitude;
 
+/// The city longitude, set by mapView centerCoordinate.
 @property (nonatomic, assign) CLLocationDegrees tempLongitude;
 
-/**
- * 所属区，如西湖区。
- * Area or city, like a county.
- */
+/// Area or city, like a county.
 @property (nonatomic, copy) NSString *area;
 
-/**
- * 中文拼音。
- * chinese pinyin.
- */
+/// Chinese pinyin for city.
 @property (nonatomic, copy) NSString *pinyin;
 
-/**
- * 省级区域名称，如浙江省。
- * province or state name.
- */
+/// The province or state name.
 @property (nonatomic, copy) NSString *province;
 
 @end

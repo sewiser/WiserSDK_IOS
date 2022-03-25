@@ -1,27 +1,32 @@
 //
-//  WiserSpeechService.h
-//  WiserSmartBaseKit-iOS
+// WiserSpeechService.h
+// WiserSmartBaseKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
+
+#ifndef WiserSmartSpeechService_h
+#define WiserSmartSpeechService_h
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// @brief WiserSmartSpeechService is used for voice control.
+///
+/// There's two main functions:
+///     1. Audio to text. Convert voice data into text strings.
+///     2. Execute text command. Device related commands can be done through this API.
+///
 @interface WiserSmartSpeechService : NSObject
 
-/**
- audio data convert to text
- 音频转为文字
 
- @param audioData   audio data
- @param audioRate   audio rate
- @param audioType   audio type
- @param homeId      home id
- @param success     Success block (audio text)
- @param failure     Failure block
- */
+/// Audio to text.
+/// @param audioData Audio data.
+/// @param audioRate Audio rate.
+/// @param audioType Audio type.
+/// @param homeId Home id.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)convertToTextWithAudioData:(NSData *)audioData
                          audioRate:(NSString *)audioRate
                          audioType:(NSString *)audioType
@@ -29,15 +34,12 @@ NS_ASSUME_NONNULL_BEGIN
                            success:(nullable WSSuccessString)success
                            failure:(nullable WSFailureError)failure;
 
-/**
- execute voice command
- 执行音频命令
- 
- @param speechText  Voice text
- @param homeId      home id
- @param success     Success block (dictionary contains command result and if need to keep session)
- @param failure     Failure block
- */
+
+/// Execute audio commands.
+/// @param speechText Voice text
+/// @param homeId Home id
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)executeCommandWithSpeechText:(NSString *)speechText
                               homeId:(long long)homeId
                              success:(nullable WSSuccessDict)success
@@ -46,3 +48,5 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif /* WiserSmartSpeechService_h */

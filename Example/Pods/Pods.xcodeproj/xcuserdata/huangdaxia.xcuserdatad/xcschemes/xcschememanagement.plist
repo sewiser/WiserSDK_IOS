@@ -11,7 +11,7 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>MQTTClient.xcscheme</key>
+		<key>OpenSSL-Universal.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -25,14 +25,14 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>Reachability.xcscheme</key>
+		<key>TuyaSmartQUIC.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>TuyaSmartQUIC.xcscheme</key>
+		<key>WiserSmartActivatorCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -67,33 +67,61 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>WiserSmartMQTTChannelKit.xcscheme</key>
+		<key>WiserSmartFeedbackKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
-		<key>WiserSmartSocketChannelKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>10</integer>
-		</dict>
-		<key>WiserSmartUtil.xcscheme</key>
+		<key>WiserSmartMQTTChannelKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
-		<key>YYModel.xcscheme</key>
+		<key>WiserSmartMessageKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>WiserSmartSceneKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>12</integer>
+		</dict>
+		<key>WiserSmartSocketChannelKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
+		<key>WiserSmartTimerKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
+		<key>WiserSmartUtil.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
+		<key>YYModel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>16</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

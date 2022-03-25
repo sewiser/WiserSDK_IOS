@@ -1,6 +1,6 @@
 {
   "name": "WiserSmartDeviceKit",
-  "version": "3.19.0",
+  "version": "3.26.5",
   "summary": "A short description of WiserSmartDeviceKit.",
   "homepage": "https://github.com/sewiser/WiserSDK_IOS",
   "license": {
@@ -11,33 +11,26 @@
   },
   "source": {
     "git": "https://github.com/sewiser/WiserSDK_IOS.git",
-    "tag": "3.19.0"
+    "tag": "3.26.5"
   },
   "static_framework": true,
   "platforms": {
-    "ios": "8.0",
+    "ios": "9.0",
     "watchos": "2.0"
   },
   "ios": {
-    "vendored_frameworks": "ios/WiserSmartDeviceKit.framework",
-    "dependencies": {
-      "WiserSmartMQTTChannelKit": [
-
-      ],
-      "WiserSmartSocketChannelKit": [
-
-      ]
-    }
+    "vendored_frameworks": "ios/WiserSmartDeviceKit.framework"
   },
   "watchos": {
     "vendored_frameworks": "watchos/WiserSmartDeviceKit.framework"
   },
+  "source_files": "ios/WiserSmartDeviceKit.framework/Versions/A/Headers/*.h",
   "dependencies": {
     "WiserSmartBaseKit": [
 
     ],
     "WiserSmartDeviceCoreKit": [
-
+      ">= 3.21.0"
     ]
   }
 }

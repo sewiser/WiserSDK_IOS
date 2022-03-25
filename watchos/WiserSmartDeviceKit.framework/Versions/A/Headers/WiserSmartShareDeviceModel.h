@@ -1,47 +1,28 @@
 //
-//  WiserSmartShareDeviceModel.h
-//  WiserSmartKitExample
+// WiserSmartShareDeviceModel.h
+// WiserSmartDeviceKit
 //
-//
-//  Copyright © 2017年 tuya. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 @interface WiserSmartShareDeviceModel : NSObject
 
-/**
- *  device icon url
- */
+/// device icon url
 @property (nonatomic, strong) NSString *iconUrl;
 
-/**
- *  devId
- */
+/// devId
 @property (nonatomic, strong) NSString *devId;
 
-/**
- *  名称(设备,群组)
- *  device name or group name
- */
+/// device name or group name
 @property (nonatomic, strong) NSString *name;
 
-/**
- *  Whether or not to share
- */
+/// Whether or not to share
 @property (nonatomic, assign) BOOL share;
 
-/**
- *  room name
- */
+/// room name
 @property (nonatomic, strong) NSString *roomName;
 
-/**
- *  home name
- */
+
+/// home name
 @property (nonatomic, strong) NSString *homeName;
-
-
-
-
-
 
 @end
