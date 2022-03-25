@@ -1,100 +1,66 @@
 //
-//  WiserSmartMessageListModel.h
-//  WiserSmartKit
+// WiserSmartMessageListModel.h
+// WiserSmartMessageKit
 //
-//
-//  Copyright © 2017年 Wiser. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
+
 #import <Foundation/Foundation.h>
 #import "WiserSmartMessageUtils.h"
 
 NS_ASSUME_NONNULL_BEGIN
-/// 消息附件
+/// Message attachment model.
 @interface WiserSmartMessageAttachModel : NSObject
 
-/**
- 附件是否是视频 (.mp4视为视频)
- */
+/// Is the attachment a video (.mp4 is considered a video).
 @property (nonatomic, assign) BOOL isVideo;
 
-/**
- 附件url
- */
+/// Attachment url.
 @property (nonatomic, strong) NSString *url;
 
-/**
- 缩略图url
- */
+/// Thumbnail url.
 @property (nonatomic, strong) NSString *thumbUrl;
 
 @end
 
-///消息列表
+/// Message list model.
 @interface WiserSmartMessageListModel : NSObject
 
-/**
- 消息id
- */
+/// The Message Identifier.
 @property (nonatomic, strong) NSString *msgId;
 
-/**
- 消息内容
- */
+/// The Message title.
 @property (nonatomic, strong) NSString *msgTypeContent;
 
-/**
- 消息内容
- */
+/// The Message content.
 @property (nonatomic, strong) NSString *msgContent;
 
-/**
- 格式化的日期时间
- */
+/// Formatted date and time.
 @property (nonatomic, strong) NSString *dateTime;
 
-/**
- 消息时间戳
- */
+/// Message timestamp.
 @property (nonatomic, assign) NSInteger time;
 
-/**
- 消息图标
- */
+/// Message icon.
 @property (nonatomic, strong) NSString *icon;
 
-/**
- 附件列表
- */
+/// Attachment list.
 @property (nonatomic, strong) NSArray<WiserSmartMessageAttachModel *> *attachPicList;
 
-/**
- 消息时间戳
- */
 @property (nonatomic, assign) BOOL hasNotRead;
 
-/**
- 设备id（注： 只有告警类型消息才会有该字段）
- */
+/// Device id (note: only alarm type messages will have this field).
 @property (nonatomic, strong) NSString  *msgSrcId;
 
-/**
- 1告警消息 2自动化消息（注： 只有告警类型消息才会有该字段 用于告警消息中区分告警还是自动化，家庭和通知消息忽略）
- */
+///  1 is Alert message, 2 is Automation message (Note: Only alert type messages will have this field used in alert messages to distinguish between alerts or automation, home and notification messages are ignored).
 @property (nonatomic, assign) NSInteger  alarmType;
 
-/**
- 消息类型
- 0: 系统消息
- 1: 有新的设备
- 2: 有新的好友
- 4: 设备告警
- */
+/// Message Type: 0 is system message, 1 is new devices, 2 is new friend, 4 is device alarm.
 @property (nonatomic, assign) NSInteger msgType;
 
-/// 家庭ID home ID
+/// The current home id.
 @property (nonatomic, assign) long long homeID;
 
-/// 家庭名称 home name
+/// The current home name.
 @property (nonatomic, copy) NSString *homeName;
 
 @end

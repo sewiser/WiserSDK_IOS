@@ -1,0 +1,33 @@
+{
+  "name": "WiserSmartFeedbackKit",
+  "version": "3.26.5",
+  "summary": "A short description of WiserSmartFeedbackKit.",
+  "homepage": "https://github.com/sewiser/WiserSDK_IOS",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": {
+    "wiser": "wiser@wiser.com"
+  },
+  "source": {
+    "git": "https://github.com/sewiser/WiserSDK_IOS.git",
+    "tag": "3.26.5"
+  },
+  "static_framework": true,
+  "platforms": {
+    "ios": "9.0",
+    "watchos": "2.0"
+  },
+  "ios": {
+    "vendored_frameworks": "ios/WiserSmartFeedbackKit.framework"
+  },
+  "watchos": {
+    "vendored_frameworks": "watchos/WiserSmartFeedbackKit.framework"
+  },
+  "source_files": "ios/*.framework/Versions/A/Headers/*.h",
+  "dependencies": {
+    "WiserSmartBaseKit": [
+
+    ]
+  }
+}

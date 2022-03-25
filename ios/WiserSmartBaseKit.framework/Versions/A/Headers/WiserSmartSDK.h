@@ -1,97 +1,89 @@
 //
-//  WiserSmartSDK.h
-//  WiserSmartKit
+// WiserSmartSDK.h
+// WiserSmartBaseKit
 //
-//
-//  Copyright (c) 2015年 Wiser. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
-#ifndef WiserSmart_WiserSmartSDK
-#define WiserSmart_WiserSmartSDK
+#ifndef WiserSmartSDK_h
+#define WiserSmartSDK_h
 
 #import <WiserSmartUtil/WiserSmartUtil.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// Server environment.
 typedef NS_ENUM(NSInteger, WSEnv) {
     WSEnvDaily,
     WSEnvPrepare,
     WSEnvRelease,
 };
 
+/// @brief WiserSmartSDK is an entry for using the Wiser SDK.
+///
+/// Before using the SDK, please go to Wiser IoT Platform (https://iot.wiser.com) create a SDK App.
+/// We need 4 things from the Platform to initialize the SDK:
+///     - Wiser App Key.
+///     - Wiser App Secret.
+///     - Security Image. Rename to `t_s.bmp` and put it in your project as a resource.
+///     - Bundle ID. Must equal to your App's bundle ID.
+///
+/// If you need to set some params (appGroupId, env, appVersion, lang, etc...) in this class, be sure to set them before initialize the SDK.
+///
+/// Finally, call this method to initialize the SDK:
+///     `[WiserSmartSDK.sharedInstance startWithAppKey:@"YOUR_APP_KEY" secretKey:@"YOUR_APP_SECRET"];`.
+///
 @interface WiserSmartSDK : NSObject
 
-/**
- Singleton
-
- @return instance
- */
+/// Returns the singleton of the class.
 + (instancetype)sharedInstance;
 
-/**
- *  Application group identifier
- *  If you want to use the SDK in app extension, set `appGroupId` before SDK initialized both in app & app extension.
- *  如果需要开发APP Extension，请在初始化SDK的时候设置 appGroupId
- */
+/// Application group identifier.
+/// If you want to use the SDK in app extension, set `appGroupId` before SDK initialized both in app & app extension.
 @property (nonatomic, strong) NSString *appGroupId;
 
-/// Latitude of the loaction
+/// Latitude of the location.
 @property (nonatomic, assign) double latitude;
 
-/// Longitude of the loaction
+/// Longitude of the location.
 @property (nonatomic, assign) double longitude;
 
-/// Server environment, daily/prepare/release. For test only. Not recommended to switch
-/// 测试环境，不建议切换
+/// Server environment, defaults is WSEnvRelease. Please do not set in production environment.
 @property (nonatomic, assign) WSEnv env;
 
-/// Request need SSL Pinning, default is `YES`
-/// 请求都进行 SSL Pining 校验，默认为 `YES`
+/// Request need SSL Pinning, default is `YES`.
 @property (nonatomic, assign) BOOL useSSLPinning;
 
+/// WiserSmart AppKey.
 @property (nonatomic, strong, readonly) NSString *appKey;
 
+/// WiserSmart SecretKey.
 @property (nonatomic, strong, readonly) NSString *secretKey;
 
-/// Channel
+/// Channel.
 @property (nonatomic, strong) NSString *channel;
 
-/// uuid of the iOS/watchOS device. Will be created at app first launch.
+/// UUID of the iOS/watchOS device. Will be created at app first launch.
 @property (nonatomic, strong, readonly) NSString *uuid;
 
-/**
- *  App version, default value is from Info.plist -> CFBundleShortVersionString
- *  App 版本号，默认为 Info.plist -> CFBundleShortVersionString 中的值
- */
+/// App version, default value is from Info.plist -> CFBundleShortVersionString.
 @property (nonatomic, strong) NSString *appVersion;
 
-/**
- * Device product name. For example: iPhone XS Max.
- * 设备产品名称，例如：iPhone XS Max.
- */
+/// Device product name. For example: iPhone XS Max.
 @property (nonatomic, strong) NSString *deviceProductName;
 
-/**
- *  App sdk lang, default value is from mainBundle -> preferredLocalizations -> [0]
- *  App sdk 语言，默认为mainBundle -> preferredLocalizations -> [0] 中的值
- */
+/// App SDK lang, default value is from mainBundle -> preferredLocalizations -> [0].
 @property (nonatomic, strong) NSString *lang;
 
-/**
- *  Initialize WiserSmart SDK
- *  初始化涂鸦智能SDK
- *
- *  @param appKey    WiserSmart AppKey
- *  @param secretKey WiserSmart SecretKey
- */
+
+/// Initialize WiserSmart SDK.
+/// @param appKey WiserSmart AppKey.
+/// @param secretKey WiserSmart SecretKey.
 - (void)startWithAppKey:(NSString *)appKey secretKey:(NSString *)secretKey;
 
-/**
- *  Report location if needed
- *
- *  @param latitude latitude
- *  @param longitude longitude
- */
+
+/// Report location if needed.
+/// @param latitude Latitude.
+/// @param longitude Longitude.
 - (void)updateLatitude:(double)latitude longitude:(double)longitude;
 
 @end
@@ -99,21 +91,15 @@ typedef NS_ENUM(NSInteger, WSEnv) {
 
 @interface WiserSmartSDK (Upgrade)
 
-/**
- *  Check if WiserSmartKit need to be upgrade to WiserSmartHomeKit
- *  检测是否需要升级数据 从WiserSDK 升级到WiserHomeSDK，需要进行数据升级
- *
- *  @return Whether need to upgrade data
- */
+
+/// Check if WiserSmartKit need to be upgrade to WiserSmartHomeKit.
+/// @return Whether need to upgrade data.
 - (BOOL)checkVersionUpgrade;
 
-/**
- *  SDK data upgrade
- *  SDK数据升级
- *
- *  @param success     Success block
- *  @param failure     Failure block
- */
+
+/// SDK data upgrade.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)upgradeVersion:(nullable WSSuccessHandler)success
                failure:(nullable WSFailureError)failure;
 
@@ -122,119 +108,86 @@ typedef NS_ENUM(NSInteger, WSEnv) {
 
 @interface WiserSmartSDK (PushNotification)
 
-/// Push token
+/// Push token.
+/// @deprecated Use +[WiserSmartSDK sharedInstance].deviceToken instead.
 @property (nonatomic, strong) NSString *pushToken DEPRECATED_MSG_ATTRIBUTE("Use +[WiserSmartSDK sharedInstance].deviceToken instead.");
 
-/// Push deviceToken
+/// Push deviceToken.
 @property (nonatomic, strong) NSData *deviceToken;
 
-/**
- *  Set push device token and error info
- *  设置推送token以及错误信息
- *  @param token    deviceToken
- *  @param error    error info
- */
+
+/// Set push device token and error info.
+/// @param token DeviceToken.
+/// @param error Error info.
 - (void)setDeviceToken:(nullable NSData *)token withError:(nullable NSError *)error;
 
-/**
- *  Get notification push status
- *  获取 APP 消息推送的开启状态
- *
- *  @param success     Success block
- *  @param failure     Failure block
- */
+
+/// Get the open status of APP messages push.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)getPushStatusWithSuccess:(__nullable WSSuccessBOOL)success failure:(__nullable WSFailureError)failure;
 
-/**
- *  Set notification push status
- *  开启或者关闭 APP 消息推送
- *
- *  @param enable      open or close
- *  @param success     Success block
- *  @param failure     Failure block
- */
+
+/// Enable or disable APP message pushing.
+/// @param enable A boolean value indicates whether to enable or disable.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)setPushStatusWithStatus:(BOOL)enable success:(__nullable WSSuccessHandler)success failure:(__nullable WSFailureError)failure;
 
 
-
-/**
- *  Get device alarm push status
- *  获取 APP 设备告警通知的开启状态
- *
- *  @param success     Success block
- *  @param failure     Failure block
- */
+/// Obtain the on status of device alarm notification.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)getDevicePushStatusWithSuccess:(__nullable WSSuccessBOOL)success failure:(__nullable WSFailureError)failure;
 
-/**
- *  Set device alarm push status
- *  开启或者关闭 APP 设备告警推送消息
- *
- *  @param enable      open or close
- *  @param success     Success block
- *  @param failure     Failure block
- */
+
+/// Enable or disable APP device alert push messages.
+/// @param enable  Open or close.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)setDevicePushStatusWithStauts:(BOOL)enable success:(__nullable WSSuccessHandler)success failure:(__nullable WSFailureError)failure;
 
-/**
- *  Get family message push status
- *  获取 APP 家庭通知的开启状态
- *
- *  @param success     Success block
- *  @param failure     Failure block
- */
+
+/// Get the open status of APP family notifications.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)getFamilyPushStatusWithSuccess:(__nullable WSSuccessBOOL)success failure:(__nullable WSFailureError)failure;
 
-/**
- *  Set family message push status
- *  开启或者关闭 APP 家庭推送消息
- *
- *  @param enable      open or close
- *  @param success     Success block
- *  @param failure     Failure block
- */
+
+/// Enable or disable APP family push messages.
+/// @param enable Open or close.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)setFamilyPushStatusWithStauts:(BOOL)enable success:(__nullable WSSuccessHandler)success failure:(__nullable WSFailureError)failure;
 
-/**
- *  Get notice message push status
- *  获取 APP 消息通知的开启状态
- *
- *  @param success     Success block
- *  @param failure     Failure block
- */
+
+/// Get the open status of app message notifications.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)getNoticePushStatusWithSuccess:(__nullable WSSuccessBOOL)success failure:(__nullable WSFailureError)failure;
 
-/**
- *  Set notice message push status
- *  开启或者关闭 APP 消息通知推送
- *
- *  @param enable      open or close
- *  @param success     Success block
- *  @param failure     Failure block
- */
+
+/// Enable or disable APP message notification push.
+/// @param enable Open or close.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)setNoticePushStatusWithStauts:(BOOL)enable success:(__nullable WSSuccessHandler)success failure:(__nullable WSFailureError)failure;
 
-/**
- *  Get market message push status
- *  获取 APP 营销类消息的开启状态
- *
- *  @param success     Success block
- *  @param failure     Failure block
- */
+
+/// Get the open status of APP marketing messages.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)getMarketingPushStatusWithSuccess:(__nullable WSSuccessBOOL)success failure:(__nullable WSFailureError)failure;
 
-/**
- *  Set market message push status
- *  开启或者关闭 APP 营销类消息推送
- *
- *  @param enable      open or close
- *  @param success     Success block
- *  @param failure     Failure block
- */
+
+/// Turn on or off APP marketing message pushing.
+/// @param enable Open or close.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)setMarketingPushStatusWithStauts:(BOOL)enable success:(__nullable WSSuccessHandler)success failure:(__nullable WSFailureError)failure;
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-#endif
+#endif /* WiserSmartSDK_h */

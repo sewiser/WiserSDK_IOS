@@ -2,8 +2,7 @@
 //  WiserSmartSceneLogModel.h
 //  WiserSmartSceneKit
 //
-//
-//
+//  Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <Foundation/Foundation.h>
 
@@ -11,176 +10,59 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class WiserSmartSceneLogData;
 
+/// @brief WiserSmartSceneLogModel provides more attributes for developers to create log list model for scene.
 @interface WiserSmartSceneLogModel : NSObject
-/**
- [^en]
- scene log datas
- [$en]
 
- [^zh]
- 场景日志数据
- [$zh]
- */
+/// The scene log data list.
 @property (nonatomic, strong) NSArray<WiserSmartSceneLogData *> * datas;
 
-/**
- [^en]
- total count, equal to datas.count
- [$en]
-
- [^zh]
- 日志总数量 等于datas.count
- [$zh]
- */
+/// The number of scene logs.
 @property (nonatomic, assign) NSInteger totalCount;
+
 @end
 
+/// @brief WiserSmartSceneLogData provides more attributes for developers to create log data.
 @interface WiserSmartSceneLogData : NSObject
 
-/**
-[^en]
-event id
-[$en]
+/// The log event id.
+@property (nonatomic, strong) NSString *eventId;
 
-[^zh]
-事件id
-[$zh]
-*/
-@property (nonatomic, strong) NSString * eventId;
-
-/**
- [^en]
- execute result
- [$en]
-
- [^zh]
- 执行结果
- [$zh]
- */
+/// The result of scene execution.
 @property (nonatomic, assign) NSInteger execResult;
 
-/**
- [^en]
- execute result message
- [$en]
+/// The result message of scene execution.
+@property (nonatomic, strong) NSString *execResultMsg;
 
- [^zh]
- 执行结果信息
- [$zh]
- */
-@property (nonatomic, strong) NSString * execResultMsg;
+/// The time of scene execution.
+@property (nonatomic, strong) NSString *execTime;
 
-/**
- [^en]
- execute time
- [$en]
+/// The error information of scene execution.
+@property (nonatomic, strong) NSString *failureCause;
 
- [^zh]
- 执行时间
- [$zh]
- */
-@property (nonatomic, strong) NSString * execTime;
-
-/**
- [^en]
- failure reason
- [$en]
-
- [^zh]
- 错误原因
- [$zh]
- */
-@property (nonatomic, strong) NSString * failureCause;
-
-/**
- [^en]
- failure code
- [$en]
-
- [^zh]
- 错误码
- [$zh]
- */
+/// The error code.
 @property (nonatomic, assign) NSInteger failureCode;
 
-/**
- [^en]
- owner id
- [$en]
+/// The owner id of scene log.
+@property (nonatomic, strong) NSString *ownerId;
 
- [^zh]
- 拥有者id
- [$zh]
- */
-@property (nonatomic, strong) NSString * ownerId;
+/// The rule id of the scene.
+@property (nonatomic, strong) NSString *ruleId;
 
-/**
- [^en]
- rule id
- [$en]
+/// The rule name.
+@property (nonatomic, strong) NSString *ruleName;
 
- [^zh]
- 规则 id
- [$zh]
- */
-@property (nonatomic, strong) NSString * ruleId;
-
-/**
- [^en]
- rule name
- [$en]
-
- [^zh]
- 规则名称
- [$zh]
- */
-@property (nonatomic, strong) NSString * ruleName;
-
-/**
- [^en]
- scene type: 1 Tap to Run, 2 automation
- [$en]
-
- [^zh]
- 场景类型：1：一键执行，2：自动化
- [$zh]
- */
+/// The scene type, 1 means tap-to-run scene, 2 means automation scene.
 @property (nonatomic, assign) NSInteger sceneType;
 
-/**
- [^en]
- user id
- [$en]
+/// The user id.
+@property (nonatomic, strong) NSString *uid;
 
- [^zh]
- 用户id
- [$zh]
- */
-@property (nonatomic, strong) NSString * uid;
-
-/**
- [^en]
- this data is not from service, you can set this property just for display
- [$en]
-
- [^zh]
- 此数据并非来自于云端，可以给此属性赋值仅做辅助展示作用
- [$zh]
- */
+/// This data is not from service, you can set this property just for display.
 @property (nonatomic, strong) NSString *detailTime;
 
-/**
- [^en]
- this data is not from service, you can set this property to assist sort the list into category
-  use this property just for display. 0 first , 1 middel, 2 last, -1 needless(just one item)
- [$en]
-
- [^zh]
- 此数据并非来源于云端接口，可以使用此属性作为数据列表分类排序的标记位。
- 此属性仅用作于展示， 0 首位 ， 1中间位， 2最后位， -1只有单条数据
- [$zh]
- */
+/// This data is not from service, you can set this property to assist sort the list into category use this property just for display. 0 first , 1 middle, 2 last, -1 needless(just one item)
 @property (nonatomic, assign) NSInteger indexType;
+
 @end
 
 NS_ASSUME_NONNULL_END

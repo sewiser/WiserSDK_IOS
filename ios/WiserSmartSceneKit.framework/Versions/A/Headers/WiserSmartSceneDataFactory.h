@@ -1,9 +1,8 @@
 //
-//  WiserSmartSceneDataFactory.h
-//  WiserSmartSceneKit
+// WiserSmartSceneDataFactory.h
+// WiserSmartSceneKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com/)
 
 #ifndef WSSmartSceneDataFactory_h
 #define WSSmartSceneDataFactory_h

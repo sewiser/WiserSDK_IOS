@@ -16,17 +16,18 @@
 		D55421AF23BB2D3500E58652 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D55421AE23BB2D3500E58652 /* main.m */; };
 		D55421B923BB2D3600E58652 /* WiserSDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D55421B823BB2D3600E58652 /* WiserSDKDemoTests.m */; };
 		D55421C423BB2D3600E58652 /* WiserSDKDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D55421C323BB2D3600E58652 /* WiserSDKDemoUITests.m */; };
-		D56B6939253AD45B00AEBA0C /* WiserSmartSceneKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B692F253AD45B00AEBA0C /* WiserSmartSceneKit.podspec */; };
-		D56B693A253AD45B00AEBA0C /* WiserSmartTimerKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6930253AD45B00AEBA0C /* WiserSmartTimerKit.podspec */; };
-		D56B693B253AD45B00AEBA0C /* WiserSmartDeviceKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6931253AD45B00AEBA0C /* WiserSmartDeviceKit.podspec */; };
-		D56B693C253AD45B00AEBA0C /* WiserSmartSocketChannelKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6932253AD45B00AEBA0C /* WiserSmartSocketChannelKit.podspec */; };
-		D56B693D253AD45B00AEBA0C /* WiserSmartUtil.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6933253AD45B00AEBA0C /* WiserSmartUtil.podspec */; };
-		D56B693E253AD45B00AEBA0C /* WiserSmartMQTTChannelKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6934253AD45B00AEBA0C /* WiserSmartMQTTChannelKit.podspec */; };
-		D56B693F253AD45B00AEBA0C /* WiserSmartActivatorKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6935253AD45B00AEBA0C /* WiserSmartActivatorKit.podspec */; };
-		D56B6940253AD45B00AEBA0C /* WiserSmartBaseKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6936253AD45B00AEBA0C /* WiserSmartBaseKit.podspec */; };
-		D56B6941253AD45B00AEBA0C /* WiserSmartMessageKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6937253AD45B00AEBA0C /* WiserSmartMessageKit.podspec */; };
-		D56B6942253AD45B00AEBA0C /* WiserSmartFeedbackKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B6938253AD45B00AEBA0C /* WiserSmartFeedbackKit.podspec */; };
-		D56B69B0253AD6E900AEBA0C /* WiserSmartDeviceCoreKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D56B69AF253AD6E900AEBA0C /* WiserSmartDeviceCoreKit.podspec */; };
+		D5BB9DD627ED5FA4007A4556 /* WiserSmartUtil.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D5BB9DCA27ED5FA3007A4556 /* WiserSmartUtil.podspec */; };
+		D5BB9DD727ED5FA4007A4556 /* WiserSmartDeviceCoreKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D5BB9DCB27ED5FA3007A4556 /* WiserSmartDeviceCoreKit.podspec */; };
+		D5BB9DD827ED5FA4007A4556 /* WiserSmartBaseKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D5BB9DCC27ED5FA3007A4556 /* WiserSmartBaseKit.podspec */; };
+		D5BB9DD927ED5FA4007A4556 /* WiserSmartActivatorKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D5BB9DCD27ED5FA3007A4556 /* WiserSmartActivatorKit.podspec */; };
+		D5BB9DDA27ED5FA4007A4556 /* WiserSmartMessageKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D5BB9DCE27ED5FA3007A4556 /* WiserSmartMessageKit.podspec */; };
+		D5BB9DDB27ED5FA4007A4556 /* WiserSmartActivatorCoreKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D5BB9DCF27ED5FA3007A4556 /* WiserSmartActivatorCoreKit.podspec */; };
+		D5BB9DDC27ED5FA4007A4556 /* WiserSmartDeviceKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D5BB9DD027ED5FA4007A4556 /* WiserSmartDeviceKit.podspec */; };
+		D5BB9DDD27ED5FA4007A4556 /* WiserSmartMQTTChannelKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D5BB9DD127ED5FA4007A4556 /* WiserSmartMQTTChannelKit.podspec */; };
+		D5BB9DDE27ED5FA4007A4556 /* WiserSmartFeedbackKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D5BB9DD227ED5FA4007A4556 /* WiserSmartFeedbackKit.podspec */; };
+		D5BB9DDF27ED5FA4007A4556 /* WiserSmartSceneKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D5BB9DD327ED5FA4007A4556 /* WiserSmartSceneKit.podspec */; };
+		D5BB9DE027ED5FA4007A4556 /* WiserSmartSocketChannelKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D5BB9DD427ED5FA4007A4556 /* WiserSmartSocketChannelKit.podspec */; };
+		D5BB9DE127ED5FA4007A4556 /* WiserSmartTimerKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D5BB9DD527ED5FA4007A4556 /* WiserSmartTimerKit.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,17 +67,18 @@
 		D55421BF23BB2D3600E58652 /* WiserSDKDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiserSDKDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D55421C323BB2D3600E58652 /* WiserSDKDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WiserSDKDemoUITests.m; sourceTree = "<group>"; };
 		D55421C523BB2D3600E58652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D56B692F253AD45B00AEBA0C /* WiserSmartSceneKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartSceneKit.podspec; path = ../../../WiserSmartSceneKit.podspec; sourceTree = "<group>"; };
-		D56B6930253AD45B00AEBA0C /* WiserSmartTimerKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartTimerKit.podspec; path = ../../../WiserSmartTimerKit.podspec; sourceTree = "<group>"; };
-		D56B6931253AD45B00AEBA0C /* WiserSmartDeviceKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartDeviceKit.podspec; path = ../../../WiserSmartDeviceKit.podspec; sourceTree = "<group>"; };
-		D56B6932253AD45B00AEBA0C /* WiserSmartSocketChannelKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartSocketChannelKit.podspec; path = ../../../WiserSmartSocketChannelKit.podspec; sourceTree = "<group>"; };
-		D56B6933253AD45B00AEBA0C /* WiserSmartUtil.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartUtil.podspec; path = ../../../WiserSmartUtil.podspec; sourceTree = "<group>"; };
-		D56B6934253AD45B00AEBA0C /* WiserSmartMQTTChannelKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartMQTTChannelKit.podspec; path = ../../../WiserSmartMQTTChannelKit.podspec; sourceTree = "<group>"; };
-		D56B6935253AD45B00AEBA0C /* WiserSmartActivatorKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartActivatorKit.podspec; path = ../../../WiserSmartActivatorKit.podspec; sourceTree = "<group>"; };
-		D56B6936253AD45B00AEBA0C /* WiserSmartBaseKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartBaseKit.podspec; path = ../../../WiserSmartBaseKit.podspec; sourceTree = "<group>"; };
-		D56B6937253AD45B00AEBA0C /* WiserSmartMessageKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartMessageKit.podspec; path = ../../../WiserSmartMessageKit.podspec; sourceTree = "<group>"; };
-		D56B6938253AD45B00AEBA0C /* WiserSmartFeedbackKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartFeedbackKit.podspec; path = ../../../WiserSmartFeedbackKit.podspec; sourceTree = "<group>"; };
-		D56B69AF253AD6E900AEBA0C /* WiserSmartDeviceCoreKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartDeviceCoreKit.podspec; path = ../../../WiserSmartDeviceCoreKit.podspec; sourceTree = "<group>"; };
+		D5BB9DCA27ED5FA3007A4556 /* WiserSmartUtil.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartUtil.podspec; path = ../../../WiserSmartUtil.podspec; sourceTree = "<group>"; };
+		D5BB9DCB27ED5FA3007A4556 /* WiserSmartDeviceCoreKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartDeviceCoreKit.podspec; path = ../../../WiserSmartDeviceCoreKit.podspec; sourceTree = "<group>"; };
+		D5BB9DCC27ED5FA3007A4556 /* WiserSmartBaseKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartBaseKit.podspec; path = ../../../WiserSmartBaseKit.podspec; sourceTree = "<group>"; };
+		D5BB9DCD27ED5FA3007A4556 /* WiserSmartActivatorKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartActivatorKit.podspec; path = ../../../WiserSmartActivatorKit.podspec; sourceTree = "<group>"; };
+		D5BB9DCE27ED5FA3007A4556 /* WiserSmartMessageKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartMessageKit.podspec; path = ../../../WiserSmartMessageKit.podspec; sourceTree = "<group>"; };
+		D5BB9DCF27ED5FA3007A4556 /* WiserSmartActivatorCoreKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartActivatorCoreKit.podspec; path = ../../../WiserSmartActivatorCoreKit.podspec; sourceTree = "<group>"; };
+		D5BB9DD027ED5FA4007A4556 /* WiserSmartDeviceKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartDeviceKit.podspec; path = ../../../WiserSmartDeviceKit.podspec; sourceTree = "<group>"; };
+		D5BB9DD127ED5FA4007A4556 /* WiserSmartMQTTChannelKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartMQTTChannelKit.podspec; path = ../../../WiserSmartMQTTChannelKit.podspec; sourceTree = "<group>"; };
+		D5BB9DD227ED5FA4007A4556 /* WiserSmartFeedbackKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartFeedbackKit.podspec; path = ../../../WiserSmartFeedbackKit.podspec; sourceTree = "<group>"; };
+		D5BB9DD327ED5FA4007A4556 /* WiserSmartSceneKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartSceneKit.podspec; path = ../../../WiserSmartSceneKit.podspec; sourceTree = "<group>"; };
+		D5BB9DD427ED5FA4007A4556 /* WiserSmartSocketChannelKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartSocketChannelKit.podspec; path = ../../../WiserSmartSocketChannelKit.podspec; sourceTree = "<group>"; };
+		D5BB9DD527ED5FA4007A4556 /* WiserSmartTimerKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiserSmartTimerKit.podspec; path = ../../../WiserSmartTimerKit.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,17 +175,18 @@
 		D56B692E253AD44A00AEBA0C /* Specs */ = {
 			isa = PBXGroup;
 			children = (
-				D56B6935253AD45B00AEBA0C /* WiserSmartActivatorKit.podspec */,
-				D56B6936253AD45B00AEBA0C /* WiserSmartBaseKit.podspec */,
-				D56B69AF253AD6E900AEBA0C /* WiserSmartDeviceCoreKit.podspec */,
-				D56B6931253AD45B00AEBA0C /* WiserSmartDeviceKit.podspec */,
-				D56B6938253AD45B00AEBA0C /* WiserSmartFeedbackKit.podspec */,
-				D56B6937253AD45B00AEBA0C /* WiserSmartMessageKit.podspec */,
-				D56B6934253AD45B00AEBA0C /* WiserSmartMQTTChannelKit.podspec */,
-				D56B692F253AD45B00AEBA0C /* WiserSmartSceneKit.podspec */,
-				D56B6932253AD45B00AEBA0C /* WiserSmartSocketChannelKit.podspec */,
-				D56B6930253AD45B00AEBA0C /* WiserSmartTimerKit.podspec */,
-				D56B6933253AD45B00AEBA0C /* WiserSmartUtil.podspec */,
+				D5BB9DCF27ED5FA3007A4556 /* WiserSmartActivatorCoreKit.podspec */,
+				D5BB9DCD27ED5FA3007A4556 /* WiserSmartActivatorKit.podspec */,
+				D5BB9DCC27ED5FA3007A4556 /* WiserSmartBaseKit.podspec */,
+				D5BB9DCB27ED5FA3007A4556 /* WiserSmartDeviceCoreKit.podspec */,
+				D5BB9DD027ED5FA4007A4556 /* WiserSmartDeviceKit.podspec */,
+				D5BB9DD227ED5FA4007A4556 /* WiserSmartFeedbackKit.podspec */,
+				D5BB9DCE27ED5FA3007A4556 /* WiserSmartMessageKit.podspec */,
+				D5BB9DD127ED5FA4007A4556 /* WiserSmartMQTTChannelKit.podspec */,
+				D5BB9DD327ED5FA4007A4556 /* WiserSmartSceneKit.podspec */,
+				D5BB9DD427ED5FA4007A4556 /* WiserSmartSocketChannelKit.podspec */,
+				D5BB9DD527ED5FA4007A4556 /* WiserSmartTimerKit.podspec */,
+				D5BB9DCA27ED5FA3007A4556 /* WiserSmartUtil.podspec */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -303,19 +306,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D56B693F253AD45B00AEBA0C /* WiserSmartActivatorKit.podspec in Resources */,
-				D56B693C253AD45B00AEBA0C /* WiserSmartSocketChannelKit.podspec in Resources */,
-				D56B693D253AD45B00AEBA0C /* WiserSmartUtil.podspec in Resources */,
-				D56B6940253AD45B00AEBA0C /* WiserSmartBaseKit.podspec in Resources */,
-				D56B693B253AD45B00AEBA0C /* WiserSmartDeviceKit.podspec in Resources */,
-				D56B69B0253AD6E900AEBA0C /* WiserSmartDeviceCoreKit.podspec in Resources */,
+				D5BB9DDB27ED5FA4007A4556 /* WiserSmartActivatorCoreKit.podspec in Resources */,
+				D5BB9DD927ED5FA4007A4556 /* WiserSmartActivatorKit.podspec in Resources */,
+				D5BB9DDC27ED5FA4007A4556 /* WiserSmartDeviceKit.podspec in Resources */,
+				D5BB9DDE27ED5FA4007A4556 /* WiserSmartFeedbackKit.podspec in Resources */,
+				D5BB9DD727ED5FA4007A4556 /* WiserSmartDeviceCoreKit.podspec in Resources */,
+				D5BB9DDF27ED5FA4007A4556 /* WiserSmartSceneKit.podspec in Resources */,
+				D5BB9DD827ED5FA4007A4556 /* WiserSmartBaseKit.podspec in Resources */,
+				D5BB9DE127ED5FA4007A4556 /* WiserSmartTimerKit.podspec in Resources */,
+				D5BB9DE027ED5FA4007A4556 /* WiserSmartSocketChannelKit.podspec in Resources */,
 				D55421AC23BB2D3500E58652 /* LaunchScreen.storyboard in Resources */,
-				D56B6939253AD45B00AEBA0C /* WiserSmartSceneKit.podspec in Resources */,
-				D56B693A253AD45B00AEBA0C /* WiserSmartTimerKit.podspec in Resources */,
+				D5BB9DD627ED5FA4007A4556 /* WiserSmartUtil.podspec in Resources */,
 				D55421A923BB2D3500E58652 /* Assets.xcassets in Resources */,
-				D56B693E253AD45B00AEBA0C /* WiserSmartMQTTChannelKit.podspec in Resources */,
-				D56B6941253AD45B00AEBA0C /* WiserSmartMessageKit.podspec in Resources */,
-				D56B6942253AD45B00AEBA0C /* WiserSmartFeedbackKit.podspec in Resources */,
+				D5BB9DDD27ED5FA4007A4556 /* WiserSmartMQTTChannelKit.podspec in Resources */,
+				D5BB9DDA27ED5FA4007A4556 /* WiserSmartMessageKit.podspec in Resources */,
 				D55421A723BB2D3300E58652 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

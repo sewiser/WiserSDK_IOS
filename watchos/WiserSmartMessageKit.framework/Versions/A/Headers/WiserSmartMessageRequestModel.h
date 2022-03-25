@@ -1,65 +1,90 @@
 //
-//  WiserSmartMessageRequestModel.h
-//  WiserSmartMessageKit
+// WiserSmartMessageRequestModel.h
+// WiserSmartMessageKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <Foundation/Foundation.h>
 #import "WiserSmartMessageUtils.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 消息中心消息列表请求模型
+/// Message center message list request model.
 @interface WiserSmartMessageListRequestModel : NSObject
 
-/// 消息类型 message type
+/// Message type.
 @property (nonatomic, assign) WSMessageType msgType;
 
-/// 限制列表数 limit count
+/// Limit count.
 @property (nonatomic, assign) NSInteger limit;
 
-/// 偏移 offset
+/// Total number of messages requested
 @property (nonatomic, assign) NSInteger offset;
 
 @end
 
-/// 消息中心消息详情列表请求模型
+/// Message center message detail list request model.
 @interface WiserSmartMessageDetailListRequestModel : NSObject
 
-/// 消息类型(目前仅支持WSMessageTypeAlarm类消息) message type( Currently only supported WSMessageTypeAlarm)
+/// Message type (Currently only supported WSMessageTypeAlarm).
 @property (nonatomic, assign) WSMessageType msgType;
 
-/// 限制列表数 limit count
+/// Limit count.
 @property (nonatomic, assign) NSInteger limit;
 
-/// 偏移 offset
+/// Total number of messages requested.
 @property (nonatomic, assign) NSInteger offset;
 
-/// 消息来源设备ID message device ID
+/// Message device ID.
 @property (nonatomic, copy) NSString *msgSrcId;
 
 @end
 
 @interface WiserSmartMessageListDeleteRequestModel : NSObject
-/// 消息类型 message type
+/// Message type.
 @property (nonatomic, assign) WSMessageType msgType;
 
-/// 消息ID message ID
+/// Message ID.
 @property (nonatomic, copy) NSArray<NSString *> *msgIds;
 
-/// 消息来源设备ID message device ID
+/// Message device ID.
 @property (nonatomic, copy) NSArray<NSString *> *msgSrcIds;
 
 @end
 
 @interface WiserSmartMessageListReadRequestModel : NSObject
 
-/// 消息类型(目前仅支持WSMessageTypeAlarm类消息) message type( Currently only supported WSMessageTypeAlarm)
+/// Message type (Currently only supported WSMessageTypeAlarm).
 @property (nonatomic, assign) WSMessageType msgType;
 
-/// 消息ID message ID
+/// Message ID.
 @property (nonatomic, copy) NSArray<NSString *> *msgIds;
+
+@end
+
+#pragma mark - setting
+/// Device Do Not Disturb request model.
+@interface WiserSmartMessageSettingDNDRequestModel : NSObject
+
+/// Start time.
+@property (nonatomic, copy) NSString *startTime;
+
+/// End time.
+@property (nonatomic, copy) NSString *endTime;
+
+/// The device ID list.
+@property (nonatomic, copy) NSArray<NSString *> *devIDs;
+
+/// Repeat days per week.
+///
+/// 0 means close that day, 1 means open on the day. @"0000111" means Friday to Sunday open.
+///
+@property (nonatomic, copy) NSString *loops;
+
+/// Do all devices support DND.
+///
+/// 'devIDs' is not required when 'isAllDevIDs' is Ture.
+@property (nonatomic, assign) BOOL isAllDevIDs;
 
 @end
 

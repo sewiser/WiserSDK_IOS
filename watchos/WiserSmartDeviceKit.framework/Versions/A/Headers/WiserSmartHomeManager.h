@@ -1,10 +1,8 @@
 //
-//  WiserSmartHomeManager.h
-//  WiserSmartKit
+// WiserSmartHomeManager.h
+// WiserSmartDeviceKit
 //
-//
-//  Copyright © 2017年 Wiser. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <Foundation/Foundation.h>
 
@@ -17,28 +15,19 @@
 
 @optional
 
-/**
- *  the delegate when a new home is added.
- *  新增一个家庭代理回调
- *
- *  @param manager  instance
- *  @param home     homeModel
- */
+/// The delegate when a new home is added.
+///
+/// @param manager  instance
+/// @param home     homeModel
 - (void)homeManager:(WiserSmartHomeManager *)manager didAddHome:(WiserSmartHomeModel *)home;
 
-/**
- *  the delegate when an existing home is removed.
- *  删除一个家庭代理回调
- *
- *  @param manager  instance
- *  @param homeId   homeId
- */
+/// The delegate when an existing home is removed.
+///
+/// @param manager  instance
+/// @param homeId   homeId
 - (void)homeManager:(WiserSmartHomeManager *)manager didRemoveHome:(long long)homeId;
 
-/**
- *  MQTT connected success
- *  MQTT 服务连接成功代理回调
- */
+/// MQTT service connection success callback.
 - (void)serviceConnectedSuccess;
 
 
@@ -51,28 +40,23 @@
 @property (nonatomic, copy, readonly) NSArray <WiserSmartHomeModel *> *homes;
 
 
-/**
- *  get homes list. if you want to get home deatails, need to initialize a home, call getHomeDetailWithSuccess: failure:
- *  获取家庭列表，如果要获取具体家庭的详情，需要去初始化一个home，调用接口getHomeDetailWithSuccess:failure:
- *
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Get homes list. If you want to get home details, need to initialize a home, call getHomeDetailWithSuccess: failure:
+///
+/// @param success Called when the task finishes successfully. A list of WiserSmartHomeModel will be returned.
+/// @param failure If error occurred while adding the task, this block will be called.
 - (void)getHomeListWithSuccess:(void(^)(NSArray <WiserSmartHomeModel *> *homes))success
                        failure:(WSFailureError)failure;
 
-/**
- *  Adds a new home
- *  添加家庭
- *
- *  @param homeName    Home name
- *  @param geoName     City name
- *  @param rooms       Rooms list
- *  @param latitude    Lat
- *  @param longitude   Lon
- *  @param success     Success block
- *  @param failure     Failure block
- */
+
+/// Adds a new home
+///
+/// @param homeName    Home name
+/// @param geoName     City name
+/// @param rooms       Rooms list
+/// @param latitude    Latitude
+/// @param longitude   Longitude
+/// @param success     Called when the task finishes successfully.
+/// @param failure     If error occurred while adding the task, this block will be called.
 - (void)addHomeWithName:(NSString *)homeName
                 geoName:(NSString *)geoName
                   rooms:(NSArray <NSString *>*)rooms
@@ -81,28 +65,25 @@
                 success:(WSSuccessLongLong)success
                 failure:(WSFailureError)failure;
 
-/**
- *  Home sort
- *  家庭排序
- *
- *  @param homeList    Homes list
- *  @param success     Success block
- *  @param failure     Failure block
- */
+
+/// Home sort
+///
+/// @param homeList    Homes list
+/// @param success     Called when the task finishes successfully.
+/// @param failure     If error occurred while adding the task, this block will be called.
 - (void)sortHomeList:(NSArray <WiserSmartHomeModel *> *)homeList
              success:(WSSuccessHandler)success
              failure:(WSFailureError)failure;
 
 #pragma mark - deprecated
-/**
- *  Accept or reject to shared home
- *  接受或拒绝加⼊分享过来的家庭
- *
- *  @param homeId       Home Id
- *  @param isAccept     Whether to accept the invitation
- *  @param success      Success block
- *  @param failure      Failure block
- */
+
+/// Accept or reject to shared home
+///
+/// @param homeId       Home Id
+/// @param isAccept     Whether to accept the invitation
+/// @param success      Success block
+/// @param failure      Failure block
+/// @deprecated This method is deprecated, Use WiserSmartHome::joinFamilyWithAccept:success:failure: instead.
 - (void)joinFamilyWithHomeId:(long long)homeId
                       action:(BOOL)isAccept
                      success:(WSSuccessBOOL)success

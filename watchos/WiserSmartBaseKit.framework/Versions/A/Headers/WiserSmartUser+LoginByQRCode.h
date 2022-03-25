@@ -1,9 +1,11 @@
 //
-//  WiserSmartUser+LoginByQRCode.h
-//  WiserSmartBaseKit
+// WiserSmartUser+LoginByQRCode.h
+// WiserSmartBaseKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
+
+#ifndef WiserSmartUser_LoginByQRCode_h
+#define WiserSmartUser_LoginByQRCode_h
 
 #import "WiserSmartUser.h"
 
@@ -11,29 +13,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WiserSmartUser (LoginByQRCode)
 
-#pragma mark - 扫码授权第三方应用登录
+#pragma mark - Scan code to authorize third-party app login
 
-/**
-*  Authorize third-party applications to login by QR code.
-*  授权第三方应用登录
-*
-*  @param codeInfo    QR code information
-*  @param success     Success block
-*  @param failure     Failure block
-*
-*/
+/// Authorize third-party applications to login by QR code.
+/// @param codeInfo QR code information.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)loginByQRcode:(NSDictionary *)codeInfo success:(nullable WSSuccessID)success failure:(nullable WSFailureError)failure;
 
-/**
-*  Get third-party applications info.
-*  获取第三方应用信息
-*
-*  @param codeInfo    QR code information
-*  @param success     Success block
-*  @param failure     Failure block
-*/
+/// Get third-party applications info.
+/// @param codeInfo  QR code information.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)userInfo:(NSDictionary *)codeInfo success:(nullable WSSuccessID)success failure:(nullable WSFailureError)failure;
 
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif /* WiserSmartUser_LoginByQRCode_h */

@@ -1,65 +1,73 @@
 //
-//  WiserFirmwareUpgradeInfo.h
-//  WiserSmartKit
+// WiserFirmwareUpgradeInfo.h
+// WiserSmartDeviceCoreKit
 //
-//
-//  Copyright (c) 2015年 Wiser. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #ifndef WiserSmart_WiserSmartFirmwareUpgradeModel
 #define WiserSmart_WiserSmartFirmwareUpgradeModel
 
 #import <Foundation/Foundation.h>
 
+/// device firmware upgrade informations
 @interface WiserSmartFirmwareUpgradeModel : NSObject
 
-//升级文案
+/// Upgrade copywriting.
 @property (nonatomic, strong) NSString  *desc;
 
-// 设备类型文案
+/// Equipment Type Copywriting.
 @property (nonatomic, strong) NSString *typeDesc;
 
-//0:无新版本 1:有新版本 2:在升级中 5:等待设备唤醒
+/// 0:No new version 1:There is a new version. 2:In the process of upgrading. 5:Waiting for the device to wake up.
 @property (nonatomic, assign) NSInteger upgradeStatus;
 
-//新版本使用的固件版本
+/// Firmware version used in the new version.
 @property (nonatomic, strong) NSString  *version;
 
-//当前在使用的固件版本
+/// Current firmware version in use.
 @property (nonatomic, strong) NSString  *currentVersion;
 
-//升级超时时间（秒）
+/// Upgrade timeout (seconds)
 @property (nonatomic, assign) NSInteger timeout;
 
-//0:app提醒升级 2:app强制升级 3:检测升级
+/// 0:app remind upgrade. 2:app force upgrade. 3:detect upgrade.
 @property (nonatomic, assign) NSInteger upgradeType;
 
-// 设备类型
+/// Equipment Type.
 @property (nonatomic, assign) NSInteger type;
 
-// 蓝牙设备的升级固件的下载URL
+// Equipment type 0:Normal equipment, 1:Non-insured equipment
+@property (nonatomic, assign) NSInteger devType;
+
+/// Download URL of the upgrade firmware for Bluetooth devices.
 @property (nonatomic, strong) NSString *url;
 
-//固件的md5
+/// Firmware md5.
 @property (nonatomic, strong) NSString *md5;
 
-//固件包的size, byte
+/// Size of the firmware package (byte).
 @property (nonatomic, strong) NSString *fileSize;
 
-//上次升级时间
+/// Firmware sign.
+@property (nonatomic, strong) NSString *sign;
+
+/// Last upgrade time
 @property (nonatomic, assign) long long lastUpgradeTime;
 
-//固件发布时间
+/// Firmware Release Date.
 @property (nonatomic, assign) long long firmwareDeployTime;
 
-// 升级设备是否可控,0可控 1不可控
+/// Whether the upgrade device is controllable.  0 : controllable; 1 : not controllable.
 @property (nonatomic, assign) BOOL controlType;
 
-// 固件升级中的提示文案
+/// Waiting for device wake-up description, low-power non-live device has the status of "waiting for device wake-up" before upgrade
+@property (nonatomic, strong) NSString *waitingDesc;
+
+/// Tip text in firmware upgrade.
 @property (nonatomic, strong) NSString *upgradingDesc;
 
-// 设备下载固件中的提示文案，目前只有nb设备有
-@property (nonatomic, strong) NSString *downloadingDesc;
+/// The prompt text in the device download firmware, currently only nb devices have.
+@property (nonatomic, strong) NSString *downloadingDesc __deprecated_msg("This property is deprecated, Use upgradingDesc instead");
 
 @end
 

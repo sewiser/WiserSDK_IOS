@@ -30,7 +30,6 @@
     [[WiserSmartUser sharedInstance] loginByEmail:@"86" email:@"YOUR_EMAIL" password:@"YOUR_PASSWORD" success:^{
         NSLog(@"log success");
         [self loadHome];
-        NSLog(@"登录成功，可继续往下操作。");
     } failure:^(NSError *error) {
         NSLog(@"log error: %@", error);
     }];
@@ -77,8 +76,12 @@
         
         // device list
         for (WiserSmartDeviceModel *device in weakSelf_WSSDK.home.deviceList) {
-            if ([device.devId isEqualToString:@"xxx"]) {
-                
+            if ([device.devId isEqualToString:@"vdevo157793096647229"]) {
+                [[WiserSmartDevice deviceWithDeviceId:@"vdevo157793096647229"] publishDps:@{@"20":@NO} success:^{
+                    NSLog(@"1111");
+                } failure:^(NSError *error) {
+                    NSLog(@"1111%@", error);
+                }];
             }
         }
         

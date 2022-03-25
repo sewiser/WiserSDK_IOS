@@ -1,41 +1,40 @@
 //
-//  WSGroupDevList.h
-//  WiserSmart
+// WSGroupDevList.h
+// WiserSmartDeviceCoreKit
 //
-//
-//  Copyright © 2015年 Wiser. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #ifndef WiserSmart_WiserSmartGroupDevListModel
 #define WiserSmart_WiserSmartGroupDevListModel
 
 #import <Foundation/Foundation.h>
 
+/// group device list information
 @interface WiserSmartGroupDevListModel : NSObject
 
 
-/// 设备Id
+/// The device ID.
 @property(nonatomic,strong) NSString    *devId;
 
-/// 设备Id
+/// The device ID.
 @property(nonatomic,strong) NSString    *gwId;
 
-/// 设备是否在线
+/// Is the device online.
 @property(nonatomic,assign) BOOL        online;
 
-/// 设备图标url
+/// Device icon URL.
 @property(nonatomic,strong) NSString    *iconUrl;
 
-/// 产品Id
+/// The product ID.
 @property(nonatomic,strong) NSString    *productId;
 
-/// 设备是否选中
+/// Is the device selected.
 @property(nonatomic,assign) BOOL        checked;
 
-/// 设备名字
+/// The device name.
 @property(nonatomic,strong) NSString    *name;
 
-/// 设备地址
+/// The device address.
 @property(nonatomic,strong) NSString    *nodeId;
 
 

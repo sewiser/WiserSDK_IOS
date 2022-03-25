@@ -1,9 +1,8 @@
 //
-//  WiserSmartHomeMemberRequestModel.h
-//  Pods
+// WiserSmartHomeMemberRequestModel.h
+// WiserSmartDeviceKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <Foundation/Foundation.h>
 #import "WiserSmartHomeModelUtils.h"
@@ -12,19 +11,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WiserSmartHomeMemberRequestModel : NSObject
 
-/** 成员ID 必传字段 member Id is required */
+/// Member ID, required field.
 @property (nonatomic, assign) long long memberId;
 
-/** 成员名称 nil时不会更新已有名称 name of member */
+/// Member name, will not update existing name when set to nil。
 @property (nonatomic, strong) NSString *name;
 
-/**
- * 成员角色 请正确设置你想设置的角色类型，若不想更新角色类型可以保持当前角色类型或设为 “WSHomeRoleType_Unknown”
- * role，Please set the type of role you want to set. If don't want to update role type keep WSHomeRoleType_Unknown or current role type
- */
+/// Member role, please set the correct role type you want to set, if you don't want to update the role type you can keep the current role type or set it to "WSHomeRoleType_Unknown"。
 @property (nonatomic, assign) WSHomeRoleType role;
 
-/** 成员头像 nil时不会更新已有头像 Head portraits of members Can be nil */
+/// Member avatars, will not update existing avatars when set to nil.
 @property (nonatomic, strong) UIImage *headPic;
 
 @end

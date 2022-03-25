@@ -1,96 +1,103 @@
 //
-//  WiserSmartGroupModel.h
-//  WiserSmartPublic
+// WiserSmartGroupModel.h
+// WiserSmartDeviceCoreKit
 //
-//
-//  Copyright © 2016年 Wiser. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #ifndef WiserSmart_WiserSmartGroupModel
 #define WiserSmart_WiserSmartGroupModel
 
+/// group type
 typedef enum : NSUInteger {
     WiserSmartGroupTypeWifi = 0,
     WiserSmartGroupTypeMesh,
     WiserSmartGroupTypeZigbee,
     WiserSmartGroupTypeSIGMesh,
+    WiserSmartGroupTypeBeacon,
 } WiserSmartGroupType;
 
 #import <Foundation/Foundation.h>
 #import "WiserSmartDevice.h"
 
+/// group information.
 @interface WiserSmartGroupModel : NSObject
 
-// group Id
+/// group Id
 @property (nonatomic, strong) NSString  *groupId;
 
-// product Id
+/// product Id
 @property (nonatomic, strong) NSString  *productId;
 
-// group creation time
+/// group creation time
 @property (nonatomic, assign) long long    time;
 
-// name of group
+/// name of group
 @property (nonatomic, strong) NSString  *name;
 
-// iconUrl
+/// iconUrl
 @property (nonatomic, strong) NSString  *iconUrl;
 
-// type of group
+/// type of group
 @property (nonatomic, assign) WiserSmartGroupType  type;
 
 @property (nonatomic, assign) BOOL      isShare;
 
-// dps
+/// dps
 @property (nonatomic, strong) NSDictionary *dps;
 
-// dpCodes
+/// dpCodes
 @property (nonatomic, strong) NSDictionary *dpCodes;
 
-// localKey
+/// localKey
 @property (nonatomic, strong) NSString     *localKey;
 
-// pv
-@property (nonatomic, assign) float        pv;
+/// pv
+@property (nonatomic, assign) double        pv;
 
-// deviceNum
+/// deviceNum
 @property (nonatomic, assign) NSInteger    deviceNum;
 
-// productInfo
+/// productInfo
 @property (nonatomic, strong) NSDictionary *productInfo;
 
-// homeId
+/// homeId
 @property (nonatomic, assign) long long    homeId;
 
-// roomId
+/// roomId
 @property (nonatomic, assign) long long    roomId;
 
-// customize DP name
+/// customize DP name
 @property (nonatomic, copy)   NSDictionary *dpName;
 
-// order
+/// order
 @property (nonatomic, assign) NSInteger displayOrder;
 
-// home all group order
+/// home all group order
 @property (nonatomic, assign) NSInteger homeDisplayOrder;
 
-// device list
+/// device list
 @property (nonatomic, strong) NSArray<WiserSmartDeviceModel *> *deviceList;
 
-// local Short Address of Groups
+/// local Short Address of Groups
 @property (nonatomic, strong) NSString     *localId;
 
-// subclass
+/// subclass
 @property (nonatomic, strong) NSString     *pcc;
 
-// meshId or gwId
+/// meshId or gwId
 @property (nonatomic, strong) NSString     *meshId;
 
-// schema array
+/// schema array
 @property (nonatomic, strong) NSArray      *schemaArray;
 
-// is standard dp code
+/// is standard dp code
 @property (nonatomic, assign) BOOL         standard;
+
+/// standard schema
+@property (nonatomic, strong, readonly) WiserSmartStandSchemaModel *standSchemaModel;
+
+// add beacon beaconKey
+@property (nonatomic, strong) NSString *groupKey;
 
 @end
 

@@ -1,10 +1,8 @@
 //
-//  WiserSmartReceivedShareUserModel.h
-//  WiserSmartKit
+// WiserSmartReceivedShareUserModel.h
+// WiserSmartDeviceKit
 //
-//
-//  Copyright © 2018年 Wiser. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 @interface WiserSmartReceivedShareUserModel : NSObject
 

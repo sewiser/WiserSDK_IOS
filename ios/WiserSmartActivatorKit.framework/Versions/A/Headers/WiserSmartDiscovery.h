@@ -1,9 +1,8 @@
 //
-//  WiserSmartDiscovery.h
-//  WiserSmartActivatorKit
+// WiserSmartDiscovery.h
+// WiserSmartActivatorKit
 //
-//
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <WiserSmartDeviceKit/WiserSmartDeviceKit.h>
 
@@ -15,60 +14,49 @@ NS_ASSUME_NONNULL_BEGIN
 
 @required
 
-/**
- Callback of Device Discovery
- 设备搜索回调
- 
- @param discovery   instance
- @param deviceModel deviceModel
- @param error       error
- */
+/// Callback of device discovery.
+/// @param discovery Instance of WiserSmartDiscovery class.
+/// @param deviceModel Wiser smart device model.
+/// @param error NSError object.
 - (void)discovery:(WiserSmartDiscovery *)discovery didDiscoveryDevice:(WiserSmartDeviceModel *)deviceModel error:(NSError *)error;
 
 @end
 
+/// @brief WiserSmartDiscovery is used for EZ configuration.
+///
+/// This class provides EZ configuration capabilities for WiFi devices.
+///
+/// @note This EZ configuration is different form the EZ mode in 'WiserSmartActivator'. Need to call the method 'bindDeviceWithHomeId:devIds:success:' after obtaining the devices, cause configuration token has no home information
+///
 @interface WiserSmartDiscovery : NSObject
 
 @property (nonatomic, weak) id<WiserSmartDiscoveryDelegate> delegate;
 
-/**
- *  To obtain token (valid for 10 minutes)
- *  获取配网Token（有效期10分钟）
- *
- *  @param success Success block
- *  @param failure Failure block
- */
+/// Obtain configuration token (valid for 10 minutes).
+/// @param success Called when the task finishes successfully. WSSuccessString will be returned.
+/// @param failure Called when the task is interrupted by an error.
 - (void)getTokenSuccess:(WSSuccessString)success
                 failure:(WSFailureError)failure;
 
-/**
- * start discover device
- * 开始发现设备
- *
- * @param ssid      Name of route 路由器热点名称
- * @param password  Password of route 路由器热点密码
- * @param timeout   Timeout, default 100 seconds
- * @param success   Success block
- * @param failure   Failure block
- */
+/// Start discovering devices.
+/// @param ssid Name of route.
+/// @param password Password of route.
+/// @param timeout Timeout, default 100 seconds.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)startDiscoveryWithSsid:(NSString *)ssid
                      password:(NSString *)password
                       timeout:(NSTimeInterval)timeout
                       success:(WSSuccessHandler)success
                       failure:(WSFailureError)failure;
 
-
-/**
- * start discover device with token
- * 开始发现设备
- *
- * @param ssid      Name of route 路由器热点名称
- * @param password  Password of route 路由器热点密码
- * @param token     Config token 配网 token
- * @param timeout   Timeout, default 100 seconds
- * @param success   Success block
- * @param failure   Failure block
- */
+/// Start discovering devices using token.
+/// @param ssid Name of route.
+/// @param password Password of route.
+/// @param token Configuration token.
+/// @param timeout Timeout, default 100 seconds.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)startDiscoveryWithSsid:(NSString *)ssid
                      password:(NSString *)password
                          token:(NSString *)token
@@ -76,25 +64,14 @@ NS_ASSUME_NONNULL_BEGIN
                       success:(WSSuccessHandler)success
                       failure:(WSFailureError)failure;
 
-
-
-
-/**
- * Binding device to the home
- * 将设备绑定家庭
- *
- * @param homeId  HomeId
- * @param devIds  Deivce Id list
- * @param success Success block
- * @param failure Failure block
- */
+/// Binding devices to home.
+/// @param homeId Home ID.
+/// @param devIds Device ID list.
+/// @param success Called when the task finishes successfully.
+/// @param failure Called when the task is interrupted by an error.
 - (void)bindDeviceWithHomeId:(long long)homeId devIds:(NSArray <NSString *>*)devIds success:(WSSuccessHandler)success failure:(WSFailureError)failure;
 
-
-/**
- *  stop Discovery
- *  停止发现
- */
+/// Stop discovering.
 - (void)stopDiscovery;
 
 @end

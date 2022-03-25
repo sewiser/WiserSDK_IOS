@@ -1,6 +1,6 @@
 {
   "name": "WiserSmartActivatorKit",
-  "version": "3.19.0",
+  "version": "3.26.5",
   "summary": "A short description of WiserSmartActivatorKit.",
   "homepage": "https://github.com/sewiser/WiserSDK_IOS",
   "license": {
@@ -11,18 +11,19 @@
   },
   "source": {
     "git": "https://github.com/sewiser/WiserSDK_IOS.git",
-    "tag": "3.19.0"
+    "tag": "3.26.5"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "static_framework": true,
   "vendored_frameworks": "ios/WiserSmartActivatorKit.framework",
+  "source_files": "ios/WiserSmartActivatorKit.framework/Versions/A/Headers/*.h",
   "dependencies": {
-    "WiserSmartDeviceKit": [
+    "WiserSmartActivatorCoreKit": [
 
     ],
-    "Reachability": [
+    "WiserSmartDeviceKit": [
 
     ]
   }

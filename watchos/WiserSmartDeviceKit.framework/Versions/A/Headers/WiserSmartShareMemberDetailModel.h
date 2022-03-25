@@ -1,38 +1,26 @@
 //
-//  WiserSmartShareMemberDetailModel.h
-//  WiserSmartKitExample
+// WiserSmartShareMemberDetailModel.h
+// WiserSmartDeviceKit
 //
-//
-//  Copyright © 2017年 tuya. All rights reserved.
-//
+// Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 @class WiserSmartShareDeviceModel;
 
 @interface WiserSmartShareMemberDetailModel : NSObject
 
-/**
- deviceModel list
- */
+/// deviceModel list
 @property (nonatomic, strong) NSArray <WiserSmartShareDeviceModel *> *devices;
 
-/**
- mobile
- */
+/// mobile
 @property (nonatomic, strong) NSString *mobile;
 
-/**
- name
- */
+/// name
 @property (nonatomic, strong) NSString *name;
 
-/**
- remark name
- */
+/// remark name
 @property (nonatomic, strong) NSString *remarkName;
 
-/**
- auto sharing
- */
+/// auto sharing
 @property (nonatomic, assign) BOOL autoSharing;
 
 

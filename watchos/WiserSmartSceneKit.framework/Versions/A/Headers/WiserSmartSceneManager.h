@@ -2,9 +2,7 @@
 //  WiserSmartSceneManager.h
 //  WiserSmartSceneKit
 //
-//
-//  Copyright © 2017年 Wiser. All rights reserved.
-//
+//  Copyright (c) 2014-2021 Wiser Inc. (https://developer.wiser.com)
 
 #import <WiserSmartDeviceKit/WiserSmartDeviceKit.h>
 #import "WiserSmartCityModel.h"
@@ -15,408 +13,326 @@
 
 @class WiserSmartSceneManager;
 
+/// The protocol provides delegate methods to receive changes to the scene enable or disable state.
 @protocol WiserSmartSceneManagerDelegate<NSObject>
 
 @optional
 
-/**
- * 自动化开启状态发生变化的回调。
- * Call back of automation's enable state changed.
- *
- * @param manager     WiserSmartSceneManager instance.
- * @param state  自动化开启状态，@"enable" 或 @"disable"  enable state, @"enable" or @"disable".
- * @param sceneId     sceneId of the changed automation.
- */
+/// Called when the state of the scene changes.
+///
+/// @param manager The scene manager.
+/// @param state   The scene state, eg: "disable、"enable".
+/// @param sceneId The scene ID.
 - (void)sceneManager:(WiserSmartSceneManager *)manager state:(NSString *)state sceneId:(NSString *)sceneId;
 
 @end
 
-
+/// @brief The WiserSmartSceneManager class provides many methods for developers getting the list of scenes, getting the list of conditions, getting the list of tasks, the list of cities, the list of scene log, etc.
 @interface WiserSmartSceneManager : NSObject
 
-/**
- * 单例
- * Singleton
- *
- * @return WiserSmartSceneManager singleton instance.
- */
+/// Returns the singleton of the WiserSmartSceneManager class.
+///
+/// @return The WiserSmartSceneManager instance.
 + (instancetype)sharedInstance;
 
+/// The delegate will be notified when the scene's contents change. @see WiserSmartSceneManagerDelegate.
 @property (nonatomic, weak) id<WiserSmartSceneManagerDelegate> delegate;
 
-
-/**
- * (全量列表接口)获取家庭的场景列表,场景和自动化可以通过conditons数组是否为空来区分，conditions大于0说明是一个自动化，否则是普通场景。获取到的WiserSmartSceneModel含有所有存在数据。
- * (Detail list interface)Get scene and auto list, scene and automation can be differentiated with property conditons.count, conditons over 0 will be automation. WiserSmartSceneModel in list has all detail.
- *
- * @param homeId      homeId
- * @param success     操作成功回调, 返回详细场景列表  success callback
- * @param failure     failure callback
- */
+/// Get a list of scenes, including tap-to-run and automation. We can judge tap-to-run and automation scene by the entityType of conditions property in WiserSmartSceneModel, The scene is tap-to-run when the entityType equal AutoTypeManual, otherwise it's automation.
+///
+/// @see For more information about the entityType, you can see WiserSmartSceneConditionModel class.
+///
+/// @param homeId  The current home ID.
+/// @param success When successfully get the scene list, this block will be called and return WiserSmartSceneModel list.
+/// @param failure When error occurred, this block will be called and return WSFailureError.
 - (void)getSceneListWithHomeId:(long long)homeId
                        success:(void(^)(NSArray<WiserSmartSceneModel *> *list))success
                        failure:(WSFailureError)failure;
 
-/**
- * (精简列表接口)获取家庭的场景列表,场景和自动化可以通过conditons数组是否为空来区分，conditions大于0说明是一个自动化，否则是普通场景。获取到的WiserSmartSceneModel只含有用于列表显示的数据。
- * (Simple list interface)Get scene and auto list, scene and automation can be differentiated with property conditons.count, conditons over 0 will be automation.WiserSmartSceneModel in list contains only the fields used for list display.
- *
- * @param homeId      homeId
- * @param success     操作成功回调, 返回简单场景列表  success callback
- * @param failure     failure callback
- */
+/// Get a simple list of scenes, including tap-to-run and automation. We can judge tap-to-run and automation scene by the entityType of conditions property in WiserSmartSceneModel, The scene is tap-to-run when the entityType equal AutoTypeManual, otherwise it's automation.
+///
+/// @note The different between the simple scene list and scene list is less json data returned by the server.
+///
+/// @param homeId  The current home ID.
+/// @param success When successfully get the scene list, this block will be called and return WiserSmartSceneModel list.
+/// @param failure When error occurred, this block will be called and return WSFailureError.
 - (void)getSimpleSceneListWithHomeId:(long long)homeId
                        success:(void(^)(NSArray<WiserSmartSceneModel *> *list))success
                        failure:(WSFailureError)failure;
 
-/**
-* (场景详情接口)获取某个场景的全量数据。
-* (Scene detail interface)Get full information of a scene.
-*
-* @param homeId      homeId
-* @param sceneId     场景id  Scene model's Id
-* @param success     操作成功回调, 返回单个场景详情  success callback
-* @param failure     failure callback
-*/
+/// Get scene detail information according to the specify homeId and sceneId.
+///
+/// @param homeId  The home ID.
+/// @param sceneId The scene ID.
+/// @param success When successfully get scene detail, this block will be called and return WiserSmartSceneModel object.
+/// @param failure When error occurred, this block will be called and return WSFailureError.
 - (void)getSceneDetailWithHomeId:(long long)homeId
                          sceneId:(NSString *)sceneId
                          success:(void(^)(WiserSmartSceneModel *scene))success
                          failure:(WSFailureError)failure;
 
-/**
- * 获取家庭的推荐场景列表
- * Get recommended scene list.
- *
- * @param homeId      homeId
- * @param success     操作成功回调, 返回场景列表  success callback
- * @param failure     failure callback
- */
+/// Get recommend scene list with the specify homeId.
+///
+/// @param homeId  The home ID.
+/// @param success When success, return WiserSmartSceneModel list.
+/// @param failure When error occurred, return WSFailureError.
 - (void)getRecommendedSceneListWithHomeId:(long long)homeId
                        success:(void(^)(NSArray<WiserSmartSceneModel *> *list))success
                        failure:(WSFailureError)failure;
 
-/**
-* 获取家庭下收藏的场景列表
-* Get a list of favorite scenes under the family.
-*
-* @param homeId      homeId
-* @param success     操作成功回调, 返回场景列表  success callback
-* @param failure     failure callback
-*/
+/// Get collection scene list with the specify homeId.
+///
+/// @param homeId  The home ID.
+/// @param success When success, return WiserSmartSceneModel list.
+/// @param failure When error occurred, return WSFailureError.
 - (void)getCollectionSceneListWithHomeId:(long long)homeId
                                  success:(WSSuccessList)success
                                  failure:(WSFailureError)failure;
 
-/**
- * 获取自动化支持的气象条件列表
- * Get weather conditon list which automation support.
- *
- * @param fahrenheit      Unit of temperature，if use fahrenheit, set fahrenheit param to YES.
- * @param success         success callback.
- * @param failure          failure callback
- */
-- (void)getConditionListWithFahrenheit:(BOOL)fahrenheit
-                               success:(void(^)(NSArray<WiserSmartSceneDPModel *> *list))success
-                               failure:(WSFailureError)failure __deprecated_msg("use -getAllConditionListWithFahrenheit:windSpeedUnit:homeId:success:failure instead");
-
-
-/**
- * 获取自动化支持的所有条件列表，包括气象条件和可能的其他条件
- * Get weather conditon list and other condition list which automation support.
- *
- * @param fahrenheit      Unit of temperature，if use fahrenheit, set fahrenheit param to YES.
- * @param success         success callback. key @"envConditions" is whether conditions,  @"devConditions" is other condtions.
- * @param homeId            homeId
- * @param failure          failure callback
- */
-- (void)getAllConditionListWithFahrenheit:(BOOL)fahrenheit
-                                   homeId:(long long)homeId
-                                  success:(void(^)(NSDictionary *dict))success
-                                  failure:(WSFailureError)failure __deprecated_msg("use -getAllConditionListWithFahrenheit:windSpeedUnit:homeId:success:failure instead");
-
-/**
- * 获取自动化支持的所有条件列表，包括气象条件和可能的其他条件
- * Get weather conditon list and other condition list which automation support.
- *
- * @param fahrenheit      Unit of temperature，if use fahrenheit, set fahrenheit param to YES.
- * @param speedUnit      Unit of wind speed,@"mph"、@"m/s"、@"kph"、@"km/h".
- * @param homeId            homeId
- * @param success         success callback. key @"envConditions" is whether conditions,  @"devConditions" is other condtions.
- * @param failure          failure callback
- */
+/// Get all condition list for automation conditions with the specify temperature scale type, speed unit and homeId.
+///
+/// @param fahrenheit If YES, indicate the temperature unit is Fahrenheit, otherwise Celsius.
+/// @param speedUnit  The speed unit description.
+/// @param homeId     The current home ID.
+/// @param success    When success, return  map object, including envConditions and devConditions object.
+/// @param failure    When error occurred, return WSFailureError.
 - (void)getAllConditionListWithFahrenheit:(BOOL)fahrenheit
                             windSpeedUnit:(NSString *)speedUnit
                                    homeId:(long long)homeId
                                   success:(void(^)(NSDictionary *dict))success
                                   failure:(WSFailureError)failure;
 
-/**
- * 获取场景中支持的任务设备列表
- * Get devices supported to add to scene's action in home.
- *
- * @param homeId      homeId
- * @param success     success callback
- * @param failure     failure callback
- */
+/// Get action device list in the scene with specify the current home id.
+///
+/// @param homeId  The current home ID.
+/// @param success When success, return WiserSmartDeviceModel list.
+/// @param failure When error occurred, return WSFailureError.
 - (void)getActionDeviceListWithHomeId:(long long)homeId
                               success:(void(^)(NSArray<WiserSmartDeviceModel *> *list))success
                               failure:(WSFailureError)failure;
 
-
-/**
- * 获取单个房间里面支持作为动作的设备列表
- * Get devices supported to add to scene's action in given room.
- *
- * @param roomId      roomId
- */
+/// Get action device list in the current room with the specify room id.
+///
+/// @param roomId The room ID.
+///
+/// @retrun The WiserSmartDeviceModel list, the more information you can see WiserSmartDeviceModel class.
 - (NSArray<WiserSmartDeviceModel *> *)getActionDeviceListWithRoomId:(long long)roomId;
 
 
-/**
- * 获取场景中支持作为条件的设备列表
- * Get devices support to add to scene's conditon in given home.
- *
- * @param homeId      homeId
- * @param success     success callback
- * @param failure     failure callback
- */
+/// Get condition device list in the scene with specify the current home id
+///
+/// @param homeId  The home ID.
+/// @param success When success, return WiserSmartDeviceModel list.
+/// @param failure When error occurred, return WSFailureError.
 - (void)getConditionDeviceListWithHomeId:(long long)homeId
                                  success:(void(^)(NSArray<WiserSmartDeviceModel *> *list))success
                                  failure:(WSFailureError)failure;
 
-
-/**
- * 获取房间里面支持作为条件的设备列表
- * Get devices supported to add to scene's condtion in given room.
- *
- * @param roomId      roomId
- */
+/// Get condition device list for the current room in the scene with specify room id.
+///
+/// @param roomId The room ID.
+///
+/// @return The WiserSmartDeviceModel list, the more information you can see WiserSmartDeviceModel class.
 - (NSArray<WiserSmartDeviceModel *> *)getConditionDeviceListWithRoomId:(long long)roomId;
 
-/**
- * 获取家庭中支持人脸的条件设备列表.
- * Get devices supported to recognize face, which can be set as automation's conditon.
- *
- * @param homeId      homeId
- * @param success     success callback
- * @param failure     failure callback
- */
+/// Get device list for recognize face condition type with specify current home id.
+///
+/// @param homeId  The home ID.
+/// @param success When success, return WiserSmartDeviceModel list.
+/// @param failure When error occurred, return WSFailureError.
 - (void)getFaceDeviceListWithHomeId:(long long)homeId success:(void(^)(NSArray<WiserSmartDeviceModel *> *list))success failure:(WSFailureError)failure;
 
-/**
- * 获取家庭中支持家人回家联动的门锁设备设备列表.
- * Get lock devices supported to be a smart's condition.
- *
- * @param homeId      homeId
- * @param success     success callback
- * @param failure     failure callback
- */
-- (void)getLockDeviceListWithHomeId:(long long)homeId success:(void(^)(NSArray<WiserSmartDeviceModel *> *list))success failure:(WSFailureError)failure;
+/// Get device list for the member lock condition type with specify current home id.
+///
+/// @param homeId  The home ID.
+/// @param success When success, return WiserSmartDeviceModel list for member lock condition.
+/// @param failure When error occurred, return WSFailureError.
+- (void)getLockDeviceListWithHomeId:(long long)homeId
+                            success:(void(^)(NSArray<WiserSmartDeviceModel *> *list))success
+                            failure:(WSFailureError)failure;
 
-/**
- * 获取单个房间里面可以作为动作的群组列表。
- * Get groups in specified room which can be used as scene's action.
- *
- * @param roomId      homeId
- */
+/// Get group list for action in the scene with specify the current room id.
+///
+/// @param roomId The room ID.
+///
+/// @return The WiserSmartGroupModel list for action in the scene, more information you can see WiserSmartGroupModel class.
 - (NSArray<WiserSmartGroupModel *> *)getActionGroupListWithRoomId:(long long)roomId;
 
-/**
- * 获取家庭下可作为场景动作的设备群组列表和设备列表
- * Get groups and devices which can be used as scene's action in specified hoom.
- *
- * @param homeId      homeId
- * @param success     success callback，dict's keys are "groupList" and "deviceList" and @"extendsDictionary", extendsDictionary contains some extra infomation for each device.
- * @param failure     failure
- */
-- (void)getActionGroupListAndDeviceListWithHomeId:(long long)homeId success:(void(^)(NSDictionary *dict))success failure:(WSFailureError)failure;
+/// Get all device list and group list for action in the scene with specify the current home id.
+///
+/// @param homeId  The home ID.
+/// @param success When success, return map object, including deviceList、groupList and extendsDictionary object.
+/// @param failure When error occurred, return WSFailureError.
+- (void)getActionGroupListAndDeviceListWithHomeId:(long long)homeId
+                                          success:(void(^)(NSDictionary *dict))success
+                                          failure:(WSFailureError)failure;
 
-/**
- * 获取作为动作的设备的DP（数据点）列表。
- * Get data point list of specified device which can be used as scene's action.
- *
- * @param devId       device's id
- * @param success     success callback, return the data point list of given device.
- * @param failure     failure callback
- */
+/// Get device data point list for action in the scene with specify the device id.
+///
+/// @param devId   The device ID.
+/// @param success When success, return WiserSmartSceneDPModel list.
+/// @param failure When error occurred, return WSFailureError.
 - (void)getActionDeviceDPListWithDevId:(NSString *)devId
                                success:(void(^)(NSArray<WiserSmartSceneDPModel *> *list))success
                                failure:(WSFailureError)failure;
 
-
-/**
- * 获取作为条件的设备的DP（数据点）列表。
- * Get data point list of specified device which can be used as automation's condition.
- *
- * @param devId       device's id
- * @param success     success callback, return the data point list of given device.
- * @param failure     failure callback
- */
+/// Get device dp list for condition in the scene with specify the device id.
+///
+/// @param devId   The device ID.
+/// @param success When success, return WiserSmartSceneDPModel list. The WiserSmartSceneDPModel object describes the datapoint data of the device.
+/// @param failure When error occurred, return WSFailureError.
 - (void)getCondicationDeviceDPListWithDevId:(NSString *)devId
                                     success:(void(^)(NSArray<WiserSmartSceneDPModel *> *list))success
                                     failure:(WSFailureError)failure;
 
-
-/**
- * 获取作为动作的群组的DP（数据点）列表
- * Get data point list of specified group which can be used as scene's action.
- *
- * @param groupId     groupId
- * @param success     success callback, return the data point list of given group.
- * @param failure     failure callback
- */
+/// Get group datapoint list for action in the scene with specify the current group id.
+///
+/// @param groupId The group ID.
+/// @param success When success, return WiserSmartSceneDPModel list.
+/// @param failure When error occurred, return WSFailureError.
 - (void)getActionGroupDPListWithGroupId:(NSString *)groupId
                                 success:(void(^)(NSArray<WiserSmartSceneDPModel *> *list))success
                                 failure:(WSFailureError)failure;
 
-/**
- * 获取城市信息列表（国外少部分国家的城市列表不完整，国外用户建议根据经纬度获取城市信息）
- * Get city list. In addition, city list in area out of china may be not completed, so if users are out of china, we suggest you use lantitude and longitude to get the city infomation.
- *
- * @param countryCode     country code
- * @param success         success callback, return city list.
- * @param failure         failure callback
- */
+/// Get city list with specify the current country code. If you are out of China, we suggest you use latitude and longitude to get the city information.
+///
+/// @param countryCode The country code.
+/// @param success     When success, return WiserSmartCityModel list.
+/// @param failure     When error occurred, return WSFailureError.
 - (void)getCityListWithCountryCode:(NSString *)countryCode
                            success:(void(^)(NSArray<WiserSmartCityModel *> *list))success
                            failure:(WSFailureError)failure;
 
-
-/**
- * 根据经纬度获取城市信息。
- * Get city detail infomation by latitude and longitude.
- *
- * @param latitude        latitude
- * @param longitude       longitude
- * @param success           success callback, return city infomation.
- * @param failure         failure callback
- */
+/// Get city detail information with specify the latitude and longitude.
+///
+/// @param latitude  The latitude.
+/// @param longitude The longitude.
+/// @param success   When success, return WiserSmartCityModel list.
+/// @param failure   When error occurred, return WSFailureError.
 - (void)getCityInfoWithLatitude:(NSString *)latitude
                       longitude:(NSString *)longitude
                         success:(void(^)(WiserSmartCityModel *model))success
                         failure:(WSFailureError)failure;
 
-
-/**
- * 根据城市id获取城市详情
- * Get city detail infomation with cityId.
- *
- * @param cityId      cityId
- * @param success     success callback, return city ditail infomation.
- * @param failure     failure callback
- */
+/// Get city detail information with specify the city id.
+///
+/// @param cityId  The city ID.
+/// @param success When success, return WiserSmartCityModel list.
+/// @param failure When error occurred, return WSFailureError.
 - (void)getCityInfoWithCityId:(NSString *)cityId
                       success:(void(^)(WiserSmartCityModel *model))success
                       failure:(WSFailureError)failure;
 
-
-/**
- * 场景排序
- * Reorder the scene list.
- *
- * @param homeId              homeId
- * @param sceneIdList         Ordered sceneId list
- * @param success             success callback
- * @param failure             failure callback
- */
+/// Sort the scene list by the current home id.
+///
+/// @param homeId      The home ID.
+/// @param sceneIdList The scene list that to be sorted.
+/// @param success     When success, return WSSuccessHandler.
+/// @param failure     When error occurred, return WSFailureError.
 - (void)sortSceneWithHomeId:(long long)homeId
                 sceneIdList:(NSArray<NSString *> *)sceneIdList
                     success:(WSSuccessHandler)success
                     failure:(WSFailureError)failure;
 
-/**
- * 获取场景背景图标url列表
- * Get scene cover url list.
- *
- * @param success     success callback
- * @param failure     failure callback
- */
+/// Get scene background icons URL list.
+///
+/// @param success When success, return URL list.
+/// @param failure When error occurred, return WSFailureError.
 - (void)getSmartSceneBackgroundCoverWithsuccess:(WSSuccessList)success failure:(WSFailureError)failure;
 
-/**
-* 获取自定义样式数据列表，包括颜色，图标，背景图，key分别对应coverColors，coverIconList，coverPics。
-* Get scene custom style resource list. <color,icon,background>, key is <coverColors，coverIconList，coverPics>
-*
-* @param success     success callback
-* @param failure     failure callback
-*/
+/// Get scene custom style resource list, including color、icon and background. The return result map object, contain coverColors、coverIconList and coverPics.
+///
+/// @param success When success, return map object, including coverColors、coverIconList and coverPics object.
+/// @param failure When error occurred, return WSFailureError.
 - (void)getSmartSceneCustomStyleListWithSuccess:(WSSuccessDict)success failure:(WSFailureError)failure;
 
-/**
-* 获取所有场景联动日志列表。
-* Get scene linkage log list.
-*
-* 字段                描述                是否可选(optional)        类型
-* startTime           开始时间                N                    Long
-* endTime             结束时间                N                    Long
-* size                查询条数                N                    Integer
-* lastId              偏移量(eventId)         Y                    String
-* lastRecordTime      偏移量(execTime)        Y  0 for not set     Long
-*
-* @param homeId homeId
-* @param startTime startTime
-* @param endTime endTime
-* @param size Number of queries
-* @param lastId last one's Id
-* @param lastRecordTime lastRecordTime, 0 for Not set
-* @param success success callback
-* @param failure failure callback
-*/
-- (void)getSmartSceneLogWithHomeId:(long long)homeId startTime:(long long)startTime endTime:(long long)endTime size:(NSInteger)size lastId:(NSString *)lastId lastRecordTime:(long long)lastRecordTime success:(void(^)(WiserSmartSceneLogModel *logModel))success failure:(WSFailureError)failure;
+/// Get all scene linkage logs, including reminder of successful or failed scene execution、push information and so on.
+///
+/// @param homeId         The home ID.
+/// @param startTime      The start date.
+/// @param endTime        The end date.
+/// @param size           The number of items to be queried.
+/// @param lastId         The id of the last query item.
+/// @param lastRecordTime The record date of the last query item.
+/// @param success        When success, return WiserSmartSceneLogModel list.
+/// @param failure        When error occurred, return WSFailureError.
+- (void)getSmartSceneLogWithHomeId:(long long)homeId
+                         startTime:(long long)startTime
+                           endTime:(long long)endTime
+                              size:(NSInteger)size
+                            lastId:(NSString *)lastId
+                    lastRecordTime:(long long)lastRecordTime
+                           success:(void(^)(WiserSmartSceneLogModel *logModel))success
+                           failure:(WSFailureError)failure;
 
-/**
-* 获取设备相关的场景联动日志列表。
-* Get scene linkage log list of specified device.
-*
-* 字段                描述                是否可选(optional)        类型
-* devId               设备ID                  N           String
-* startTime           开始时间                N                    Long
-* endTime             结束时间                N                    Long
-* size                查询条数                N                    Integer
-* lastId              偏移量(eventId)         Y                    String
-* lastRecordTime      偏移量(execTime)        Y  0 for not set     Long
-*
-* @param devId device Id
-* @param homeId homeId
-* @param startTime startTime
-* @param endTime endTime
-* @param size Number of queries
-* @param lastId last one's Id
-* @param lastRecordTime lastRecordTime, 0 for Not set
-* @param success success callback
-* @param failure failure callback
-*/
-- (void)getSmartSceneLogOfDeviceWithDevId:devId homeId:(long long)homeId startTime:(long long)startTime endTime:(long long)endTime size:(NSInteger)size lastId:(NSString *)lastId lastRecordTime:(long long)lastRecordTime success:(void(^)(WiserSmartSceneLogModel *logModel))success failure:(WSFailureError)failure;
+/// Get scene linkage log list of specified device.
+///
+/// @param devId          The device ID.
+/// @param homeId         The home ID.
+/// @param startTime      The start date.
+/// @param endTime        The end date.
+/// @param size           The number of items to be queried.
+/// @param lastId         The id of the last query item.
+/// @param lastRecordTime The record date of the last query item.
+/// @param success        When success, return WiserSmartSceneLogModel list.
+/// @param failure        When error occurred, return WSFailureError.
+- (void)getSmartSceneLogOfDeviceWithDevId:(NSString *)devId
+                                   homeId:(long long)homeId
+                                startTime:(long long)startTime
+                                  endTime:(long long)endTime
+                                     size:(NSInteger)size
+                                   lastId:(NSString *)lastId
+                           lastRecordTime:(long long)lastRecordTime
+                                  success:(void(^)(WiserSmartSceneLogModel *logModel))success
+                                  failure:(WSFailureError)failure;
 
-/**
-* 查询联动日志详情。
-* Query linkage log details.
-*
-* 字段                描述                是否可选        类型
-* eventId             事件ID                 N          String
-* startTime           开始时间                N           Long
-* endTime             结束时间                N           Long
-* returnType          返回类型                Y           Long        0:返回全部明细 all details， 1:返回失败状态的明细 only error items
-*
-* @param homeId homeId
-* @param eventId eventId
-* @param startTime startTime
-* @param endTime endTime
-* @param success     success callback
-* @param failure     failure callback
-*/
-- (void)getSmartSceneLogDetailWithHomeId:(long long)homeId eventId:(NSString *)eventId startTime:(long long)startTime endTime:(long long)endTime returnType:(long long)returnType success:(void(^)(NSArray <WiserSmartSceneLogDetailModel *>*items))success failure:(WSFailureError)failure;
+/// Get scene log detail information by the homeId, eventId, startTime, endTime, returnType.
+///
+/// @param homeId     The home ID.
+/// @param eventId    The event ID.
+/// @param startTime  The start date.
+/// @param endTime    The end date.
+/// @param returnType The return type.
+/// @param success    When success, return WiserSmartSceneLogDetailModel list.
+/// @param failure    When error occurred, return WSFailureError.
+- (void)getSmartSceneLogDetailWithHomeId:(long long)homeId
+                                 eventId:(NSString *)eventId
+                               startTime:(long long)startTime
+                                 endTime:(long long)endTime
+                              returnType:(long long)returnType
+                                 success:(void(^)(NSArray <WiserSmartSceneLogDetailModel *>*items))success
+                                 failure:(WSFailureError)failure;
 
-/**
-* 移除所有场景注册在系统中的地理围栏，在当前用户退出登录时调用。
-* Removes all Geo-fencing registered in the system from the automation and is called when the current user logs out.
-*/
+/// Remove all geofence registered in the apple system for automation scene when user logout.
 - (void)removeAllGeoFence;
 
-/**
- * 取消正在进行的操作。
- * Cancel the request being executed.
- */
+/// Cancel the request being executed.
 - (void)cancelRequest;
+
+#pragma mark - Deprecated
+
+/// Get a weather condition list for automation conditions with the specify temperature scale type. If Fahrenheit is YES, indicates that the temperature unit you use is Fahrenheit, otherwise you use is Celsius.
+///
+/// @param fahrenheit If YES, indicate the temperature unit is Fahrenheit, otherwise Celsius.
+/// @param success    When success, return WiserSmartSceneDPModel list.
+/// @param failure    When error occurred, return WSFailureError.
+///
+/// @deprecated This method is deprecated, Use getAllConditionListWithFahrenheit:windSpeedUnit:homeId:success:failure instead.
+- (void)getConditionListWithFahrenheit:(BOOL)fahrenheit
+                               success:(void(^)(NSArray<WiserSmartSceneDPModel *> *list))success
+                               failure:(WSFailureError)failure __deprecated_msg("use -getAllConditionListWithFahrenheit:windSpeedUnit:homeId:success:failure instead");
+
+/// Get all condition list for automation conditions, including weather condition、device condition and so on.
+///
+/// @param fahrenheit If YES, indicate the temperature unit is Fahrenheit, otherwise Celsius.
+/// @param homeId     The current home ID.
+/// @param success    When success, return map object, including envConditions and devConditions object.
+/// @param failure    When error occurred, return WSFailureError.
+///
+/// @deprecated This method is deprecated, Use getAllConditionListWithFahrenheit:windSpeedUnit:homeId:success:failure instead.
+- (void)getAllConditionListWithFahrenheit:(BOOL)fahrenheit
+                                   homeId:(long long)homeId
+                                  success:(void(^)(NSDictionary *dict))success
+                                  failure:(WSFailureError)failure __deprecated_msg("use -getAllConditionListWithFahrenheit:windSpeedUnit:homeId:success:failure instead");
 
 @end
