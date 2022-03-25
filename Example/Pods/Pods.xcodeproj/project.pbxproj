@@ -17,7 +17,6 @@
 				63E26A39CF1DF94A9E6210E501ACDBBD /* PBXTargetDependency */,
 			);
 			name = WiserSmartActivatorKit;
-			productName = WiserSmartActivatorKit;
 		};
 		2CABD76A849210E1C51735E3387DB045 /* WiserSmartTimerKit */ = {
 			isa = PBXAggregateTarget;
@@ -29,7 +28,6 @@
 				C170AB7DFC782F3620AB1A268F4D003B /* PBXTargetDependency */,
 			);
 			name = WiserSmartTimerKit;
-			productName = WiserSmartTimerKit;
 		};
 		3423A55A7CBEB0727FF2410D11344E7C /* WiserSmartBaseKit */ = {
 			isa = PBXAggregateTarget;
@@ -41,7 +39,6 @@
 				290ADDBD43720BBB93D0A1715A885258 /* PBXTargetDependency */,
 			);
 			name = WiserSmartBaseKit;
-			productName = WiserSmartBaseKit;
 		};
 		5151B703C39398C6130FB9955B1B8F7B /* TuyaSmartQUIC */ = {
 			isa = PBXAggregateTarget;
@@ -52,7 +49,6 @@
 			dependencies = (
 			);
 			name = TuyaSmartQUIC;
-			productName = TuyaSmartQUIC;
 		};
 		5508BCA5ADAB7F8292FC11A2280EB7B5 /* WiserSmartDeviceKit */ = {
 			isa = PBXAggregateTarget;
@@ -64,7 +60,6 @@
 				693AE50B5BDB5EF3BBDD258443580434 /* PBXTargetDependency */,
 			);
 			name = WiserSmartDeviceKit;
-			productName = WiserSmartDeviceKit;
 		};
 		586D3BF60198163FF03FB7E5D9495185 /* WiserSmartMessageKit */ = {
 			isa = PBXAggregateTarget;
@@ -75,7 +70,6 @@
 				C9F11C4DE5C6FA0D696E140BFD711E54 /* PBXTargetDependency */,
 			);
 			name = WiserSmartMessageKit;
-			productName = WiserSmartMessageKit;
 		};
 		A59544B34C626C4766A334933578986D /* WiserSmartActivatorCoreKit */ = {
 			isa = PBXAggregateTarget;
@@ -86,7 +80,6 @@
 				A07C6457AAEAD2F1A3F758E56B148D23 /* PBXTargetDependency */,
 			);
 			name = WiserSmartActivatorCoreKit;
-			productName = WiserSmartActivatorCoreKit;
 		};
 		B9ED5194E665042005069EF06C82A050 /* OpenSSL-Universal */ = {
 			isa = PBXAggregateTarget;
@@ -96,7 +89,6 @@
 			dependencies = (
 			);
 			name = "OpenSSL-Universal";
-			productName = "OpenSSL-Universal";
 		};
 		BED173CE574763C667287B3566B0E689 /* WiserSmartSocketChannelKit */ = {
 			isa = PBXAggregateTarget;
@@ -108,7 +100,6 @@
 				D66BFE03636A1EA321AE884AC384D0FE /* PBXTargetDependency */,
 			);
 			name = WiserSmartSocketChannelKit;
-			productName = WiserSmartSocketChannelKit;
 		};
 		D402B8C936891497BADFEA412F846F79 /* WiserSmartDeviceCoreKit */ = {
 			isa = PBXAggregateTarget;
@@ -121,7 +112,6 @@
 				D8325FA24437589F1979979F5572BBF3 /* PBXTargetDependency */,
 			);
 			name = WiserSmartDeviceCoreKit;
-			productName = WiserSmartDeviceCoreKit;
 		};
 		D9F1DFC50B6DBAAC9B0FF3BC861D0C0B /* WiserSmartFeedbackKit */ = {
 			isa = PBXAggregateTarget;
@@ -132,7 +122,6 @@
 				E2C573796AC318996091B69ABA770779 /* PBXTargetDependency */,
 			);
 			name = WiserSmartFeedbackKit;
-			productName = WiserSmartFeedbackKit;
 		};
 		DB699287D96594507B0BE80A2CFF6A74 /* WiserSmartUtil */ = {
 			isa = PBXAggregateTarget;
@@ -143,7 +132,6 @@
 				7A6E2EB0DBCA780531A7B3E77A312758 /* PBXTargetDependency */,
 			);
 			name = WiserSmartUtil;
-			productName = WiserSmartUtil;
 		};
 		F357947358EC20D37F7013CFD351D593 /* WiserSmartSceneKit */ = {
 			isa = PBXAggregateTarget;
@@ -155,7 +143,6 @@
 				8D2D756A5641EDC2496A25330C1702DE /* PBXTargetDependency */,
 			);
 			name = WiserSmartSceneKit;
-			productName = WiserSmartSceneKit;
 		};
 		F3E80B248C1EAB6586BF9C91EB224EBE /* WiserSmartMQTTChannelKit */ = {
 			isa = PBXAggregateTarget;
@@ -167,7 +154,6 @@
 				4C529E26345AFC0D276D3B3E8635B50C /* PBXTargetDependency */,
 			);
 			name = WiserSmartMQTTChannelKit;
-			productName = WiserSmartMQTTChannelKit;
 		};
 /* End PBXAggregateTarget section */
 
@@ -511,7 +497,7 @@
 		3553E5630644E2BD0484248AB00D483A /* txt_db.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = txt_db.h; path = "include-ios/openssl/txt_db.h"; sourceTree = "<group>"; };
 		3665B80C875628AE550F3015FC70F681 /* WiserSmartSceneDPModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WiserSmartSceneDPModel.h; sourceTree = "<group>"; };
 		36B61932912CC904166521AE5ACAFA64 /* WiserSmartMQTTChannelKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WiserSmartMQTTChannelKit.release.xcconfig; sourceTree = "<group>"; };
-		36C41997DAC9BB4CE73BD899B2A6928C /* WiserSmartSceneKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WiserSmartSceneKit.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		36C41997DAC9BB4CE73BD899B2A6928C /* WiserSmartSceneKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WiserSmartSceneKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3745043C6523B66FDABB2D5D6BD93B13 /* WiserSmartHomeModelUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartHomeModelUtils.h; path = ios/WiserSmartDeviceKit.framework/Versions/A/Headers/WiserSmartHomeModelUtils.h; sourceTree = "<group>"; };
 		385F4CC95A7D7A0AC8D1CADD3900F7DD /* WiserSmartMultiControlDpRelationModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartMultiControlDpRelationModel.h; path = ios/WiserSmartDeviceKit.framework/Versions/A/Headers/WiserSmartMultiControlDpRelationModel.h; sourceTree = "<group>"; };
 		3960B49B668A2063DC6E5C33177801CA /* WiserSmartBaseKitErrors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartBaseKitErrors.h; path = ios/WiserSmartBaseKit.framework/Versions/A/Headers/WiserSmartBaseKitErrors.h; sourceTree = "<group>"; };
@@ -545,7 +531,7 @@
 		4CB68B56F57DFBA7609C8B3F64487DF3 /* safestack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = safestack.h; path = "include-ios/openssl/safestack.h"; sourceTree = "<group>"; };
 		4CE9967AD409FC2AEBEE477D9762F258 /* WiserSmartActivator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartActivator.h; path = ios/WiserSmartActivatorCoreKit.framework/Versions/A/Headers/WiserSmartActivator.h; sourceTree = "<group>"; };
 		4D4B4C1887347A20CBF5CDC36450FB00 /* WiserSmartFirmwareUpgradeStatusModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartFirmwareUpgradeStatusModel.h; path = ios/WiserSmartDeviceCoreKit.framework/Versions/A/Headers/WiserSmartFirmwareUpgradeStatusModel.h; sourceTree = "<group>"; };
-		4DF9042B5AE470A9E4C0DFACE9FD3A01 /* WiserSmartMessageKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WiserSmartMessageKit.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		4DF9042B5AE470A9E4C0DFACE9FD3A01 /* WiserSmartMessageKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WiserSmartMessageKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4E136DE233F012DC83F9072141158FE7 /* WiserSmartHome+WSDeprecatedApi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WiserSmartHome+WSDeprecatedApi.h"; path = "ios/WiserSmartDeviceKit.framework/Versions/A/Headers/WiserSmartHome+WSDeprecatedApi.h"; sourceTree = "<group>"; };
 		4E3D43F192B1954CED1E275FBE4EAD77 /* WiserSmartHomeKitActivator+Home.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WiserSmartHomeKitActivator+Home.h"; path = "ios/WiserSmartActivatorKit.framework/Versions/A/Headers/WiserSmartHomeKitActivator+Home.h"; sourceTree = "<group>"; };
 		4F2598F88F0B43F919D5DE9C7E1DFF1D /* WiserSmartRoom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartRoom.h; path = ios/WiserSmartDeviceKit.framework/Versions/A/Headers/WiserSmartRoom.h; sourceTree = "<group>"; };
@@ -585,8 +571,8 @@
 		6E7BF3BD4B258F9F57D6BEC34D1F9505 /* WiserSmartHome+Weather.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WiserSmartHome+Weather.h"; path = "ios/WiserSmartDeviceKit.framework/Versions/A/Headers/WiserSmartHome+Weather.h"; sourceTree = "<group>"; };
 		6E9037DC8E96D344C6F85359FFE36A98 /* WiserSmartFeedbackKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WiserSmartFeedbackKit.debug.xcconfig; sourceTree = "<group>"; };
 		6ECE92545E06EF92BF3ED8A5533B033A /* WiserSmartDeviceKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WiserSmartDeviceKit.release.xcconfig; sourceTree = "<group>"; };
-		6FB9A1E438C41547E8324F4CE33564F3 /* WiserSmartFeedbackKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WiserSmartFeedbackKit.podspec; sourceTree = "<group>"; tabWidth = 2; };
-		70278F2C4D7D7F33C0A0F69A5E9287B8 /* WiserSmartTimerKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WiserSmartTimerKit.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		6FB9A1E438C41547E8324F4CE33564F3 /* WiserSmartFeedbackKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WiserSmartFeedbackKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		70278F2C4D7D7F33C0A0F69A5E9287B8 /* WiserSmartTimerKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WiserSmartTimerKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7132D5D6A52EC00132518181DA19EECC /* krb5_asn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = krb5_asn.h; path = "include-ios/openssl/krb5_asn.h"; sourceTree = "<group>"; };
 		722644D623DAE8AD462FA56496C66C7D /* ssl23.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl23.h; path = "include-ios/openssl/ssl23.h"; sourceTree = "<group>"; };
 		724466B70A9AAFE9BE10FA417CBAD64B /* Pods-WiserSDKDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WiserSDKDemo-dummy.m"; sourceTree = "<group>"; };
@@ -635,7 +621,7 @@
 		9C7C9987D020530DDBE0F92BDC03F60D /* WiserSmartUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartUser.h; path = ios/WiserSmartBaseKit.framework/Versions/A/Headers/WiserSmartUser.h; sourceTree = "<group>"; };
 		9C88B7AF7EA3A8E63FA4705455CEF19B /* WiserSmartTimerKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WiserSmartTimerKit.framework; path = ios/WiserSmartTimerKit.framework; sourceTree = "<group>"; };
 		9D7D698F98348841F98E534528D04CCC /* WiserSmartMQTTChannelKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WiserSmartMQTTChannelKit.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E632C4FA6120F583A1A22737FC1D1D0 /* engine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = engine.h; path = "include-ios/openssl/engine.h"; sourceTree = "<group>"; };
 		9EF8474E0A55B944784221C133BF7A1E /* WiserSmartFeedbackItemModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WiserSmartFeedbackItemModel.h; sourceTree = "<group>"; };
 		9F1A294C54D163B818688EE40B976FE3 /* CocoaAsyncSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-dummy.m"; sourceTree = "<group>"; };
@@ -658,10 +644,10 @@
 		AC7B6B5FA65A8F284B2ACCCDA85DFC08 /* WiserSmartDiscovery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartDiscovery.h; path = ios/WiserSmartActivatorKit.framework/Versions/A/Headers/WiserSmartDiscovery.h; sourceTree = "<group>"; };
 		ACF3843D6C0BD192B176A1BC3D1656E5 /* WiserSmartHomeMemberRequestModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartHomeMemberRequestModel.h; path = ios/WiserSmartDeviceKit.framework/Versions/A/Headers/WiserSmartHomeMemberRequestModel.h; sourceTree = "<group>"; };
 		AEC04657132BD213D1643CF017E84BA5 /* YYClassInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYClassInfo.h; path = YYModel/YYClassInfo.h; sourceTree = "<group>"; };
-		AF373952146C50DFB408A500248FE1CC /* WiserSmartDeviceKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WiserSmartDeviceKit.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		AF373952146C50DFB408A500248FE1CC /* WiserSmartDeviceKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WiserSmartDeviceKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AF5788E66B01E8482AB485EF8C79017C /* WSSDKLogUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WSSDKLogUtils.h; sourceTree = "<group>"; };
-		AF78D8F19D05590FD5ABE9B84E399219 /* WiserSmartActivatorKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WiserSmartActivatorKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B002E5108D2F24AA73CAFDF1C6CFBCAE /* WiserSmartBaseKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WiserSmartBaseKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AF78D8F19D05590FD5ABE9B84E399219 /* WiserSmartActivatorKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WiserSmartActivatorKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B002E5108D2F24AA73CAFDF1C6CFBCAE /* WiserSmartBaseKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WiserSmartBaseKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B1FA40F11FDF5CAC0D3FA0360C220FFA /* pkcs12.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pkcs12.h; path = "include-ios/openssl/pkcs12.h"; sourceTree = "<group>"; };
 		B2DEB5778139E34713A445816FB01424 /* WiserSmartGroupModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartGroupModel.h; path = ios/WiserSmartDeviceCoreKit.framework/Versions/A/Headers/WiserSmartGroupModel.h; sourceTree = "<group>"; };
 		B433C306439E13F1A4823C434CF8D666 /* WiserSmartRouterActivator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartRouterActivator.h; path = ios/WiserSmartActivatorCoreKit.framework/Versions/A/Headers/WiserSmartRouterActivator.h; sourceTree = "<group>"; };
@@ -720,7 +706,7 @@
 		DC46AF9B4A36976742D5BBA5A8AB49D3 /* WiserSmartHomeDeviceShare+WSDeprecatedApi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WiserSmartHomeDeviceShare+WSDeprecatedApi.h"; path = "ios/WiserSmartDeviceKit.framework/Versions/A/Headers/WiserSmartHomeDeviceShare+WSDeprecatedApi.h"; sourceTree = "<group>"; };
 		DCF3803157FAC493704FAA89D12896B1 /* WiserSmartMultiControlDeviceModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartMultiControlDeviceModel.h; path = ios/WiserSmartDeviceKit.framework/Versions/A/Headers/WiserSmartMultiControlDeviceModel.h; sourceTree = "<group>"; };
 		DD30ECA14DFE1751AEE81366B6C2219F /* evp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = evp.h; path = "include-ios/openssl/evp.h"; sourceTree = "<group>"; };
-		DD33D1A105276E4AA5847570D0E08867 /* WiserSmartUtil.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WiserSmartUtil.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DD33D1A105276E4AA5847570D0E08867 /* WiserSmartUtil.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WiserSmartUtil.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DD8174CB6BD823A4B5C6E0AAE028FCEE /* WiserSmartShareDeviceModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartShareDeviceModel.h; path = ios/WiserSmartDeviceKit.framework/Versions/A/Headers/WiserSmartShareDeviceModel.h; sourceTree = "<group>"; };
 		DDE8190EF9FC3C22C9745CCD3941333D /* NSError+WSSDKDomain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSError+WSSDKDomain.h"; sourceTree = "<group>"; };
 		DEBFA9D40567D094B58A4CED69BE079F /* TuyaSmartQUIC-copy-dsyms.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "TuyaSmartQUIC-copy-dsyms.sh"; sourceTree = "<group>"; };
@@ -745,18 +731,18 @@
 		ECE65558014D2D012F32AC3E31AF820E /* WSApiMergeService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WSApiMergeService.h; path = ios/WiserSmartBaseKit.framework/Versions/A/Headers/WSApiMergeService.h; sourceTree = "<group>"; };
 		EE17A73F923B6BEBCC6334C6DE125CFA /* WiserSmartDeviceCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WiserSmartDeviceCoreKit.framework; path = ios/WiserSmartDeviceCoreKit.framework; sourceTree = "<group>"; };
 		EE201989D62137A67A4438617501E09E /* CocoaAsyncSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-prefix.pch"; sourceTree = "<group>"; };
-		EE723E635EE28DBD31CCC7DA140C8D6B /* WiserSmartSocketChannelKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WiserSmartSocketChannelKit.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		EE723E635EE28DBD31CCC7DA140C8D6B /* WiserSmartSocketChannelKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WiserSmartSocketChannelKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EE739F28FA0D8BFB3BA08E13758F5CE9 /* WiserSmartAutoActivator+Home.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WiserSmartAutoActivator+Home.h"; path = "ios/WiserSmartActivatorKit.framework/Versions/A/Headers/WiserSmartAutoActivator+Home.h"; sourceTree = "<group>"; };
-		EE969D21970CA77204BB76593E6F9259 /* WiserSmartActivatorCoreKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WiserSmartActivatorCoreKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		EE969D21970CA77204BB76593E6F9259 /* WiserSmartActivatorCoreKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WiserSmartActivatorCoreKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EEA110DB5B9E617AD46DF0D78D53E747 /* Pods-WiserSDKDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WiserSDKDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		EF0C0D532DBB276A85A720741EBA36BB /* WiserSmartDeviceCoreKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WiserSmartDeviceCoreKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		EF0C0D532DBB276A85A720741EBA36BB /* WiserSmartDeviceCoreKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WiserSmartDeviceCoreKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EF55CD6126E9748712472C5C0B83C392 /* YYClassInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYClassInfo.m; path = YYModel/YYClassInfo.m; sourceTree = "<group>"; };
 		F09B17613F437307EEEE9D482422F537 /* WiserSmartDeviceModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartDeviceModel.h; path = ios/WiserSmartDeviceCoreKit.framework/Versions/A/Headers/WiserSmartDeviceModel.h; sourceTree = "<group>"; };
 		F0D889448F89942E73C8AEADF0EA2387 /* WiserSmartSocketChannelKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WiserSmartSocketChannelKit.debug.xcconfig; sourceTree = "<group>"; };
 		F20AB8EC6093B48FE4FE7F57BB4D3AD9 /* ossl_typ.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ossl_typ.h; path = "include-ios/openssl/ossl_typ.h"; sourceTree = "<group>"; };
 		F318CE5AEE5AD3069A4CDF8AAB1DD09B /* WiserSmartReceiveMemberDetailModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartReceiveMemberDetailModel.h; path = ios/WiserSmartDeviceKit.framework/Versions/A/Headers/WiserSmartReceiveMemberDetailModel.h; sourceTree = "<group>"; };
 		F37119914BA75B57A07CE9F19D740E1A /* WiserSmartSceneLogModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WiserSmartSceneLogModel.h; sourceTree = "<group>"; };
-		F37DE063D870922FF184C41492913711 /* WiserSmartMQTTChannelKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WiserSmartMQTTChannelKit.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		F37DE063D870922FF184C41492913711 /* WiserSmartMQTTChannelKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WiserSmartMQTTChannelKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F558E79BBFDFABCE3121E8015DCA43F7 /* YYModel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYModel-prefix.pch"; sourceTree = "<group>"; };
 		F55E6BA66011758154BFC0981964F6B6 /* WiserSmartSpeechService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WiserSmartSpeechService.h; path = ios/WiserSmartBaseKit.framework/Versions/A/Headers/WiserSmartSpeechService.h; sourceTree = "<group>"; };
 		F66CE451889511147BEED889A89402F0 /* WiserSmartSceneConditionFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WiserSmartSceneConditionFactory.h; sourceTree = "<group>"; };
@@ -803,6 +789,7 @@
 			children = (
 				DA646CAA6D5AC6232C53F6B5D38F6D22 /* A */,
 			);
+			name = Versions;
 			path = Versions;
 			sourceTree = "<group>";
 		};
@@ -819,6 +806,7 @@
 			children = (
 				1F5B551B0B0CF9686359813AE1FACB2D /* A */,
 			);
+			name = Versions;
 			path = Versions;
 			sourceTree = "<group>";
 		};
@@ -937,6 +925,7 @@
 				1B85C07B5F016B3B5CA6B5B47438F70D /* Frameworks */,
 				6794D42B54CF851EB62E891F7FF2E24F /* Support Files */,
 			);
+			name = "OpenSSL-Universal";
 			path = "OpenSSL-Universal";
 			sourceTree = "<group>";
 		};
@@ -1007,6 +996,7 @@
 			children = (
 				81C1FA898C738D35C810A717A4D89231 /* Headers */,
 			);
+			name = A;
 			path = A;
 			sourceTree = "<group>";
 		};
@@ -1015,6 +1005,7 @@
 			children = (
 				D489A8019DDBA3020634BCD75846094A /* Headers */,
 			);
+			name = A;
 			path = A;
 			sourceTree = "<group>";
 		};
@@ -1109,6 +1100,7 @@
 			children = (
 				E05DCA5CE742A785F4DF3AA9CD470B54 /* A */,
 			);
+			name = Versions;
 			path = Versions;
 			sourceTree = "<group>";
 		};
@@ -1136,6 +1128,7 @@
 			children = (
 				8DCCEA4D9CA2B5186B8F2F1A3143780A /* Headers */,
 			);
+			name = A;
 			path = A;
 			sourceTree = "<group>";
 		};
@@ -1186,6 +1179,7 @@
 				9566E3C753420A4E186902AB3246BB65 /* GCDAsyncUdpSocket.m */,
 				A8F5CA3D70A68D911B19939237EF784D /* Support Files */,
 			);
+			name = CocoaAsyncSocket;
 			path = CocoaAsyncSocket;
 			sourceTree = "<group>";
 		};
@@ -1211,6 +1205,7 @@
 				FD749E6F37A9ED59A3E79ADEA40506A4 /* Frameworks */,
 				86E497EDF3EC4FB91DEAD3C4CCE69A16 /* Support Files */,
 			);
+			name = TuyaSmartQUIC;
 			path = TuyaSmartQUIC;
 			sourceTree = "<group>";
 		};
@@ -1222,6 +1217,7 @@
 				0B456F5319CDE0EDB44B42C51064BEF3 /* WiserSmartSocketReadModel.h */,
 				DA52A05E154E612F63482BF4BE5164F3 /* WiserSmartSocketWriteModel.h */,
 			);
+			name = Headers;
 			path = Headers;
 			sourceTree = "<group>";
 		};
@@ -1251,6 +1247,7 @@
 			children = (
 				3E61A3C4A2FED4C6A5D541A3EC642D86 /* A */,
 			);
+			name = Versions;
 			path = Versions;
 			sourceTree = "<group>";
 		};
@@ -1304,6 +1301,7 @@
 			children = (
 				832AD4A679739A406E4E339511E28AE6 /* Headers */,
 			);
+			name = A;
 			path = A;
 			sourceTree = "<group>";
 		};
@@ -1379,6 +1377,7 @@
 				C398BD9D051115F5E60DC17776EC42F0 /* WiserSmartFeedbackTalkListModel.h */,
 				402674C50354C49BD781FE658EF21352 /* WiserSmartFeedbackTypeListModel.h */,
 			);
+			name = Headers;
 			path = Headers;
 			sourceTree = "<group>";
 		};
@@ -1411,6 +1410,7 @@
 				BAD27BB9893B16F98496EB41059F52E2 /* WiserSmartScenePreConditionFactory.h */,
 				05AD577C06BE39C426BF11149CAEAAEC /* WiserSmartScenePreConditionModel.h */,
 			);
+			name = Headers;
 			path = Headers;
 			sourceTree = "<group>";
 		};
@@ -1464,6 +1464,7 @@
 				C9F62B52040BB8224114692F65F0248D /* WiserSmartTimer+WSDeprecatedApi.h */,
 				C907864E0D83A63F1CD363C47A0770B5 /* WiserSmartTimerKit.h */,
 			);
+			name = Headers;
 			path = Headers;
 			sourceTree = "<group>";
 		};
@@ -1624,6 +1625,7 @@
 				444F03A6789A5A2232A2B4E83A3B25AD /* WSSDKUserDefault.h */,
 				8F16BCCB97B23CA421530ECED2890119 /* WSSDKUtil.h */,
 			);
+			name = Headers;
 			path = Headers;
 			sourceTree = "<group>";
 		};
@@ -1632,6 +1634,7 @@
 			children = (
 				E5A1497B33CE4C70132888C4235DCB52 /* A */,
 			);
+			name = Versions;
 			path = Versions;
 			sourceTree = "<group>";
 		};
@@ -1645,6 +1648,7 @@
 				A2E1BC894168E11EA80A683B98846438 /* YYModel.h */,
 				E56D417021CB4810160010D987423664 /* Support Files */,
 			);
+			name = YYModel;
 			path = YYModel;
 			sourceTree = "<group>";
 		};
@@ -1661,6 +1665,7 @@
 			children = (
 				78F62FE9DA783B2587B1C4AE065A7126 /* A */,
 			);
+			name = Versions;
 			path = Versions;
 			sourceTree = "<group>";
 		};
@@ -1703,6 +1708,7 @@
 				9D7D698F98348841F98E534528D04CCC /* WiserSmartMQTTChannelKit.h */,
 				A535A2C375E6C00602B54E4E63FFBE81 /* WiserSmartMQTTConfigModel.h */,
 			);
+			name = Headers;
 			path = Headers;
 			sourceTree = "<group>";
 		};
@@ -1726,6 +1732,7 @@
 			children = (
 				64831B7BC4B5389224DDB394285F664A /* Headers */,
 			);
+			name = A;
 			path = A;
 			sourceTree = "<group>";
 		};
@@ -1740,6 +1747,7 @@
 				763DB344399FDEFF5977317BD05ED49A /* WiserSmartMessageSetting.h */,
 				C3990E1EBE2D1C844C02388EDF76C133 /* WiserSmartMessageUtils.h */,
 			);
+			name = Headers;
 			path = Headers;
 			sourceTree = "<group>";
 		};
@@ -1769,6 +1777,7 @@
 			children = (
 				B7B010F25D3E4363AB094A9E5AD4E9B1 /* Headers */,
 			);
+			name = A;
 			path = A;
 			sourceTree = "<group>";
 		};
@@ -1814,6 +1823,7 @@
 			children = (
 				DA8B4256F5134CC5204C304DAA417DDB /* Headers */,
 			);
+			name = A;
 			path = A;
 			sourceTree = "<group>";
 		};
@@ -1868,6 +1878,7 @@
 			children = (
 				249D61807535A162B8B0F11D50C6B6DF /* A */,
 			);
+			name = Versions;
 			path = Versions;
 			sourceTree = "<group>";
 		};
