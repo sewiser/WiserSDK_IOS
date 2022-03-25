@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "WiserSmartDeviceKit"
-  s.version = "3.19.0"
+  s.version = "3.26.5"
   s.summary = "A short description of #{s.name}."
   s.homepage = "https://github.com/sewiser/WiserSDK_IOS"
   s.license = {"type"=>"MIT"}
@@ -9,16 +9,15 @@ Pod::Spec.new do |s|
 
   s.static_framework          = true
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.ios.vendored_frameworks = 'ios/WiserSmartDeviceKit.framework'
 
   s.watchos.deployment_target = '2.0'
   s.watchos.vendored_frameworks = 'watchos/WiserSmartDeviceKit.framework'
 
-  s.dependency 'WiserSmartBaseKit'
-  s.dependency 'WiserSmartDeviceCoreKit'
+  s.source_files = 'ios/WiserSmartDeviceKit.framework/Versions/A/Headers/*.h'
 
-  s.ios.dependency 'WiserSmartMQTTChannelKit'
-  s.ios.dependency 'WiserSmartSocketChannelKit'
+  s.dependency 'WiserSmartBaseKit'
+  s.dependency 'WiserSmartDeviceCoreKit', '>= 3.21.0'
 
 end
