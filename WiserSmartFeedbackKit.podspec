@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = '2.0'
   s.watchos.vendored_frameworks = 'watchos/WiserSmartFeedbackKit.framework'
 
-  s.source_files = 'ios/*.framework/Versions/A/Headers/*.h'
+  s.source_files = 'ios/WiserSmartFeedbackKit.framework/Versions/A/Headers/*.h'
 
   s.dependency 'WiserSmartBaseKit'
 
