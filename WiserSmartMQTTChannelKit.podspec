@@ -15,6 +15,5 @@ Pod::Spec.new do |s|
   s.source_files = 'ios/WiserSmartMQTTChannelKit.framework/Versions/A/Headers/*.h'
   
   s.dependency 'WiserSmartBaseKit'
-  s.dependency 'TuyaSmartQUIC', '1.1.1'
 
 end
