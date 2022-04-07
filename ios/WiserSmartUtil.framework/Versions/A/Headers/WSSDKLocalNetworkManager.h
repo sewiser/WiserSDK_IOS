@@ -2,9 +2,6 @@
 //  WSSDKLocalNetworkManager.h
 //  WiserSmartUtil
 //
-//
-//  Copyright © 2020 tuya. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 
