@@ -19,12 +19,12 @@
     "watchos": "2.0"
   },
   "ios": {
-    "vendored_frameworks": "ios/WiserSmartFeedbackKit.framework"
+    "vendored_frameworks": "ios/WiserSmartMessageKit.framework"
   },
   "watchos": {
-    "vendored_frameworks": "watchos/WiserSmartFeedbackKit.framework"
+    "vendored_frameworks": "watchos/WiserSmartMessageKit.framework"
   },
-  "source_files": "ios/WiserSmartFeedbackKit.framework/Versions/A/Headers/*.h",
+  "source_files": "ios/WiserSmartMessageKit.framework/Versions/A/Headers/*.h",
   "dependencies": {
     "WiserSmartBaseKit": [
 

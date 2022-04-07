@@ -24,7 +24,7 @@
   "watchos": {
     "vendored_frameworks": "watchos/WiserSmartFeedbackKit.framework"
   },
-  "source_files": "ios/*.framework/Versions/A/Headers/*.h",
+  "source_files": "ios/WiserSmartFeedbackKit.framework/Versions/A/Headers/*.h",
   "dependencies": {
     "WiserSmartBaseKit": [
 

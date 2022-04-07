@@ -25,9 +25,6 @@
   "dependencies": {
     "WiserSmartBaseKit": [
 
-    ],
-    "TuyaSmartQUIC": [
-      "1.1.1"
     ]
   }
 }

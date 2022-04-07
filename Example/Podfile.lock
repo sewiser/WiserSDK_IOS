@@ -1,7 +1,6 @@
 PODS:
   - CocoaAsyncSocket (7.6.4)
   - OpenSSL-Universal (1.0.2.17)
-  - TuyaSmartQUIC (1.1.1)
   - WiserSmartActivatorCoreKit (3.26.5):
     - WiserSmartDeviceCoreKit
   - WiserSmartActivatorKit (3.26.5):
@@ -22,7 +21,6 @@ PODS:
   - WiserSmartMessageKit (3.26.5):
     - WiserSmartBaseKit
   - WiserSmartMQTTChannelKit (3.26.5):
-    - TuyaSmartQUIC (= 1.1.1)
     - WiserSmartBaseKit
   - WiserSmartSceneKit (3.26.5):
     - WiserSmartBaseKit
@@ -55,7 +53,6 @@ SPEC REPOS:
   trunk:
     - CocoaAsyncSocket
     - OpenSSL-Universal
-    - TuyaSmartQUIC
     - YYModel
 
 EXTERNAL SOURCES:
@@ -87,15 +84,14 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   OpenSSL-Universal: ff04c2e6befc3f1247ae039e60c93f76345b3b5a
-  TuyaSmartQUIC: 5bb81563fedf5b739ac50a5abbf42ec807cfb64b
   WiserSmartActivatorCoreKit: 50eb1f023550b4deae5a072032612cacdd51912d
   WiserSmartActivatorKit: 7fd23b67e3a704329e4c23a2c52b9bcc0b45ac6d
   WiserSmartBaseKit: ab1f6494f518bddbabdcb9f887c1e13a6117b8a5
   WiserSmartDeviceCoreKit: e5decc441b4fc6ed6128d38984b68e305577c6a2
   WiserSmartDeviceKit: f0641d76c19839c68068be914a106de90175d41e
-  WiserSmartFeedbackKit: f0028237d27e0662dd65051297239ea829f1b9df
-  WiserSmartMessageKit: e51c0964ddc4e5fd6239792728835fe938057e4c
-  WiserSmartMQTTChannelKit: 5bfa441ba14fc0be8430839a31bf11d9512114e7
+  WiserSmartFeedbackKit: 65ffa0c5d39616de88007467bdbe3a6d3e75f7c1
+  WiserSmartMessageKit: e5334ffe07491e460dd5a4a404d16071b1bef931
+  WiserSmartMQTTChannelKit: 62fe60a6cced02c77af0e2521eee4bde0708a1ec
   WiserSmartSceneKit: 10909b50e1debe336d93f75da187dd1634ed8bd6
   WiserSmartSocketChannelKit: 1f5889c66f19f44f10632460302a2474aa065fef
   WiserSmartTimerKit: 076c7d32559c4a3e5c6474e6dec7c2f67cd73e3a
