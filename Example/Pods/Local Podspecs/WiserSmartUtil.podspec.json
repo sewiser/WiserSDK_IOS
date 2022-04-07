@@ -1,0 +1,47 @@
+{
+  "name": "WiserSmartUtil",
+  "version": "3.26.5",
+  "summary": "A short description of WiserSmartUtil.",
+  "homepage": "https://github.com/sewiser/WiserSDK_IOS",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": {
+    "wiser": "wiser@wiser.com"
+  },
+  "source": {
+    "git": "https://github.com/sewiser/WiserSDK_IOS.git",
+    "tag": "3.26.5"
+  },
+  "platforms": {
+    "ios": "9.0",
+    "watchos": "2.0"
+  },
+  "ios": {
+    "frameworks": [
+      "CoreTelephony",
+      "Foundation",
+      "SystemConfiguration",
+      "UIKit"
+    ],
+    "resources": "ios/WiserSmartUtil.framework/**/*.bundle",
+    "vendored_frameworks": "ios/WiserSmartUtil.framework",
+    "pod_target_xcconfig": {
+      "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    },
+    "user_target_xcconfig": {
+      "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    }
+  },
+  "watchos": {
+    "frameworks": "WatchKit",
+    "resources": "watchos/WiserSmartUtil.framework/**/*.bundle",
+    "vendored_frameworks": "watchos/WiserSmartUtil.framework"
+  },
+  "source_files": "ios/WiserSmartUtil.framework/Versions/A/Headers/*.h",
+  "dependencies": {
+    "OpenSSL-Universal": [
+      "1.0.2.17"
+    ]
+  }
+}

@@ -487,7 +487,7 @@ typedef NS_ENUM(NSInteger, WSPasswordRegularType) {
 #pragma mark - Ticket from third cloud login
 
 /// Login with ticket.
-/// Ticket is created from a third-party cloud platform, for more information, please refer to the tuya cloud-to-cloud solution.
+/// Ticket is created from a third-party cloud platform, for more information, please refer to the cloud-to-cloud solution.
 ///
 /// @param ticket User ticket from service.
 /// @param success Called when the task finishes successfully.

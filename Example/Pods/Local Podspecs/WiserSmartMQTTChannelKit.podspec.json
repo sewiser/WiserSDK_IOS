@@ -1,0 +1,30 @@
+{
+  "name": "WiserSmartMQTTChannelKit",
+  "version": "3.26.6",
+  "summary": "A short description of WiserSmartMQTTChannelKit.",
+  "homepage": "https://github.com/sewiser/WiserSDK_IOS",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": {
+    "wiser": "wiser@wiser.com"
+  },
+  "source": {
+    "git": "https://github.com/sewiser/WiserSDK_IOS.git",
+    "tag": "3.26.6"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "ios": {
+    "frameworks": "CoreData"
+  },
+  "static_framework": true,
+  "vendored_frameworks": "ios/WiserSmartMQTTChannelKit.framework",
+  "source_files": "ios/WiserSmartMQTTChannelKit.framework/Versions/A/Headers/*.h",
+  "dependencies": {
+    "WiserSmartBaseKit": [
+
+    ]
+  }
+}
