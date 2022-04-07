@@ -1,6 +1,0 @@
-module WiserSmartBaseKit {
-  umbrella header "WiserSmartBaseKit.h"
-
-  export *
-  module * { export * }
-}

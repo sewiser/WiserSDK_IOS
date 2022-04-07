@@ -1,6 +1,0 @@
-framework module WiserSmartMQTTChannelKit {
-  umbrella header "WiserSmartMQTTChannelKit.h"
-
-  export *
-  module * { export * }
-}

@@ -1,6 +1,0 @@
-framework module WiserSmartSocketChannelKit {
-  umbrella header "WiserSmartSocketChannelKit.h"
-
-  export *
-  module * { export * }
-}
