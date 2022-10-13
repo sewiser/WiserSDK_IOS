@@ -17,19 +17,18 @@ target 'WiserSDKDemo' do
 #  pod 'WiserSmartTimerKit', :path => '../'
 #
   
-  # use remote source 3.26.5
-  pod 'WiserSmartBaseKit', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.26.6'
-  pod 'WiserSmartUtil', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.26.6'
-  pod 'WiserSmartActivatorCoreKit', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.26.5'
-  pod 'WiserSmartActivatorKit', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.26.5'
-  pod 'WiserSmartDeviceCoreKit', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.26.5'
-  pod 'WiserSmartDeviceKit', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.26.5'
-  pod 'WiserSmartFeedbackKit', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.26.5'
-  pod 'WiserSmartMessageKit', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.26.5'
-  pod 'WiserSmartMQTTChannelKit', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.26.6'
-  pod 'WiserSmartSocketChannelKit', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.26.5'
-  pod 'WiserSmartSceneKit', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.26.5'
-  pod 'WiserSmartTimerKit', :git => 'https://github.com/sewiser/WiserSDK_IOS.git', :tag => '3.26.5'
+  pod 'WiserSmartActivatorCoreKit', :podspec => 'https://raw.githubusercontent.com/sewiser/WiserSDK_IOS/master/WiserSmartActivatorCoreKit.podspec'
+  pod 'WiserSmartActivatorKit', :podspec => 'https://raw.githubusercontent.com/sewiser/WiserSDK_IOS/master/WiserSmartActivatorKit.podspec'
+  pod 'WiserSmartBaseKit', :podspec => 'https://raw.githubusercontent.com/sewiser/WiserSDK_IOS/master/WiserSmartBaseKit.podspec'
+  pod 'WiserSmartDeviceCoreKit', :podspec => 'https://raw.githubusercontent.com/sewiser/WiserSDK_IOS/master/WiserSmartDeviceCoreKit.podspec'
+  pod 'WiserSmartDeviceKit',:podspec => 'https://raw.githubusercontent.com/sewiser/WiserSDK_IOS/master/WiserSmartDeviceKit.podspec'
+  pod 'WiserSmartFeedbackKit', :podspec => 'https://raw.githubusercontent.com/sewiser/WiserSDK_IOS/master/WiserSmartFeedbackKit.podspec'
+  pod 'WiserSmartMessageKit', :podspec => 'https://raw.githubusercontent.com/sewiser/WiserSDK_IOS/master/WiserSmartMessageKit.podspec'
+  pod 'WiserSmartMQTTChannelKit', :podspec => 'https://raw.githubusercontent.com/sewiser/WiserSDK_IOS/master/WiserSmartMQTTChannelKit.podspec'
+  pod 'WiserSmartSceneKit', :podspec => 'https://raw.githubusercontent.com/sewiser/WiserSDK_IOS/master/WiserSmartSceneKit.podspec'
+  pod 'WiserSmartSocketChannelKit', :podspec => 'https://raw.githubusercontent.com/sewiser/WiserSDK_IOS/master/WiserSmartSocketChannelKit.podspec'
+  pod 'WiserSmartTimerKit', :podspec => 'https://raw.githubusercontent.com/sewiser/WiserSDK_IOS/master/WiserSmartTimerKit.podspec'
+  pod 'WiserSmartUtil', :podspec => 'https://raw.githubusercontent.com/sewiser/WiserSDK_IOS/master/WiserSmartUtil.podspec'
   
 end
 
