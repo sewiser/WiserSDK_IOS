@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.license = {"type"=>"MIT"}
   s.authors = {"0x5e"=>"gaosen.wiser.com"}
   s.homepage = "https:/.wiser.com"
-  s.source = { :http => "https://raw.githubusercontent.com/sewiser/WiserSDK_IOS/feature/xcframework/xcframeworks/#{s.name}/#{s.version}/#{s.name}.xcframework.zip" }
+  s.source = { :http => "https://raw.githubusercontent.com/sewiser/WiserSDK_IOS/master/xcframeworks/#{s.name}/#{s.version}/#{s.name}.xcframework.zip" }
   s.ios.deployment_target     = '9.0'
 
   s.static_framework          = true
