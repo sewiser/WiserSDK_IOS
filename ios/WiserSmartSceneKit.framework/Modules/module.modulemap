@@ -1,6 +1,0 @@
-framework module WiserSmartSceneKit {
-  umbrella header "WiserSmartSceneKit.h"
-
-  export *
-  module * { export * }
-}
