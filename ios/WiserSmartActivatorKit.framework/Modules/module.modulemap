@@ -1,6 +1,0 @@
-framework module WiserSmartActivatorKit {
-  umbrella header "WiserSmartActivatorKit.h"
-
-  export *
-  module * { export * }
-}
